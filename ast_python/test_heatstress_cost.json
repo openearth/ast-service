@@ -1,0 +1,19 @@
+{
+    "measure_area": 100.0,
+    "record": {
+        "ID": 5,
+        "Blue Green measures": "Bank infiltration",
+        "construction_m2": 5,
+        "maint_annual_frac_constr": 3,
+        "Client": "",
+        "Riding along on other developments": "",
+        "construction costs": " 5 - 7",
+        "maintenance costs": "",
+        "average costs": 6,
+        "average percentage of costs": "",
+        "remarks construction costs": "",
+        "remarks maintenance costs": "",
+        "Remark maintenance": "",
+        "Remarks_assumptions": ""
+    }
+}
