@@ -2,22 +2,24 @@
 
 import json
 
+def temperature_dict(d):
+    return temperature(**d)
 
 def temperature_json(jsonstr):
     d = json.loads(jsonstr)
     return temperature(**d)
-
 
 def temperature(record, project_area, measure_area):
     temp_reduction_local = float(record["Value_T"])
     temp_reduction = temp_reduction_local * measure_area / project_area
     return temp_reduction
 
+def cost_dict(d):
+    return cost(**d)
 
 def cost_json(jsonstr):
     d = json.loads(jsonstr)
     return cost(**d)
-
 
 def cost(record, measure_area):
     construction_unit_cost = float(record["construction_m2"])
@@ -27,11 +29,12 @@ def cost(record, measure_area):
     maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost
     return maintenance_cost
 
+def waterquality_dict(d):
+    return waterquality(**d)
 
 def waterquality_json(jsonstr):
     d = json.loads(jsonstr)
     return waterquality(**d)
-
 
 def waterquality(record, measure_area):
     capture_unit = float(record["Nutrients"])

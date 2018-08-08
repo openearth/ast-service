@@ -2,6 +2,8 @@
 
 import json
 
+def pluvflood_dict(d):
+    return pluvflood(**d)
 
 def pluvflood_json(jsonstr):
     d = json.loads(jsonstr)

@@ -5,6 +5,10 @@ import numpy as np
 import json
 
 
+def selection_dict(d):
+    df = selection(**d)
+    return df.to_json(orient="records")
+
 def selection_json(jsonstr):
     d = json.loads(jsonstr)
     df = selection(**d)
