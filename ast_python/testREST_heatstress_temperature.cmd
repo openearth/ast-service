@@ -1,1 +1,1 @@
-curl -X POST -H "Content-Type: application/json" -d @test_heatstress_temperature.json http://tl-431.xtr.deltares.nl:5000/api/heatstress/temperature
+curl -X POST -H "Content-Type: application/json" -d @test_heatstress_temperature.json http://tl-431.xtr.deltares.nl/api/heatstress/temperature

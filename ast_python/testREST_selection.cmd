@@ -1,1 +1,1 @@
-curl -X POST -H "Content-Type: application/json" -d @test_selection.json http://tl-431.xtr.deltares.nl:5000/api/selection
+curl -X POST -H "Content-Type: application/json" -d @test_selection.json http://tl-431.xtr.deltares.nl/api/selection

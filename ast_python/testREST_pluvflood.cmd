@@ -1,1 +1,1 @@
-curl -X POST -H "Content-Type: application/json" -d @test_pluvflood.json http://tl-431.xtr.deltares.nl:5000/api/pluvflood
+curl -X POST -H "Content-Type: application/json" -d @test_pluvflood.json http://tl-431.xtr.deltares.nl/api/pluvflood
