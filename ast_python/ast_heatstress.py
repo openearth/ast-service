@@ -33,8 +33,12 @@ def cost(id, area):
     construction_unit_cost = float(record["construction_m2"])
     maintenance_unit_cost = float(record["maint_annual_frac_constr"])
     construction_cost = construction_unit_cost * area
-    maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost
-    return maintenance_cost, construction_cost
+    maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost    
+    ret = {
+        "maintenanceCost": maintenance_cost,
+        "constructionCost": construction_cost
+    }
+    return ret
 
 def waterquality_dict(d):
     return waterquality(**d)
@@ -52,4 +56,10 @@ def waterquality(id, area):
     capture_unit = capture_unit * area
     settling_unit = settling_unit * area
     filtering_unit = filtering_unit * area
-    return capture_unit, settling_unit, filtering_unit
+
+    ret = {
+        "filteringUnit": filtering_unit,
+        "settlingUnit": settling_unit,
+        "captureUnit": capture_unit
+    }
+    return ret

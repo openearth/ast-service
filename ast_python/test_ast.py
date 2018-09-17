@@ -9,36 +9,36 @@ import ast_pluvflood
 
 class TestAST(unittest.TestCase):
     def test_pluvflood(self):
-        with open("test_pluvflood_new.json") as f:
+        with open("test_pluvflood.json") as f:
             jsonstr = f.read()
         return_time_project_area = ast_pluvflood.pluvflood_json(jsonstr)
         self.assertAlmostEqual(return_time_project_area, 4.45)
 
     def test_heatstress_temperature(self):
-        with open("test_heatstress_temperature_new.json") as f:
+        with open("test_heatstress_temperature.json") as f:
             jsonstr = f.read()
         temp_reduction = ast_heatstress.temperature_json(jsonstr)
         self.assertAlmostEqual(temp_reduction, 0.11)
 
     def test_heatstress_cost(self):
-        with open("test_heatstress_cost_new.json") as f:
+        with open("test_heatstress_cost.json") as f:
             jsonstr = f.read()
-        maintenance_cost, construction_cost = ast_heatstress.cost_json(jsonstr)
-        self.assertAlmostEqual(maintenance_cost, 15.0)
-        self.assertAlmostEqual(construction_cost, 500.0)
+        res = ast_heatstress.cost_json(jsonstr)
+        self.assertAlmostEqual(res['maintenanceCost'], 15.0)
+        self.assertAlmostEqual(res['constructionCost'], 500.0)
 
     def test_heatstress_waterquality(self):
-        with open("test_heatstress_waterquality_new.json") as f:
+        with open("test_heatstress_waterquality.json") as f:
             jsonstr = f.read()
-        capture_unit, settling_unit, filtering_unit = ast_heatstress.waterquality_json(
+        res = ast_heatstress.waterquality_json(
             jsonstr
         )
-        self.assertAlmostEqual(capture_unit, 90.0)
-        self.assertAlmostEqual(settling_unit, 93.0)
-        self.assertAlmostEqual(filtering_unit, 95.0)
+        self.assertAlmostEqual(res['captureUnit'], 90.0)
+        self.assertAlmostEqual(res['settlingUnit'], 93.0)
+        self.assertAlmostEqual(res['filteringUnit'], 95.0)
 
     def test_selection(self):
-        with open("test_selection_new.json") as f:
+        with open("test_selection.json") as f:
             jsonstr = f.read()
         measures_list = ast_selection.selection_json(jsonstr)
         df = pd.DataFrame(json.loads(measures_list))
