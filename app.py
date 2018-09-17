@@ -1,3 +1,5 @@
+import os
+
 # AST 2.0
 from ast_python.ast_selection import *
 from ast_python.ast_heatstress import *
@@ -75,6 +77,30 @@ def ast_calc_heatstress_cost():
 		res = { 'error': 'Invalid JSON request', 'code': 400 }
 		status = 400
 	return jsonify({'result': res}), status	
+
+# Measures
+@application.route('/api/measures', methods=['GET'])
+def ast_calc_measures():
+	try:
+		res = {}
+		ast_dir = os.path.dirname(os.path.realpath(__file__))
+
+		with open(os.path.join(ast_dir, 'tables/ast_measures.json')) as f:
+			res['measures'] = json.load(f)			
+		with open(os.path.join(ast_dir, 'tables/ast_measures_cost.json')) as f:
+			res['measures_cost'] = json.load(f)		
+		with open(os.path.join(ast_dir, 'tables/ast_measures_pluvflood.json')) as f:
+			res['measures_pluvflood'] = json.load(f)		
+		with open(os.path.join(ast_dir, 'tables/ast_measures_temperature.json')) as f:
+			res['measures_temperature'] = json.load(f)		
+		with open(os.path.join(ast_dir, 'tables/ast_measures_wq.json')) as f:
+			res['measures_wq'] = json.load(f)
+		
+		status = 200
+	except:
+		res = { 'error': 'Internal server error, check measures files', 'code': 500 }
+		status = 500
+	return jsonify({'result': res}), status
 
 # Main
 if __name__ == "__main__":
