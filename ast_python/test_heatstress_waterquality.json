@@ -1,10 +1,4 @@
 {
-    "measure_area": 100.0,
-    "record": {
-        "ID": 18,
-        "Measure": "Helophyte filters (horizontal and vertical)",
-        "Nutrients": 0.9,
-        "AdsorbingPollutants": 0.93,
-        "Pathogens": 0.95
-    }
+    "area": 100.0,
+    "id": 18
 }

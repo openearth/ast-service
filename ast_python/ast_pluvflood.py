@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
-
+from os.path import join, dirname, realpath
 import json
+from ast_utils import *
+
+# Data file
+records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_pluvflood.json')
 
 def pluvflood_dict(d):
     return pluvflood(**d)
@@ -9,12 +13,12 @@ def pluvflood_json(jsonstr):
     d = json.loads(jsonstr)
     return pluvflood(**d)
 
-
 def pluvflood(
-    record, project_area, measure_area, measure_depth, inflow_area, current_return_time
+    id, projectArea, area, depth, inflow, returnTime
 ):
-    storage_capacity = measure_area * measure_depth
-    effective_depth = storage_capacity / inflow_area  # [m]
+    record = find_record(id, records_file)
+    storage_capacity = area * depth
+    effective_depth = storage_capacity / inflow  # [m]
     effective_depth_mm = effective_depth * 1000.0
     effective_depth_list = [
         0.0,
@@ -46,10 +50,10 @@ def pluvflood(
     multiplication_factor = recurrence_a + (recurrence_b - recurrence_a) * (
         effective_depth_mm - effective_depth_a
     ) / (effective_depth_b - effective_depth_a)
-    return_time_inflow_area = current_return_time * multiplication_factor
-    return_time_project_area = (
-        return_time_inflow_area * inflow_area / (project_area)
-        + current_return_time * (project_area - inflow_area) / project_area
+    return_time_inflow = returnTime * multiplication_factor
+    return_time_projectArea = (
+        return_time_inflow * inflow / (projectArea)
+        + returnTime * (projectArea - inflow) / projectArea
     )
 
-    return return_time_project_area
+    return return_time_projectArea

@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
-
+from os.path import join, dirname, realpath
+import json
+from ast_utils import *
 import pandas as pd
 import numpy as np
-import json
+import logging
 
+# Data files
+records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures.json')
+scores_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_scores.json')
 
 def selection_dict(d):
     df = selection(**d)
@@ -14,33 +19,31 @@ def selection_json(jsonstr):
     df = selection(**d)
     return df.to_json(orient="records")
 
-
-def selection(
-    scores,
+def selection(    
     scale,
     soil,
     slope,
     multifunctionality,
     surface,
-    subsurface_characteristics,
-    climate_capacity,
-    site_suitability,
+    subsurface,
+    capacity,
+    suitability,
 ):
 
     # construct DataFrame from list of dicts
+    scores = read_json_array(scores_file)
     df = pd.DataFrame(scores)
 
     # convert checkboxes to index the DataFrame with
     scale_list = _checklist(scale)
-    climate_capacity_list = _checklist(climate_capacity)
-    site_suitability_list = _checklist(site_suitability)
-
+    capacity_list = _checklist(capacity)
+    suitability_list = _checklist(suitability)
     max_scale = df[scale_list].max(axis=1)
 
-    # include all characteristics less than or equal to subsurface_characteristics
-    subsurface_characteristics_range = ["High", "Medium", "Low", "Very_low"]
+    # include all characteristics less than or equal to subsurface
+    subsurface_characteristics_range = ["high", "medium", "low", "veryLow"]
     subsurface_characteristics_index = subsurface_characteristics_range.index(
-        subsurface_characteristics
+        subsurface
     )
     subsurface_characteristics_list = subsurface_characteristics_range[
         subsurface_characteristics_index:
@@ -50,33 +53,27 @@ def selection(
     df["TechFeasabilty"] = max_scale + df[soil] + df[slope]
 
     # TODO implement multifuntional landuse scores or multiply with 2
-    df["site_suitability1"] = (
-        df[site_suitability_list].max(axis=1)
+    df["suitability1"] = (
+        df[suitability_list].max(axis=1)
         + multifunctionality * df["Enables_multifunctional_land_use"] * 2
     )
     # check what to do with roofs versus subsurface, now they can sum to 2, instead of 1
-    df["site_suitability2"] = df[surface] + df[subsurface_characteristics_list].max(
-        axis=1
-    )
-
-    df["site_suitability"] = df["site_suitability1"] * df["site_suitability2"].replace(
-        0, 0.4
-    )
-
-    df["climate_capacity_sum"] = df[climate_capacity_list].sum(axis=1)
+    df["suitability2"] = df[surface] + df[subsurface_characteristics_list].max(axis=1)
+    df["suitability"] = df["suitability1"] * df["suitability2"].replace(0, 0.4)
+    df["capacity_sum"] = df[capacity_list].sum(axis=1)
 
     # TODO check whether 0 values should be allowed
-    df.loc[np.isclose(df["climate_capacity_sum"], 0), "climate_capacity_factor"] = 0.0
-    df.loc[np.isclose(df["climate_capacity_sum"], 1), "climate_capacity_factor"] = 1.25
-    df.loc[np.isclose(df["climate_capacity_sum"], 2), "climate_capacity_factor"] = 1.35
-    df.loc[np.isclose(df["climate_capacity_sum"], 3), "climate_capacity_factor"] = 1.425
-    df.loc[np.isclose(df["climate_capacity_sum"], 4), "climate_capacity_factor"] = 1.5
-    df.loc[np.isclose(df["climate_capacity_sum"], 5), "climate_capacity_factor"] = 1.575
-    df.loc[np.isclose(df["climate_capacity_sum"], 6), "climate_capacity_factor"] = 1.6
+    df.loc[np.isclose(df["capacity_sum"], 0), "capacity_factor"] = 0.0
+    df.loc[np.isclose(df["capacity_sum"], 1), "capacity_factor"] = 1.25
+    df.loc[np.isclose(df["capacity_sum"], 2), "capacity_factor"] = 1.35
+    df.loc[np.isclose(df["capacity_sum"], 3), "capacity_factor"] = 1.425
+    df.loc[np.isclose(df["capacity_sum"], 4), "capacity_factor"] = 1.5
+    df.loc[np.isclose(df["capacity_sum"], 5), "capacity_factor"] = 1.575
+    df.loc[np.isclose(df["capacity_sum"], 6), "capacity_factor"] = 1.6
 
     # TODO find out why tech feas score instead of rank?
-    df["system_suitability"] = (df["site_suitability"] + df["TechFeasabilty"]) * df[
-        "climate_capacity_factor"
+    df["system_suitability"] = (df["suitability"] + df["TechFeasabilty"]) * df[
+        "capacity_factor"
     ]
 
     df["system_suitability_rank"] = df["system_suitability"].rank(

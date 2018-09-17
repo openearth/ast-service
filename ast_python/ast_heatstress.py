@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
-
+from os.path import join, dirname, realpath
 import json
+from ast_utils import *
+
+# Data files
+records_file_cost = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_cost.json')
+records_file_temp = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_temperature.json')
+records_file_wq = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_wq.json')
 
 def temperature_dict(d):
     return temperature(**d)
@@ -9,9 +15,10 @@ def temperature_json(jsonstr):
     d = json.loads(jsonstr)
     return temperature(**d)
 
-def temperature(record, project_area, measure_area):
+def temperature(id, projectArea, area):
+    record = find_record(id, records_file_temp)
     temp_reduction_local = float(record["Value_T"])
-    temp_reduction = temp_reduction_local * measure_area / project_area
+    temp_reduction = temp_reduction_local * area / projectArea
     return temp_reduction
 
 def cost_dict(d):
@@ -21,13 +28,13 @@ def cost_json(jsonstr):
     d = json.loads(jsonstr)
     return cost(**d)
 
-def cost(record, measure_area):
+def cost(id, area):
+    record = find_record(id, records_file_cost)
     construction_unit_cost = float(record["construction_m2"])
     maintenance_unit_cost = float(record["maint_annual_frac_constr"])
-
-    construction_cost = construction_unit_cost * measure_area
+    construction_cost = construction_unit_cost * area
     maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost
-    return maintenance_cost
+    return maintenance_cost, construction_cost
 
 def waterquality_dict(d):
     return waterquality(**d)
@@ -36,12 +43,13 @@ def waterquality_json(jsonstr):
     d = json.loads(jsonstr)
     return waterquality(**d)
 
-def waterquality(record, measure_area):
+def waterquality(id, area):
+    record = find_record(id, records_file_wq)
     capture_unit = float(record["Nutrients"])
     settling_unit = float(record["AdsorbingPollutants"])
     filtering_unit = float(record["Pathogens"])
 
-    capture_unit = capture_unit * measure_area
-    settling_unit = settling_unit * measure_area
-    filtering_unit = filtering_unit * measure_area
+    capture_unit = capture_unit * area
+    settling_unit = settling_unit * area
+    filtering_unit = filtering_unit * area
     return capture_unit, settling_unit, filtering_unit

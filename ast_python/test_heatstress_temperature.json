@@ -1,14 +1,5 @@
 {
-    "project_area": 1000.0,
-    "measure_area": 100.0,
-    "record": {
-        "ID": 2,
-        "Name": "Adding green in streetscape: Shrubbery",
-        "Value_T": 1.1,
-        "Freq_TminGT20": 0,
-        "Freq_TmaxGT25": 0,
-        "Value_ET": "",
-        "Range_T": "0.6 tot 1.6",
-        "T_effect": ""
-    }
+    "projectArea": 1000.0,
+    "area": 100.0,
+    "id": 2
 }
