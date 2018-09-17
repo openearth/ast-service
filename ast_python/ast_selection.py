@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from os.path import join, dirname, realpath
 import json
-from ast_utils import *
+from ast_python.ast_utils import *
 import pandas as pd
 import numpy as np
 import logging

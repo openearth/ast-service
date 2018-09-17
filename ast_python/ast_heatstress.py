@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from os.path import join, dirname, realpath
 import json
-from ast_utils import *
+from ast_python.ast_utils import *
 
 # Data files
 records_file_cost = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_cost.json')
