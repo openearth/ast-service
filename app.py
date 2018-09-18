@@ -8,15 +8,17 @@ from ast_python.ast_pluvflood import *
 # FLASK
 from flask import Flask
 from flask import request, jsonify
+from flask_cors import CORS
 
 # FLASK app
 application = Flask(__name__)
+CORS(application)
 
 # /
 @application.route('/')
 def empty_view(self):
     content = {'please move along': 'nothing to see here, perhaps looking for /api?'}
-    return content, 404
+    return content, 200
 
 # /api/selection
 @application.route('/api/selection', methods=['GET', 'POST'])
