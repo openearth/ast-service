@@ -19,7 +19,11 @@ def temperature(id, projectArea, area):
     record = find_record(id, records_file_temp)
     temp_reduction_local = float(record["Value_T"])
     temp_reduction = temp_reduction_local * area / projectArea
-    return temp_reduction
+    # API needs key/value pairs
+    ret = {
+        "tempReduction" : temp_reduction
+    }
+    return ret
 
 def cost_dict(d):
     return cost(**d)
@@ -33,7 +37,9 @@ def cost(id, area):
     construction_unit_cost = float(record["construction_m2"])
     maintenance_unit_cost = float(record["maint_annual_frac_constr"])
     construction_cost = construction_unit_cost * area
-    maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost    
+    maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost   
+    
+    # API needs key/value pairs
     ret = {
         "maintenanceCost": maintenance_cost,
         "constructionCost": construction_cost
@@ -57,6 +63,7 @@ def waterquality(id, area):
     settling_unit = settling_unit * area
     filtering_unit = filtering_unit * area
 
+    # API needs key/value pairs
     ret = {
         "filteringUnit": filtering_unit,
         "settlingUnit": settling_unit,

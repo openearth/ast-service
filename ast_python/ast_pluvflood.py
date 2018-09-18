@@ -55,5 +55,9 @@ def pluvflood(
         return_time_inflow * inflow / (projectArea)
         + returnTime * (projectArea - inflow) / projectArea
     )
-
-    return return_time_projectArea
+    
+    # API needs key/value pairs
+    ret = {
+        "returnTime" : return_time_projectArea
+    }
+    return ret
