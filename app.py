@@ -80,7 +80,7 @@ def ast_calc_heatstress_cost():
 		status = 400
 	return jsonify({'result': res}), status	
 
-# Measures
+# /api/measures
 @application.route('/api/measures', methods=['GET'])
 def ast_calc_measures():
 	try:
@@ -104,6 +104,25 @@ def ast_calc_measures():
 		status = 500
 	return jsonify({'result': res}), status
 
+# /api/scores
+@application.route('/api/scores', methods=['GET'])
+def ast_calc_scores():
+	try:
+		res = {}
+		ast_dir = os.path.dirname(os.path.realpath(__file__))
+
+		with open(os.path.join(ast_dir, 'tables/ast_scores.json')) as f:
+			res['scores'] = json.load(f)			
+		with open(os.path.join(ast_dir, 'tables/ast_selection_scores.json')) as f:
+			res['selection_scores'] = json.load(f)		
+		
+		status = 200
+	except:
+		res = { 'error': 'Internal server error, check scores files', 'code': 500 }
+		status = 500
+	return jsonify({'result': res}), status
+	
+	
 # Main
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
