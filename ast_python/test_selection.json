@@ -17,7 +17,7 @@
 			"blueSpace": true
 	},
 	"subsurface":"high",
-	"surface":"Flat_roofs",
+	"surface":"flatRoofs",
 	"soil": "sand",
 	"capacity":
 	{

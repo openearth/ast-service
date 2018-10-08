@@ -31,13 +31,13 @@ def selection(
 ):
 
     # construct DataFrame from list of dicts
-    scores = read_json_array(scores_file)
+    scores = read_json_array(scores_file)        
     df = pd.DataFrame(scores)
-
+    
     # convert checkboxes to index the DataFrame with
     scale_list = _checklist(scale)
-    capacity_list = _checklist(capacity)
-    suitability_list = _checklist(suitability)
+    capacity_list = _checklist(capacity) 
+    suitability_list = _checklist(suitability)    
     max_scale = df[scale_list].max(axis=1)
 
     # include all characteristics less than or equal to subsurface
@@ -55,7 +55,7 @@ def selection(
     # TODO implement multifuntional landuse scores or multiply with 2
     df["suitability1"] = (
         df[suitability_list].max(axis=1)
-        + multifunctionality * df["Enables_multifunctional_land_use"] * 2
+        + multifunctionality * df["enablesMultifunctionalLandUse"] * 2
     )
     # check what to do with roofs versus subsurface, now they can sum to 2, instead of 1
     df["suitability2"] = df[surface] + df[subsurface_characteristics_list].max(axis=1)
