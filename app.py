@@ -27,7 +27,7 @@ def ast_calc_selection():
 	    json_data = request.get_json()
 	    res = selection_dict(json_data)
 	    status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400		
 	return jsonify(res), status
@@ -39,7 +39,7 @@ def ast_calc_pluvflood():
 	    json_data = request.get_json()
 	    res = pluvflood_dict(json_data)
 	    status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400
 	return jsonify({'result': res}), status
@@ -51,7 +51,7 @@ def ast_calc_heatstress_temperature():
 	    json_data = request.get_json()
 	    res = temperature_dict(json_data)
 	    status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400
 	return jsonify({'result': res}), status
@@ -63,7 +63,7 @@ def ast_calc_heatstress_waterquality():
 	    json_data = request.get_json()
 	    res = waterquality_dict(json_data)
 	    status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400
 	return jsonify({'result': res}), status
@@ -75,7 +75,7 @@ def ast_calc_heatstress_cost():
 	    json_data = request.get_json()
 	    res = cost_dict(json_data)
 	    status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400
 	return jsonify({'result': res}), status	
@@ -99,7 +99,7 @@ def ast_calc_measures():
 			res['measures_wq'] = json.load(f)
 		
 		status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400
 	return jsonify({'result': res}), status
@@ -117,7 +117,7 @@ def ast_calc_scores():
 			res['selection_scores'] = json.load(f)		
 		
 		status = 200
-	except Exception, e:
+	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400
 	return jsonify({'result': res}), status
