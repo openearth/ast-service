@@ -41,7 +41,7 @@ def selection(
     max_scale = df[scale_list].max(axis=1)
 
     # include all characteristics less than or equal to subsurface
-    subsurface_characteristics_range = ["high", "medium", "low", "veryLow"]
+    subsurface_characteristics_range = ["high", "medium", "low", "verylow"]
     subsurface_characteristics_index = subsurface_characteristics_range.index(
         subsurface
     )
@@ -81,7 +81,7 @@ def selection(
     )
     df_sorted = df.sort_values("system_suitability_rank")
 
-    measures_list = df_sorted[["AST_ID", "Name", "system_suitability"]]
+    measures_list = df_sorted[["ast_id", "name", "system_suitability"]]
     return measures_list
 
 
