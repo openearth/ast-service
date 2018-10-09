@@ -41,7 +41,7 @@ def selection(
     max_scale = df[scale_list].max(axis=1)
 
     # include all characteristics less than or equal to subsurface
-    subsurface_characteristics_range = ["high", "medium", "low", "verylow"]
+    subsurface_characteristics_range = ["high", "medium", "low", "veryLow"]
     subsurface_characteristics_index = subsurface_characteristics_range.index(
         subsurface
     )
