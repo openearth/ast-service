@@ -30,7 +30,7 @@ def ast_calc_selection():
 	except Exception as e:
 		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
 		status = 400		
-	return jsonify(res), status
+	return jsonify({'result': res}), status
 
 # /api/pluvflood
 @application.route('/api/pluvflood', methods=['GET', 'POST'])

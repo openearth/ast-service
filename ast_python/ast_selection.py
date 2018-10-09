@@ -11,8 +11,7 @@ records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures.j
 scores_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_scores.json')
 
 def selection_dict(d):
-    df = selection(**d)
-    return df.to_json(orient="records")
+    return selection(**d).to_dict()
 
 def selection_json(jsonstr):
     d = json.loads(jsonstr)
