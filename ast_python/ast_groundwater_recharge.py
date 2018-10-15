@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from os.path import join, dirname, realpath
 import json
-from ast_utils import * #ast_python.
+from ast_python.ast_utils import *
 
 # Data file
 records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_groundwater_recharge.json')
 
 def groundwater_recharge_dict(d):
-    return pluvflood(**d)
+    return groundwater_recharge(**d)
 
 def groundwater_recharge_json(jsonstr):
     d = json.loads(jsonstr)

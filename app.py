@@ -4,6 +4,8 @@ import os
 from ast_python.ast_selection import *
 from ast_python.ast_heatstress import *
 from ast_python.ast_pluvflood import *
+from ast_python.ast_groundwater_recharge import *
+from ast_python.ast_evapotranspiration import *
 
 # FLASK
 from flask import Flask
@@ -44,6 +46,30 @@ def ast_calc_pluvflood():
 		status = 400
 	return jsonify({'result': res}), status
 
+# /api/evapotranspiration
+@application.route('/api/evapotranspiration', methods=['GET', 'POST'])
+def ast_calc_evapotranspiration():
+	try:
+	    json_data = request.get_json()
+	    res = evapotranspiration_dict(json_data)
+	    status = 200
+	except Exception as e:
+		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
+		status = 400
+	return jsonify({'result': res}), status
+
+# /api/groundwater_recharge
+@application.route('/api/groundwater_recharge', methods=['GET', 'POST'])
+def ast_calc_groundwater_recharge():
+	try:
+	    json_data = request.get_json()
+	    res = groundwater_recharge_dict(json_data)
+	    status = 200
+	except Exception as e:
+		res = { 'error': 'Invalid JSON request', 'code': 400, 'msg': str(e) }
+		status = 400
+	return jsonify({'result': res}), status	
+	
 # /api/heatstress/temperature
 @application.route('/api/heatstress/temperature', methods=['GET', 'POST'])
 def ast_calc_heatstress_temperature():
