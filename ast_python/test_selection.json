@@ -1,5 +1,5 @@
 {
-	"multifunctionality": 0.7,
+	"multifunctionality": "0.7",
 	"scale":{
 			"city": true,
 			"neighbourhood": true,

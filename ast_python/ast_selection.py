@@ -54,7 +54,7 @@ def selection(
     # TODO implement multifuntional landuse scores or multiply with 2
     df["suitability1"] = (
         df[suitability_list].max(axis=1)
-        + multifunctionality * df["enablesMultifunctionalLandUse"] * 2
+        + float(multifunctionality) * df["enablesMultifunctionalLandUse"] * 2
     )
     # check what to do with roofs versus subsurface, now they can sum to 2, instead of 1
     df["suitability2"] = df[surface] + df[subsurface_characteristics_list].max(axis=1)
