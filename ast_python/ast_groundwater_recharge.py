@@ -3,9 +3,6 @@ from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
 
-# Data file
-records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_groundwater_recharge.json')
-
 def groundwater_recharge_dict(d):
     return groundwater_recharge(**d)
 
@@ -13,9 +10,9 @@ def groundwater_recharge_json(jsonstr):
     d = json.loads(jsonstr)
     return groundwater_recharge(**d)
 
-def groundwater_recharge(
-    id, projectArea, area, depth, inflow, returnTime
-):
+def groundwater_recharge(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+	# Data file
+    records_file = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_groundwater_recharge.json')
     record = find_record(id, records_file)
     storage_capacity = area * depth
     effective_depth = storage_capacity / inflow  # [m]
@@ -60,5 +57,3 @@ def groundwater_recharge(
         "groundwater_recharge" : groundwater_recharge_projectArea
     }
     return ret
-#a= groundwater_recharge(1, 1000, 100, 10, 20, 1)
-#print(a)

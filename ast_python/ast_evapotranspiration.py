@@ -3,9 +3,6 @@ from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
 
-# Data file
-records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_evapotranspiration.json')
-
 def evapotranspiration_dict(d):
     return evapotranspiration(**d)
 
@@ -13,9 +10,9 @@ def evapotranspiration_json(jsonstr):
     d = json.loads(jsonstr)
     return evapotranspiration(**d)
 
-def evapotranspiration(
-    id, projectArea, area, depth, inflow, returnTime
-):
+def evapotranspiration(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+    # Data file
+    records_file = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_evapotranspiration.json')
     record = find_record(id, records_file)
     storage_capacity = area * depth
     effective_depth = storage_capacity / inflow  # [m]
@@ -60,5 +57,3 @@ def evapotranspiration(
         "evapotranspiration" : evapotranspiration_projectArea
     }
     return ret
-#a= evapotranspiration(1, 1000, 100, 10, 20, 1)
-#print(a)

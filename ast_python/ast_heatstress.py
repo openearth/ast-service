@@ -3,11 +3,6 @@ from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
 
-# Data files
-records_file_cost = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_cost.json')
-records_file_temp = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_temperature.json')
-records_file_wq = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_wq.json')
-
 def temperature_dict(d):
     return temperature(**d)
 
@@ -15,7 +10,9 @@ def temperature_json(jsonstr):
     d = json.loads(jsonstr)
     return temperature(**d)
 
-def temperature(id, projectArea, area):
+def temperature(id, projectArea, area, scenarioName):
+	# Data file
+    records_file_temp = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_temperature.json')    
     record = find_record(id, records_file_temp)
     temp_reduction_local = float(record["Value_T"])
     temp_reduction = temp_reduction_local * area / projectArea
@@ -32,7 +29,9 @@ def cost_json(jsonstr):
     d = json.loads(jsonstr)
     return cost(**d)
 
-def cost(id, area):
+def cost(id, area, scenarioName):
+    # Data file
+    records_file_cost = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_cost.json')    
     record = find_record(id, records_file_cost)
     construction_unit_cost = float(record["construction_m2"])
     maintenance_unit_cost = float(record["maint_annual_frac_constr"])
@@ -53,12 +52,13 @@ def waterquality_json(jsonstr):
     d = json.loads(jsonstr)
     return waterquality(**d)
 
-def waterquality(id, area):
+def waterquality(id, area, scenarioName):
+    # Data file
+    records_file_wq = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_wq.json')
     record = find_record(id, records_file_wq)
     capture_unit = float(record["Nutrients"])
     settling_unit = float(record["AdsorbingPollutants"])
     filtering_unit = float(record["Pathogens"])
-
     capture_unit = capture_unit * area
     settling_unit = settling_unit * area
     filtering_unit = filtering_unit * area

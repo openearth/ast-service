@@ -3,9 +3,6 @@ from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
 
-# Data file
-records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures_pluvflood.json')
-
 def pluvflood_dict(d):
     return pluvflood(**d)
 
@@ -13,9 +10,9 @@ def pluvflood_json(jsonstr):
     d = json.loads(jsonstr)
     return pluvflood(**d)
 
-def pluvflood(
-    id, projectArea, area, depth, inflow, returnTime
-):
+def pluvflood(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+    # Data file
+    records_file = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_pluvflood.json')
     record = find_record(id, records_file)
     storage_capacity = area * depth
     effective_depth = storage_capacity / inflow  # [m]
