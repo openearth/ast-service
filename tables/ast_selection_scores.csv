@@ -1,4 +1,4 @@
-AST_ID;Name;City;Neighbourhood;Street;Building;Sand;Peat;Clay_;Bed_rock;Sloping_area;Flat_area_on_high_ground;Flat_area_on_low_ground;Red_space;Grey_space;Green_space_-_private__gardens;Undeveloped_land_and_Green_space_-_no_recreational_use;Green_space_-_recreational_use_&_urban_farming;Grey_green_space_-_sports_playground;Blue_space;Enables_multifunctional_land_use;Low_slope_roofs;Flat_roofs;Very_low;Low;Medium;High;Attenuation;Infiltration;Storage_&_Harvesting;Cooling;point;linear__conveyance;Heatstress_Threshold_Capacity;Heatstress_Coping_Capacity;Drought_Threshold_Capacity;Drought_Coping_Capacity;Flood_Threshold_Capacity;Flood_Coping_Capacity;Multifunctional_landuse;type;Show
+ast_id;name;city;neighbourhood;street;building;sand;peat;clay;bed_rock;sloping_area;flat_area_on_high_ground;flat_area_on_low_ground;red_space;grey_space;green_space_private_gardens;undeveloped_land_and_green_space_no_recreational_use;green_space_recreational_use_urban_farming;grey_green_space_sports_playground;blue_space;enables_multifunctional_land_use;low_slope_roofs;flat_roofs;very_low;low;medium;high;attenuation;infiltration;storage_harvesting;cooling;point;linear_conveyance;heatstress_threshold_capacity;heatstress_coping_capacity;drought_threshold_capacity;drought_coping_capacity;flood_threshold_capacity;flood_coping_capacity;multifunctional_landuse;type;show
 20;Infiltration_and_Transport-sewer;0;4;10;4;10;4;4;0;0;10;4;0;10;3;6;4;10;0;5;0;0;1;0;0;0;0;4;0;0;0;1;0;0;1;0;1;0;;Blue_Grey;TRUE
 11;Ditch_or_infiltration-strip;0;4;10;0;10;4;4;4;10;10;4;0;6;4;10;0;0;0;0;0;0;1;0;0;0;4;4;0;1;0;1;0;0;1;0;1;1;;Blue_Green;TRUE
 19;Increase_area_of_surface_water_;10;10;4;0;4;10;10;4;4;10;10;0;1;1;10;8;0;10;2;0;0;0;1;0;0;0;0;5;2;1;1;1;1;0;1;1;1;;Blue_Green;TRUE
@@ -31,7 +31,7 @@ AST_ID;Name;City;Neighbourhood;Street;Building;Sand;Peat;Clay_;Bed_rock;Sloping_
 16;Intensive_green_roof;0;0;4;10;10;10;10;10;10;10;10;10;0;0;0;0;0;0;5;1;1;0;0;0;0;2;0;0;2;0;0;1;1;0;0;1;0;;Blue_Green;TRUE
 39;Urban_agriculture;10;10;10;10;10;10;10;10;10;10;10;6;9;9;9;10;7;0;2;0;0;1;0;0;0;5;1;0;5;0;0;1;1;0;0;1;0;;Blue_Green;TRUE
 44;Wet_proofing_(water_resistant_construction);0;0;0;10;4;10;10;10;10;10;4;10;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;;Grey;TRUE
-45;Raised_curbs__hollow_roads;4;10;10;4;10;10;10;10;10;10;10;0;10;0;0;0;0;0;4;0;0;1;0;0;0;2;0;0;0;0;1;0;0;0;0;1;1;;Grey;TRUE
+45;Raised_curbs_hollow_roads;4;10;10;4;10;10;10;10;10;10;10;0;10;0;0;0;0;0;4;0;0;1;0;0;0;2;0;0;0;0;1;0;0;0;0;1;1;;Grey;TRUE
 46;Storage_settling_tank_and_storage_basins;0;10;10;4;10;10;10;10;4;10;10;0;8;0;8;0;8;0;0;0;0;0;0;0;0;5;0;5;0;1;0;0;0;0;1;1;0;;Grey;TRUE
 47;Pumping_station_(Increased_capacity);4;10;4;4;10;10;10;10;4;10;10;10;10;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;1;1;;Grey;TRUE
 48;Sewer_system_(increase_capacity);4;10;10;10;10;10;10;10;4;10;10;0;10;0;0;0;0;0;4;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0;0;1;0;;Grey;TRUE
@@ -61,11 +61,11 @@ AST_ID;Name;City;Neighbourhood;Street;Building;Sand;Peat;Clay_;Bed_rock;Sloping_
 8;Cooling_with_water_elements:_ponds;0;4;10;4;10;10;10;10;10;10;10;0;10;10;4;6;4;10;3;0;0;1;0;0;0;0;0;0;3;1;0;1;1;0;0;0;0;;Blue_Green;TRUE
 9;Decentral_Separator_for_road_runoff_treatment_;0;10;4;4;10;10;10;10;10;10;10;0;10;0;0;0;0;0;3;0;0;0;1;0;0;0;0;0;0;1;0;0;0;0;0;0;0;;Grey;TRUE
 12;Extra_intensive_green_roof;4;4;4;10;10;10;10;10;10;10;10;10;0;0;0;0;0;0;5;1;1;0;0;0;0;3;0;0;2;0;0;1;1;0;0;1;0;;Blue_Green;TRUE
-13;Floating__puri-plants_(floatlands);4;10;4;4;10;10;10;10;0;10;10;0;0;5;0;0;0;10;1;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;;Blue_Green;TRUE
+13;Floating_puri-plants_(floatlands);4;10;4;4;10;10;10;10;0;10;10;0;0;5;0;0;0;10;1;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;;Blue_Green;TRUE
 32;Seasonal_storage_(extra_storage_height_of_surface_water);4;10;4;0;10;10;10;10;4;10;10;0;0;0;10;0;0;0;3;0;0;1;0;0;0;3;0;5;0;0;0;0;0;1;1;1;0;;Blue_Green;TRUE
 33;Shallow_infiltration_measures_boxes_(sand);0;4;10;10;10;4;4;0;4;10;4;5;10;10;6;6;6;0;4;0;0;0;1;0;0;0;5;0;0;1;0;0;0;1;0;1;0;;Blue;TRUE
 42;Green_roofs_with_drainage_delay;0;0;4;10;10;10;10;10;10;10;10;10;0;0;0;0;0;0;5;1;1;0;0;0;0;4;0;0;2;0;0;1;1;0;0;1;0;;Blue_Green;TRUE
-43;Bioswales___Infiltrating_filter_swales_on_sandy_soil;0;10;10;4;10;4;4;0;0;10;4;0;0;5;6;10;0;0;1;0;0;0;0;1;0;5;3;0;0;1;0;1;1;1;0;1;0;;Blue_Green;TRUE
+43;Bioswales__Infiltrating_filter_swales_on_sandy_soil;0;10;10;4;10;4;4;0;0;10;4;0;0;5;6;10;0;0;1;0;0;0;0;1;0;5;3;0;0;1;0;1;1;1;0;1;0;;Blue_Green;TRUE
 68;Tree_cells;0;4;10;4;10;10;10;0;10;10;4;0;10;5;6;6;0;0;3;0;0;0;0;1;0;0;3;0;0;1;0;0;0;0;0;1;0;;Blue_Green;TRUE
 69;French_drain;0;4;10;4;10;4;4;0;0;10;4;0;10;3;6;4;10;0;5;0;0;1;0;0;0;0;4;0;0;0;1;0;0;1;0;1;0;;Blue_Grey;TRUE
 70;Infiltration_Recreation_Field;0;10;4;2;10;10;10;10;0;10;10;0;0;2;10;8;0;10;1;0;0;0;0;0;1;0;1;5;5;1;0;1;1;0;1;1;1;;Blue_Green;TRUE
