@@ -58,3 +58,5 @@ def pluvflood(id, projectArea, area, depth, inflow, returnTime, scenarioName):
         "returnTime" : return_time_projectArea
     }
     return ret
+a= pluvflood(1, 1000, 100, 10, 20, 1)
+print(a)
