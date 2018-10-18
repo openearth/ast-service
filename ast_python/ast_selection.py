@@ -37,8 +37,16 @@ def selection(
     scale_list = _checklist(scale)
     capacity_list = _checklist(capacity) 
     suitability_list = _checklist(suitability)    
-    max_scale = df[scale_list].max(axis=1)
 
+
+    if scale_list == []: 
+        max_scale = 0
+    else:
+        max_scale = df[scale_list].max(axis=1)
+
+    
+    
+    
     # include all characteristics less than or equal to subsurface
     subsurface_characteristics_range = ["high", "medium", "low", "veryLow"]
     subsurface_characteristics_index = subsurface_characteristics_range.index(
@@ -52,17 +60,23 @@ def selection(
     df["TechFeasabilty"] = max_scale + df[soil] + df[slope]
 
     # TODO implement multifuntional landuse scores or multiply with 2
-    df["suitability1"] = (
+    if suitability_list == []:
+        df["suitability1"] = 1
+    else:
+        df["suitability1"] = (
         df[suitability_list].max(axis=1)
         + float(multifunctionality) * df["enablesMultifunctionalLandUse"] * 2
     )
     # check what to do with roofs versus subsurface, now they can sum to 2, instead of 1
     df["suitability2"] = df[surface] + df[subsurface_characteristics_list].max(axis=1)
     df["suitability"] = df["suitability1"] * df["suitability2"].replace(0, 0.4)
-    df["capacity_sum"] = df[capacity_list].sum(axis=1)
+    if capacity_list == []:
+        df["capacity_sum"] = 0
+    else:
+        df["capacity_sum"] = df[capacity_list].sum(axis=1)
 
     # TODO check whether 0 values should be allowed
-    df.loc[np.isclose(df["capacity_sum"], 0), "capacity_factor"] = 0.0
+    df.loc[np.isclose(df["capacity_sum"], 0), "capacity_factor"] = 1.0
     df.loc[np.isclose(df["capacity_sum"], 1), "capacity_factor"] = 1.25
     df.loc[np.isclose(df["capacity_sum"], 2), "capacity_factor"] = 1.35
     df.loc[np.isclose(df["capacity_sum"], 3), "capacity_factor"] = 1.425
