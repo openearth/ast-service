@@ -17,10 +17,18 @@ def temperature(id, projectArea, area, scenarioName):
     temp_reduction_local = float(record["Value_T"])
     temp_reduction = temp_reduction_local * area / projectArea
     # API needs key/value pairs
+    if temp_reduction_local >=0.01 and area > 200:
+        coolspot = 1
+    else:
+        coolspot = 0
+        
+    # API needs key/value pairs
     ret = {
-        "tempReduction" : temp_reduction
+        "coolSpot" : coolspot,
+		"tempReduction" : temp_reduction
     }
     return ret
+
 
 def cost_dict(d):
     return cost(**d)
