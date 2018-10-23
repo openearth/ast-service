@@ -110,18 +110,19 @@ def ast_calc_heatstress_cost():
 @application.route('/api/measures', methods=['GET'])
 def ast_calc_measures():
 	try:
+		scenarioName = request.args.get('scenarioName')
 		res = {}
 		ast_dir = os.path.dirname(os.path.realpath(__file__))
 
-		with open(os.path.join(ast_dir, 'tables/ast_measures.json')) as f:
+		with open(os.path.join(ast_dir, 'tables/'+scenarioName+'/ast_measures.json')) as f:
 			res['measures'] = json.load(f)			
-		with open(os.path.join(ast_dir, 'tables/ast_measures_cost.json')) as f:
+		with open(os.path.join(ast_dir, 'tables/'+scenarioName+'/ast_measures_cost.json')) as f:
 			res['measures_cost'] = json.load(f)		
-		with open(os.path.join(ast_dir, 'tables/ast_measures_pluvflood.json')) as f:
+		with open(os.path.join(ast_dir, 'tables/'+scenarioName+'/ast_measures_pluvflood.json')) as f:
 			res['measures_pluvflood'] = json.load(f)		
-		with open(os.path.join(ast_dir, 'tables/ast_measures_temperature.json')) as f:
+		with open(os.path.join(ast_dir, 'tables/'+scenarioName+'/ast_measures_temperature.json')) as f:
 			res['measures_temperature'] = json.load(f)		
-		with open(os.path.join(ast_dir, 'tables/ast_measures_wq.json')) as f:
+		with open(os.path.join(ast_dir, 'tables/'+scenarioName+'/ast_measures_wq.json')) as f:
 			res['measures_wq'] = json.load(f)
 		
 		status = 200
