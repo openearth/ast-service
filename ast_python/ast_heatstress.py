@@ -15,9 +15,10 @@ def temperature(id, projectArea, area, scenarioName):
     records_file_temp = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_temperature.json')    
     record = find_record(id, records_file_temp)
     temp_reduction_local = float(record["Value_T"])
+	temp_coolspot_potential = float(record["Coolspot_potential"])
     temp_reduction = temp_reduction_local * area / projectArea
     # API needs key/value pairs
-    if temp_reduction_local >=0.01 and area > 200:
+    if temp_coolspot_potential > 0.5 and area > 200:
         coolspot = 1
     else:
         coolspot = 0
