@@ -61,16 +61,17 @@ def waterquality_json(jsonstr):
     d = json.loads(jsonstr)
     return waterquality(**d)
 
-def waterquality(id, projectArea, area, scenarioName):
+def waterquality(id, area, scenarioName):
+#def waterquality(id, projectArea, area, scenarioName):
     # Data file
     records_file_wq = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_wq.json')
     record = find_record(id, records_file_wq)
     capture_unit = float(record["Nutrients"])
     settling_unit = float(record["AdsorbingPollutants"])
     filtering_unit = float(record["Pathogens"])
-    capture_unit = capture_unit * area / projectArea * 100.0
-    settling_unit = settling_unit * area / projectArea * 100.0
-    filtering_unit = filtering_unit * area / projectArea * 100.0
+    capture_unit = capture_unit * area #/ projectArea * 100.0
+    settling_unit = settling_unit * area #/ projectArea * 100.0
+    filtering_unit = filtering_unit * area #/ projectArea * 100.0
 
     # API needs key/value pairs
     ret = {
