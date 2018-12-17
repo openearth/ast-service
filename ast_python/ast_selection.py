@@ -83,7 +83,8 @@ def selection(
     df.loc[np.isclose(df["capacity_sum"], 4), "capacity_factor"] = 1.5
     df.loc[np.isclose(df["capacity_sum"], 5), "capacity_factor"] = 1.575
     df.loc[np.isclose(df["capacity_sum"], 6), "capacity_factor"] = 1.6
-
+    df.loc[np.isclose(df["capacity_sum"], 7), "capacity_factor"] = 1.675
+    df.loc[np.isclose(df["capacity_sum"], 8), "capacity_factor"] = 1.75
     # TODO find out why tech feas score instead of rank?
     df["system_suitability"] = (df["suitability"] + df["TechFeasabilty"]) * df[
         "capacity_factor"
