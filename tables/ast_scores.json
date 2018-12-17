@@ -40,6 +40,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -83,6 +85,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -126,6 +130,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -169,6 +175,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -212,6 +220,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -255,6 +265,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -298,6 +310,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -341,6 +355,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -384,6 +400,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -427,6 +445,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -470,6 +490,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -513,6 +535,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -556,6 +580,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -599,6 +625,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "FALSE"
 	}, {
@@ -642,6 +670,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -685,6 +715,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -728,6 +760,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -771,6 +805,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -814,6 +850,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -857,6 +895,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -900,6 +940,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -943,6 +985,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -986,6 +1030,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1029,6 +1075,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1072,6 +1120,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1115,6 +1165,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1158,6 +1210,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1201,6 +1255,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1244,6 +1300,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -1287,6 +1345,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1330,6 +1390,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1373,6 +1435,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1416,6 +1480,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1459,6 +1525,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1502,6 +1570,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1545,6 +1615,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1588,6 +1660,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1631,6 +1705,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1674,6 +1750,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -1717,6 +1795,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -1760,6 +1840,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -1803,6 +1885,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -1846,6 +1930,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1889,6 +1975,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -1932,6 +2020,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -1975,6 +2065,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2018,6 +2110,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2061,6 +2155,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2104,6 +2200,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -2147,6 +2245,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2190,6 +2290,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2233,6 +2335,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2276,6 +2380,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -2319,6 +2425,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -2362,6 +2470,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2405,6 +2515,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2448,6 +2560,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2491,6 +2605,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -2534,6 +2650,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2577,6 +2695,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2620,6 +2740,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -2663,6 +2785,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2706,6 +2830,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2749,6 +2875,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2792,6 +2920,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue",
 		"show": "TRUE"
 	}, {
@@ -2835,6 +2965,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2878,6 +3010,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2921,6 +3055,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -2964,6 +3100,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -3007,6 +3145,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -3050,6 +3190,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -3093,6 +3235,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -3136,6 +3280,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "blue_green",
 		"show": "TRUE"
 	}, {
@@ -3179,6 +3325,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -3222,6 +3370,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "grey",
 		"show": "TRUE"
 	}, {
@@ -3265,6 +3415,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3308,6 +3460,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3351,6 +3505,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3394,6 +3550,8 @@
 		"droughtCoping": 1,
 		"floodPrevention": 0,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 0,
+		"waterSafetyCoping": 0,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3437,6 +3595,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3480,6 +3640,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3523,6 +3685,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3566,6 +3730,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3609,6 +3775,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -3652,6 +3820,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 0,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 0,
 		"type": "blue_grey",
 		"show": "TRUE"
 	}, {
@@ -3695,6 +3865,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}, {
@@ -3738,6 +3910,8 @@
 		"droughtCoping": 0,
 		"floodPrevention": 1,
 		"floodCoping": 1,
+		"waterSafetyPrevention": 1,
+		"waterSafetyCoping": 1,
 		"type": "na",
 		"show": "TRUE"
 	}
