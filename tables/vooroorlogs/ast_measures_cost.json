@@ -1246,7 +1246,7 @@
 		"Remarks_assumptions": 0
 	}, {
 		"ID": 91,
-		"Blue Green measures": "Permeable pavement (infiltration)",
+		"Blue Green measures": "Remove pavement to plant green",
 		"construction_m2": 0,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
