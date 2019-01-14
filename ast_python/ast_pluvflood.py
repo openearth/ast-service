@@ -45,8 +45,7 @@ def pluvflood(id, projectArea, area, depth, inflow, returnTime, scenarioName):
         effective_depth_mm - effective_depth_a
     ) / (effective_depth_b - effective_depth_a)
     return_time_inflow = returnTime * multiplication_factor
-    return_time_projectArea = (return_time_inflow * inflow / (projectArea) + returnTime * (projectArea - inflow) / projectArea - returnTime
-    )
+    return_time_projectArea = (return_time_inflow * inflow / (projectArea) + returnTime * (projectArea - inflow) / projectArea) - returnTime
     
     # API needs key/value pairs
     ret = {
