@@ -11,10 +11,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 2,
 		"name": "Adding green in streetscape: Shrubbery",
@@ -27,10 +24,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 3,
 		"name": "Adding green in streetscape: Trees",
@@ -43,10 +37,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 4,
 		"name": "Artificial urban wetlands",
@@ -59,10 +50,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 5,
 		"name": "Bank infiltration",
@@ -75,10 +63,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 6,
 		"name": "Bioswales/Infiltrating filter swales on silty soil",
@@ -91,10 +76,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 7,
 		"name": "Cooling with water elements: fountains",
@@ -107,10 +89,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 8,
 		"name": "Cooling with water elements: ponds",
@@ -123,10 +102,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 9,
 		"name": "Decentral Separator for road runoff treatment ",
@@ -139,10 +115,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 10,
 		"name": "Deep groundwater infiltration",
@@ -155,10 +128,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 11,
 		"name": "Ditches, Infiltration strips with above-ground storage",
@@ -171,10 +141,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 12,
 		"name": "Extra intensive green roof",
@@ -187,10 +154,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 13,
 		"name": "Floating  puri-plants (floatlands)",
@@ -203,10 +167,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 14,
 		"name": "Green facades",
@@ -219,10 +180,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 15,
 		"name": "Green roofs (extensive)",
@@ -235,10 +193,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 16,
 		"name": "Green roofs (intensive)",
@@ -251,10 +206,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 17,
 		"name": "Green shores and riverbanks",
@@ -267,10 +219,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 18,
 		"name": "Helophyte filters (horizontal and vertical)",
@@ -283,10 +232,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 19,
 		"name": "Increase storage or discharge capacity of surface water ",
@@ -299,10 +245,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 20,
 		"name": "Infiltration and Transport-sewer",
@@ -315,10 +258,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 21,
 		"name": "Infiltration box -silt",
@@ -331,10 +271,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 22,
 		"name": "Infiltration fields with above-ground storage",
@@ -347,10 +284,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 23,
 		"name": "Infiltration trenches, verges",
@@ -363,10 +297,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 24,
 		"name": "Infiltration shafts",
@@ -379,10 +310,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 25,
 		"name": "Parks and urban forests",
@@ -395,10 +323,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 26,
 		"name": "Porous pavements",
@@ -411,10 +336,7 @@
 		"Col5": 1151,
 		"Col6": 1204,
 		"Col7": 1471,
-		"Col8": 1471,
-		"Col9": 1471,
-		"Col10": 1471,
-		"Col11": 1471
+		"Col8": 1471
 	}, {
 		"ID": 27,
 		"name": "Private green gardens",
@@ -427,10 +349,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 28,
 		"name": "Rainwater retention ponds, with or without infiltration possibilities",
@@ -443,10 +362,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 29,
 		"name": "Rainwater retention tank",
@@ -459,10 +375,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 30,
 		"name": "Rainwater storage below buildings",
@@ -475,10 +388,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 31,
 		"name": "Retention soil filter",
@@ -491,10 +401,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 32,
 		"name": "Seasonal storage (by realizing extra storage height of surface water)",
@@ -507,10 +414,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 33,
 		"name": "Shallow infiltration measures",
@@ -523,10 +427,7 @@
 		"Col5": 1151,
 		"Col6": 1204,
 		"Col7": 1471,
-		"Col8": 1471,
-		"Col9": 1471,
-		"Col10": 1471,
-		"Col11": 1471
+		"Col8": 1471
 	}, {
 		"ID": 34,
 		"name": "Specific seasonal storage facilities (larger ones)",
@@ -539,10 +440,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 35,
 		"name": "Surface drains",
@@ -555,10 +453,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 36,
 		"name": "Swales (subsurface storage)",
@@ -571,10 +466,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 37,
 		"name": "Systems for using precipitation in buildings (rainwater tank)",
@@ -587,10 +479,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 38,
 		"name": "Tree pit bioretention",
@@ -603,10 +492,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 39,
 		"name": "Urban farms/ urban agriculture",
@@ -619,10 +505,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 40,
 		"name": "Water roofs/Blue roofs",
@@ -635,10 +518,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 41,
 		"name": "Water squares",
@@ -651,10 +531,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 42,
 		"name": "Green roofs with drainage delay",
@@ -667,10 +544,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 43,
 		"name": "Bioswales/Infiltrating filter swales on sandy soil",
@@ -683,10 +557,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 44,
 		"name": "Wet proofing (water resistant construction)",
@@ -699,10 +570,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 45,
 		"name": "Raised curbs/ hollow roads",
@@ -715,10 +583,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 46,
 		"name": "Storage/settling tank and storage basins",
@@ -731,10 +596,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 47,
 		"name": "Pumping station (Increased capacity)",
@@ -747,10 +609,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 48,
 		"name": "Sewer system (increase capacity)",
@@ -763,10 +622,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 49,
 		"name": "Reconstruct combined sewer systems to separated sewer systems",
@@ -779,10 +635,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 50,
 		"name": "Smart-drain (groundwater)",
@@ -795,10 +648,7 @@
 		"Col5": 883,
 		"Col6": 899,
 		"Col7": 981,
-		"Col8": 981,
-		"Col9": 981,
-		"Col10": 981,
-		"Col11": 981
+		"Col8": 981
 	}, {
 		"ID": 51,
 		"name": "Improve soil infiltration capacity",
@@ -811,10 +661,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 52,
 		"name": "Use of treated wastewater",
@@ -827,10 +674,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 53,
 		"name": "Use of groundwater (aquifer storage and recovery)",
@@ -843,10 +687,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 54,
 		"name": "Water inlet systems",
@@ -859,10 +700,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 55,
 		"name": "Disconnecting paved surfaces from sewer system",
@@ -875,10 +713,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 56,
 		"name": "Smart irrigation measures",
@@ -891,10 +726,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 57,
 		"name": "Building without a crawlspace",
@@ -907,10 +739,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 58,
 		"name": "Reconstructing (wooden) foundations",
@@ -923,10 +752,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 59,
 		"name": "Replacing leaking/draining sewers",
@@ -939,10 +765,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 60,
 		"name": "Green ventilation grids",
@@ -955,10 +778,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 61,
 		"name": "Wetting surfaces (of gardens, roofs, roads)",
@@ -971,10 +791,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 62,
 		"name": "Cool paving and building materials",
@@ -987,10 +804,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 63,
 		"name": "Gutter",
@@ -1003,10 +817,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 64,
 		"name": "Inclination of roads",
@@ -1019,10 +830,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 65,
 		"name": "Water circulation systems",
@@ -1035,10 +843,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 66,
 		"name": "Increase height difference between street level and ground floor level",
@@ -1051,10 +856,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 67,
 		"name": "Lowering embankments",
@@ -1067,10 +869,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 68,
 		"name": "Tree cells",
@@ -1083,10 +882,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 69,
 		"name": "French drain",
@@ -1099,10 +895,7 @@
 		"Col5": 816,
 		"Col6": 861,
 		"Col7": 1088,
-		"Col8": 1088,
-		"Col9": 1088,
-		"Col10": 1088,
-		"Col11": 1088
+		"Col8": 1088
 	}, {
 		"ID": 70,
 		"name": "Infiltration Recreation Field",
@@ -1115,10 +908,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 71,
 		"name": "Rainwater detention pond (wet pond)",
@@ -1131,10 +921,7 @@
 		"Col5": 833,
 		"Col6": 934,
 		"Col7": 1444,
-		"Col8": 1444,
-		"Col9": 1444,
-		"Col10": 1444,
-		"Col11": 1444
+		"Col8": 1444
 	}, {
 		"ID": 72,
 		"name": "Bioretention cell",
@@ -1147,10 +934,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 73,
 		"name": "Green open space",
@@ -1163,10 +947,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 74,
 		"name": "Cistern",
@@ -1179,10 +960,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 81,
 		"name": "Levees",
@@ -1195,10 +973,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 82,
 		"name": "Gravel layers",
@@ -1211,10 +986,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 83,
 		"name": "Small quays",
@@ -1227,10 +999,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 84,
 		"name": "Drought resistant species",
@@ -1243,10 +1012,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 86,
 		"name": "Super levee",
@@ -1259,10 +1025,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 87,
 		"name": "Quay",
@@ -1275,10 +1038,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 88,
 		"name": "Building as levee",
@@ -1291,10 +1051,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 89,
 		"name": "Temporary levee",
@@ -1307,10 +1064,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 90,
 		"name": "Permeable pavement (storage)",
@@ -1323,10 +1077,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 91,
 		"name": "Remove pavement to plant green",
@@ -1339,10 +1090,7 @@
 		"Col5": 340,
 		"Col6": 325,
 		"Col7": 310,
-		"Col8": 286,
-		"Col9": 286,
-		"Col10": 286,
-		"Col11": 286
+		"Col8": 286
 	}, {
 		"ID": 92,
 		"name": "Lowering of terrace",
@@ -1355,10 +1103,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}, {
 		"ID": 93,
 		"name": "Lowering part of garden",
@@ -1371,9 +1116,6 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0,
-		"Col10": 0,
-		"Col11": 0
+		"Col8": 0
 	}
 ]
