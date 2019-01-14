@@ -46,7 +46,7 @@ def evapotranspiration(id, projectArea, area, depth, inflow, returnTime, scenari
     ) / (effective_depth_b - effective_depth_a)
     
     evapotranspiration_projectArea = evapotranspiration_measure * inflow / projectArea
-    )
+    
     
     # API needs key/value pairs
     ret = {
