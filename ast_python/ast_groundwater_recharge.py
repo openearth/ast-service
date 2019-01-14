@@ -45,9 +45,7 @@ def groundwater_recharge(id, projectArea, area, depth, inflow, returnTime, scena
         effective_depth_mm - effective_depth_a
     ) / (effective_depth_b - effective_depth_a)
     
-    groundwater_recharge_projectArea = (groundwater_recharge_measure / projectArea
-        + returnTime * (projectArea - inflow) / projectArea
-    )
+    groundwater_recharge_projectArea = groundwater_recharge_measure * inflow /projectArea
     
     # API needs key/value pairs
     ret = {
