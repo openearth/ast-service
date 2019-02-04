@@ -1,7 +1,8 @@
 [
 	{
 		"ast_id": 20,
-		"name": "infiltration_and_transport_sewer",
+		"astName": "infiltration_and_transport_sewer",
+		"name": "Drainage/Infiltration/Transport (DIT) drains",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -42,11 +43,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 11,
-		"name": "ditch_or_infiltration_strip",
+		"astName": "ditch_or_infiltration_strip",
+		"name": "Ditches",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -87,11 +89,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 19,
-		"name": "increase_area_of_surface_water_",
+		"astName": "increase_area_of_surface_water_",
+		"name": "Create extra surface water (m2)",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -132,11 +135,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 26,
-		"name": "porous_pavement",
+		"astName": "porous_pavement",
+		"name": "Permeable pavement systems (infiltration)",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -177,11 +181,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 22,
-		"name": "infiltration_field",
+		"astName": "infiltration_field",
+		"name": "Infiltration fields and strips with surface storage",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -222,11 +227,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 28,
-		"name": "rainwater_retention_pond",
+		"astName": "rainwater_retention_pond",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -267,11 +272,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 6,
-		"name": "bioswales",
+		"astName": "bioswales",
+		"name": "Bioswale (with drainage)",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 10,
@@ -312,11 +318,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 21,
-		"name": "infiltration_boxes",
+		"astName": "infiltration_boxes",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -357,11 +363,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 23,
-		"name": "infiltration_trenche",
+		"astName": "infiltration_trenche",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -402,11 +408,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 36,
-		"name": "swale",
+		"astName": "swale",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -447,11 +453,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 14,
-		"name": "green_facades",
+		"astName": "green_facades",
+		"name": "Green facades",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 0,
@@ -492,11 +499,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 40,
-		"name": "water_roof",
+		"astName": "water_roof",
+		"name": "Water roof",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 0,
@@ -537,11 +545,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 30,
-		"name": "rainwater_storage_below_buildings",
+		"astName": "rainwater_storage_below_buildings",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -582,11 +590,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
-		"show": "TRUE"
+		"type": "FALSE",
+		"show": "FALSE"
 	}, {
 		"ast_id": 67,
-		"name": "lowering_embankments",
+		"astName": "lowering_embankments",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 10,
@@ -627,11 +635,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
-		"show": "FALSE"
+		"type": "FALSE",
+		"show": "TRUE"
 	}, {
 		"ast_id": 34,
-		"name": "specific_seasonal_storage_facility",
+		"astName": "specific_seasonal_storage_facility",
 		"city": 10,
 		"neighbourhood": 4,
 		"street": 0,
@@ -672,11 +680,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 41,
-		"name": "water_squares",
+		"astName": "water_squares",
+		"name": "Water square",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -717,11 +726,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 4,
-		"name": "artificial_urban_wetland",
+		"astName": "artificial_urban_wetland",
+		"name": "Urban wetland",
 		"city": 10,
 		"neighbourhood": 4,
 		"street": 0,
@@ -762,11 +772,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 18,
-		"name": "helophyte_filter",
+		"astName": "helophyte_filter",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 10,
@@ -807,11 +817,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 29,
-		"name": "rainwater_tank",
+		"astName": "rainwater_tank",
+		"name": "Rain barrel",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 0,
@@ -852,11 +863,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 37,
-		"name": "systems_for_rainwater_harvesting",
+		"astName": "systems_for_rainwater_harvesting",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -897,11 +908,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 1,
-		"name": "adding_grass_herbs_in_streetscape",
+		"astName": "adding_grass_herbs_in_streetscape",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -942,11 +953,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 2,
-		"name": "adding_shrubbery_in_streetscape",
+		"astName": "adding_shrubbery_in_streetscape",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -987,11 +998,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 3,
-		"name": "adding_trees_in_streetscape",
+		"astName": "adding_trees_in_streetscape",
+		"name": "Adding trees to streetscape",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1032,11 +1044,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 25,
-		"name": "park_or_urban_forest",
+		"astName": "park_or_urban_forest",
+		"name": "Urban forest",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -1077,11 +1090,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 27,
-		"name": "private_green_garden",
+		"astName": "private_green_garden",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 4,
@@ -1122,11 +1135,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 17,
-		"name": "green_shores_and_riverbanks",
+		"astName": "green_shores_and_riverbanks",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -1167,11 +1180,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 7,
-		"name": "cooling_with_water_elements",
+		"astName": "cooling_with_water_elements",
+		"name": "Fountains, waterfalls, water facades",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -1212,11 +1226,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 15,
-		"name": "extensive_green_roof",
+		"astName": "extensive_green_roof",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -1257,11 +1271,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 10,
-		"name": "deep_groundwater_infiltration",
+		"astName": "deep_groundwater_infiltration",
+		"name": "Deep groundwater infiltration",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -1302,11 +1317,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 16,
-		"name": "intensive_green_roof",
+		"astName": "intensive_green_roof",
+		"name": "Green roofs (extensive)",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -1347,11 +1363,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 39,
-		"name": "urban_agriculture",
+		"astName": "urban_agriculture",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1392,11 +1408,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 44,
-		"name": "wet_proofing_(water_resistant_construction)",
+		"astName": "wet_proofing_(water_resistant_construction)",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 0,
@@ -1437,11 +1453,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 45,
-		"name": "raised_curbs_hollow_roads",
+		"astName": "raised_curbs_hollow_roads",
+		"name": "Hollow roads",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1482,11 +1499,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 46,
-		"name": "storage_settling_tank_and_storage_basins",
+		"astName": "storage_settling_tank_and_storage_basins",
+		"name": "Storage tank or underground water storage",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1527,11 +1545,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 47,
-		"name": "pumping_station_(increased_capacity)",
+		"astName": "pumping_station_(increased_capacity)",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 4,
@@ -1572,11 +1590,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 48,
-		"name": "sewer_system_(increase_capacity)",
+		"astName": "sewer_system_(increase_capacity)",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1617,11 +1635,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 49,
-		"name": "reconstruct_combined_sewer_to_separated_sewer",
+		"astName": "reconstruct_combined_sewer_to_separated_sewer",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -1662,11 +1680,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 50,
-		"name": "smart_drain_(groundwater)",
+		"astName": "smart_drain_(groundwater)",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -1707,11 +1725,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 51,
-		"name": "improve_soil_infiltration_capacity",
+		"astName": "improve_soil_infiltration_capacity",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1752,11 +1770,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 52,
-		"name": "use_of_treated_wastewater",
+		"astName": "use_of_treated_wastewater",
 		"city": 10,
 		"neighbourhood": 4,
 		"street": 0,
@@ -1797,11 +1815,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 53,
-		"name": "use_of_groundwater_(aquifer_storage_and_recovery)",
+		"astName": "use_of_groundwater_(aquifer_storage_and_recovery)",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1842,11 +1860,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 54,
-		"name": "water_inlet_systems",
+		"astName": "water_inlet_systems",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 0,
@@ -1887,11 +1905,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 55,
-		"name": "disconnecting_paved_surfaces_from_sewer_system",
+		"astName": "disconnecting_paved_surfaces_from_sewer_system",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1932,11 +1950,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 56,
-		"name": "smart_irrigation_measures",
+		"astName": "smart_irrigation_measures",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -1977,11 +1995,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 57,
-		"name": "building_without_a_crawlspace",
+		"astName": "building_without_a_crawlspace",
+		"name": "Smart irrigation measures",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 0,
@@ -2022,11 +2041,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 58,
-		"name": "reconstructing_(wooden)_foundations",
+		"astName": "reconstructing_(wooden)_foundations",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 0,
@@ -2067,11 +2086,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 59,
-		"name": "replacing_leaking_draining_sewers",
+		"astName": "replacing_leaking_draining_sewers",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 10,
@@ -2112,11 +2131,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 60,
-		"name": "green_ventilation_grids",
+		"astName": "green_ventilation_grids",
 		"city": 10,
 		"neighbourhood": 4,
 		"street": 0,
@@ -2157,11 +2176,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 61,
-		"name": "wetting_surfaces_(of_gardens_roofs_roads)",
+		"astName": "wetting_surfaces_(of_gardens_roofs_roads)",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -2202,11 +2221,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 62,
-		"name": "cool_paving_and_building_materials",
+		"astName": "cool_paving_and_building_materials",
+		"name": "Cool building materials  (high albedo)",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -2247,11 +2267,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 63,
-		"name": "gutter",
+		"astName": "gutter",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2292,11 +2312,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 64,
-		"name": "inclination_of_roads",
+		"astName": "inclination_of_roads",
 		"city": 4,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2337,11 +2357,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 65,
-		"name": "water_circulation_systems",
+		"astName": "water_circulation_systems",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -2382,11 +2402,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 66,
-		"name": "lower_streets_to_store_water",
+		"astName": "lower_streets_to_store_water",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -2427,11 +2447,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 5,
-		"name": "bank_infiltration",
+		"astName": "bank_infiltration",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 10,
@@ -2472,11 +2492,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 24,
-		"name": "infilttration_shafts",
+		"astName": "infilttration_shafts",
 		"city": 4,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2517,11 +2537,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 31,
-		"name": "retention_soil_filter",
+		"astName": "retention_soil_filter",
 		"city": 4,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2562,11 +2582,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 35,
-		"name": "surface_drains",
+		"astName": "surface_drains",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2607,11 +2627,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 38,
-		"name": "tree_pit_bioretention",
+		"astName": "tree_pit_bioretention",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2652,11 +2672,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 8,
-		"name": "cooling_with_water_elements:_ponds",
+		"astName": "cooling_with_water_elements:_ponds",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2697,11 +2717,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 9,
-		"name": "decentral_separator_for_road_runoff_treatment_",
+		"astName": "decentral_separator_for_road_runoff_treatment_",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -2742,11 +2762,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 12,
-		"name": "extra_intensive_green_roof",
+		"astName": "extra_intensive_green_roof",
 		"city": 4,
 		"neighbourhood": 4,
 		"street": 4,
@@ -2787,11 +2807,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 13,
-		"name": "floating_puri_plants_(floatlands)",
+		"astName": "floating_puri_plants_(floatlands)",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 4,
@@ -2832,11 +2852,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 32,
-		"name": "seasonal_storage_(extra_storage_height_of_surface_water)",
+		"astName": "seasonal_storage_(extra_storage_height_of_surface_water)",
+		"name": "Storage by creating extra freeboard",
 		"city": 4,
 		"neighbourhood": 10,
 		"street": 4,
@@ -2877,11 +2898,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 33,
-		"name": "shallow_infiltration_measures_boxes_(sand)",
+		"astName": "shallow_infiltration_measures_boxes_(sand)",
+		"name": "Infiltration boxes",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -2922,11 +2944,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 42,
-		"name": "green_roofs_with_drainage_delay",
+		"astName": "green_roofs_with_drainage_delay",
+		"name": "Green roofs with drainage delay",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -2967,11 +2990,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 43,
-		"name": "bioswales_infiltrating_filter_swales_on_sandy_soil",
+		"astName": "bioswales_infiltrating_filter_swales_on_sandy_soil",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 10,
@@ -3012,11 +3035,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 68,
-		"name": "tree_cells",
+		"astName": "tree_cells",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -3057,11 +3080,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 69,
-		"name": "french_drain",
+		"astName": "french_drain",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -3102,11 +3125,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 70,
-		"name": "infiltration_recreation_field",
+		"astName": "infiltration_recreation_field",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -3147,11 +3170,12 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 71,
-		"name": "rainwater_detention_pond_(wet_pond)",
+		"astName": "rainwater_detention_pond_(wet_pond)",
+		"name": "Rainwater detention pond (wet pond)",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -3192,11 +3216,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 72,
-		"name": "bioretention_cell",
+		"astName": "bioretention_cell",
 		"city": 0,
 		"neighbourhood": 10,
 		"street": 4,
@@ -3237,11 +3261,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 73,
-		"name": "green_open_space",
+		"astName": "green_open_space",
 		"city": 10,
 		"neighbourhood": 10,
 		"street": 4,
@@ -3282,11 +3306,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_green",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 74,
-		"name": "cistern",
+		"astName": "cistern",
 		"city": 0,
 		"neighbourhood": 0,
 		"street": 4,
@@ -3327,11 +3351,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "FALSE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 80,
-		"name": "Creating shaddow",
+		"astName": "Creating shaddow",
+		"name": "Creating shadow",
 		"city": 0,
 		"neighbourhood": 2,
 		"street": 10,
@@ -3372,10 +3397,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 81,
+		"astName": "Levees",
 		"name": "Levees",
 		"city": 10,
 		"neighbourhood": 10,
@@ -3417,10 +3443,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 1,
 		"waterSafetyCoping": 1,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 82,
+		"astName": "Gravel layers",
 		"name": "Gravel layers",
 		"city": 0,
 		"neighbourhood": 2,
@@ -3462,10 +3489,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 1,
 		"waterSafetyCoping": 1,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 83,
+		"astName": "Small quays",
 		"name": "Small quays",
 		"city": 0,
 		"neighbourhood": 10,
@@ -3507,10 +3535,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 84,
+		"astName": "Drought resistant species",
 		"name": "Drought resistant species",
 		"city": 4,
 		"neighbourhood": 10,
@@ -3552,10 +3581,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 86,
+		"astName": "Super levee",
 		"name": "Super levee",
 		"city": 10,
 		"neighbourhood": 4,
@@ -3597,10 +3627,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 1,
 		"waterSafetyCoping": 1,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 87,
+		"astName": "Quay",
 		"name": "Quay",
 		"city": 4,
 		"neighbourhood": 10,
@@ -3642,10 +3673,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 1,
 		"waterSafetyCoping": 1,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 88,
+		"astName": "Building as levee",
 		"name": "Building as levee",
 		"city": 0,
 		"neighbourhood": 4,
@@ -3687,10 +3719,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 1,
 		"waterSafetyCoping": 1,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 89,
+		"astName": "Temporary levee",
 		"name": "Temporary levee",
 		"city": 0,
 		"neighbourhood": 10,
@@ -3732,10 +3765,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 1,
 		"waterSafetyCoping": 1,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 90,
+		"astName": "Permeable pavement (storage)",
 		"name": "Permeable pavement (storage)",
 		"city": 0,
 		"neighbourhood": 4,
@@ -3777,11 +3811,12 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 91,
-		"name": "Permeable pavement (infiltration)",
+		"astName": "Permeable pavement (infiltration)",
+		"name": "Remove pavement to plant green",
 		"city": 0,
 		"neighbourhood": 4,
 		"street": 10,
@@ -3822,10 +3857,11 @@
 		"floodCoping": 0,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "blue_grey",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 92,
+		"astName": "Lowering of terrace",
 		"name": "Lowering of terrace",
 		"city": 0,
 		"neighbourhood": 0,
@@ -3867,10 +3903,11 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "na",
+		"type": "TRUE",
 		"show": "TRUE"
 	}, {
 		"ast_id": 93,
+		"astName": "Lowering part of garden",
 		"name": "Lowering part of garden",
 		"city": 0,
 		"neighbourhood": 0,
@@ -3912,7 +3949,6 @@
 		"floodCoping": 1,
 		"waterSafetyPrevention": 0,
 		"waterSafetyCoping": 0,
-		"type": "na",
-		"show": "TRUE"
+		"type": "TRUE"
 	}
 ]
