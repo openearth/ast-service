@@ -39,14 +39,14 @@
 		"ID": 10,
 		"name": "Deep groundwater infiltration",
 		"Col0": 1,
-		"Col1": 1.2,
-		"Col2": 1.5,
-		"Col3": 2,
-		"Col4": 2.5,
-		"Col5": 3,
-		"Col6": 4,
-		"Col7": 12,
-		"Col8": 12
+		"Col1": 1.81,
+		"Col2": 3.28,
+		"Col3": 11.49,
+		"Col4": 41.31,
+		"Col5": 109.67,
+		"Col6": 221.16,
+		"Col7": 221.16,
+		"Col8": 221.16
 	}, {
 		"ID": 11,
 		"name": "Ditches",
