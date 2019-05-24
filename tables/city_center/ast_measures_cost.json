@@ -287,7 +287,7 @@
 	}, {
 		"ID": 20,
 		"Blue Green measures": "Infiltration and Transport-sewer",
-		"construction_m2": 15,
+		"construction_m2": 10,
 		"maint_annual_frac_constr": 10,
 		"Client": "",
 		"Riding along on other developments": "",
@@ -302,7 +302,7 @@
 	}, {
 		"ID": 21,
 		"Blue Green measures": "Infiltration boxes -silt",
-		"construction_m2": 400,
+		"construction_m2": 240,
 		"maint_annual_frac_constr": 15,
 		"Client": "",
 		"Riding along on other developments": "",
@@ -362,7 +362,7 @@
 	}, {
 		"ID": 25,
 		"Blue Green measures": "Parks and urban forests (urban forest)",
-		"construction_m2": 1,
+		"construction_m2": 100,
 		"maint_annual_frac_constr": 5,
 		"Client": "G",
 		"Riding along on other developments": "Y",
@@ -370,14 +370,14 @@
 		"maintenance costs": "0,005**)",
 		"average costs": 0.1,
 		"average percentage of costs": "5perc",
-		"remarks construction costs": "(natuur)bossen 1000-2300 euro/ha (ref alterra Bergen in het bos 2007)",
+		"remarks construction costs": "25b uit kosten tabel",
 		"remarks maintenance costs": "",
 		"Remark maintenance": "",
 		"Remarks_assumptions": "Green elements (Parken: gras/kruiden + struiken / heesters + bomen) :: 5ha/km2"
 	}, {
 		"ID": 26,
 		"Blue Green measures": "Porous pavements",
-		"construction_m2": 10,
+		"construction_m2": 100,
 		"maint_annual_frac_constr": 5,
 		"Client": "G",
 		"Riding along on other developments": "Y",
@@ -407,7 +407,7 @@
 	}, {
 		"ID": 28,
 		"Blue Green measures": "Rainwater retention ponds, with or without infiltration possibilities",
-		"construction_m2": 20,
+		"construction_m2": 127,
 		"maint_annual_frac_constr": 2,
 		"Client": "",
 		"Riding along on other developments": "",
@@ -482,7 +482,7 @@
 	}, {
 		"ID": 33,
 		"Blue Green measures": "Shallow infiltration measures; infiltration boxes -sand",
-		"construction_m2": 400,
+		"construction_m2": 240,
 		"maint_annual_frac_constr": 15,
 		"Client": "",
 		"Riding along on other developments": "",
@@ -662,7 +662,7 @@
 	}, {
 		"ID": 45,
 		"Blue Green measures": "Raised curbs/ hollow roads",
-		"construction_m2": 0,
+		"construction_m2": 100,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -947,7 +947,7 @@
 	}, {
 		"ID": 64,
 		"Blue Green measures": "Inclination of roads",
-		"construction_m2": 0,
+		"construction_m2": 60,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1052,7 +1052,7 @@
 	}, {
 		"ID": 71,
 		"Blue Green measures": "Rainwater detention pond (wet pond)",
-		"construction_m2": 0,
+		"construction_m2": 138,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1082,7 +1082,7 @@
 	}, {
 		"ID": 73,
 		"Blue Green measures": "Green open space",
-		"construction_m2": 0,
+		"construction_m2": 10,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1157,7 +1157,7 @@
 	}, {
 		"ID": 84,
 		"Blue Green measures": "Drought resistant species",
-		"construction_m2": 0,
+		"construction_m2": 28,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1187,7 +1187,7 @@
 	}, {
 		"ID": 87,
 		"Blue Green measures": "Quay",
-		"construction_m2": 0,
+		"construction_m2": 28.75,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1202,7 +1202,7 @@
 	}, {
 		"ID": 88,
 		"Blue Green measures": "Building as levee",
-		"construction_m2": 0,
+		"construction_m2": 37.5,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1217,7 +1217,7 @@
 	}, {
 		"ID": 89,
 		"Blue Green measures": "Temporary levee",
-		"construction_m2": 0,
+		"construction_m2": 150,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1232,7 +1232,7 @@
 	}, {
 		"ID": 90,
 		"Blue Green measures": "Permeable pavement (storage)",
-		"construction_m2": 0,
+		"construction_m2": 125,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1247,7 +1247,7 @@
 	}, {
 		"ID": 91,
 		"Blue Green measures": "Remove pavement to plant green",
-		"construction_m2": 0,
+		"construction_m2": 28,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1262,7 +1262,7 @@
 	}, {
 		"ID": 92,
 		"Blue Green measures": "Lowering of terrace",
-		"construction_m2": 0,
+		"construction_m2": 75,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
@@ -1277,7 +1277,7 @@
 	}, {
 		"ID": 93,
 		"Blue Green measures": "Lowering part of garden",
-		"construction_m2": 0,
+		"construction_m2": 75,
 		"maint_annual_frac_constr": 0,
 		"Client": 0,
 		"Riding along on other developments": 0,
