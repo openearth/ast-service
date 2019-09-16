@@ -14,6 +14,9 @@ def evapotranspiration(id, projectArea, area, depth, inflow, returnTime, scenari
     # Data file
     records_file = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_evapotranspiration.json')
     record = find_record(id, records_file)
+    # check for too small inflow areas
+    if inflow <=0.01:
+        inflow = 0.01
     storage_capacity = area * depth
     effective_depth = storage_capacity / inflow  # [m]
     effective_depth_mm = effective_depth * 1000.0
