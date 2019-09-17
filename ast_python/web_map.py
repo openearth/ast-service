@@ -58,7 +58,7 @@ def wms_layers(url):
         if 'EPSG:3857' in wms[layer].crsOptions:
             layer_url = wms._WebMapService_1_1_1__build_getmap_request(
                 layers=[layer], bgcolor='#FFFFFF', bbox=[], srs="EPSG:3857", size=(256, 256), format="image/png", transparent=True)
-            layer_url = unquote(urlencode(layer_url))
+            layer_url = bind_url(url) + unquote(urlencode(layer_url))
             layer_url = layer_url.replace("bbox=", "bbox={bbox-epsg-3857}")
         else:
             logging.warning("Layer {layer} has the wrong CRS.".format(layer=layer))
