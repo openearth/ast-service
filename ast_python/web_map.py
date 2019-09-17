@@ -75,7 +75,9 @@ def filter_tilematrix_crs(tilematrixsetlinks):
     # "tileSize": 256
 def wmts_layers(url):
     """Retrieve layers from WMS url."""
-    template = ""
+    try:
+        wmts = WebMapTileService(url, version="1.1.1")
+    except owslib.util.ServiceException as e:
         return {"message": "Can't parse url as WMTS service.", "layers": []}
 
     layers = []
