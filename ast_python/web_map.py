@@ -3,7 +3,7 @@ from owslib.wms import WebMapService
 from owslib.wmts import WebMapTileService
 from urllib.parse import unquote, urlencode
 from owslib.util import bind_url
-
+from owslib.util import ServiceException
 logging.basicConfig(level=logging.INFO)
 
 
@@ -21,6 +21,22 @@ def esri_url_parser(url):
         pass
 
 
+def layerurl(url, type="MOCK"):
+    if type == "WMS":
+        return wms_layers(url)
+    elif type == "WMTS":
+        return wmts_layers(url)
+    elif type == "ESRI":
+        return esri_url_parser(url)
+    elif type == "MOCK":
+        wms = wms_layers("https://img.nj.gov/imagerywms/Natural2015?")
+        wmts = wmts_layers("https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS")
+        wms["layers"].extend(wmts["layers"])
+        return {"messages": "This is a test messsage.", "layers": wms["layers"]}
+    else:
+        return {"messages": "Unknown type"}
+
+
 # WMS example
 # 'type': 'raster',
 # 'tiles': [
@@ -32,16 +48,13 @@ def wms_layers(url):
 
     try:
         wms = WebMapService(url, version="1.1.1")
-        print(dir(wms))
-    except owslib.util.ServiceException as e:
+    except ServiceException as e:
         return {"message": "Can't parse url as WMS service.", "layers": []}
 
     layers = []
     messages = []
 
     for layer in list(wms.contents):
-        print(layer)
-        print(wms[layer])
         if 'EPSG:3857' in wms[layer].crsOptions:
             layer_url = wms._WebMapService_1_1_1__build_getmap_request(
                 layers=[layer], bgcolor='#FFFFFF', bbox=[], srs="EPSG:3857", size=(256, 256), format="image/png", transparent=True)
@@ -76,16 +89,28 @@ def filter_tilematrix_crs(tilematrixsetlinks):
 def wmts_layers(url):
     """Retrieve layers from WMS url."""
     try:
-        wmts = WebMapTileService(url, version="1.1.1")
-    except owslib.util.ServiceException as e:
+        wmts = WebMapTileService(url, version="1.0.0")
+    except ServiceException as e:
         return {"message": "Can't parse url as WMTS service.", "layers": []}
 
     layers = []
     messages = []
 
     for layer in list(wmts.contents):
-        matrixsets = filter_tilematrix_crs(wmts[layer].tilematrixsetlinks)
-        print(wmts[layer].tilematrixsetlinks)
+
+        matrixsets = []
+        for matrix in wmts[layer].tilematrixsetlinks:
+            crs = wmts.tilematrixsets[matrix].crs
+            if crs is not None and "3857" in wmts.tilematrixsets[matrix].crs:
+                matrixsets.append(matrix)
+
+        # matrixsets = filter_tilematrix_crs(wmts[layer].tilematrixsetlinks)
+        if len(matrixsets) == 0:
+            messages.append("Ignored layer due to wrong CRS.")
+            continue
+        # print(wmts[layer].tilematrixsets[0].crs)
+        # print(dir(wmts[layer].tilematrixsets[0]))
+        # print(dir(wmts[layer].tilematrixsetlinks))
 
         # Rest based URL
         if wmts.restonly:
@@ -118,11 +143,14 @@ def arcgis_exporttiles_layers(url):
 
 if __name__ == "__main__":
     url = "https://img.nj.gov/imagerywms/Natural2015?"
-    wms_layers(url)
+    # wms_layers(url)
 
     url = "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS"
-    # url = "https://www.wmts.nrw.de/geobasis/wmts_nw_dop"
-    wmts_layers(url)
+    url = "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/WMTS"
+    # url = "https://tiles.arcgis.com/tiles/nSZVuSZjHpEZZbRo/arcgis/rest/services/Waterdiepte_bij_intense_neerslag_1_per_1000_jaar/MapServer/WMTS"
+    print(wmts_layers(url))
 
     url = "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/"
-    arcgis_exporttiles_layers(url)
+    # arcgis_exporttiles_layers(url)
+
+    # print(layerurl("", "MOCK"))

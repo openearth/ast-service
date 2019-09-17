@@ -161,8 +161,8 @@ def ast_calc_scores():
 @application.route('/api/maplayers', methods=['GET', 'POST'])
 def maplayers():
     url = input.get("url", None)
-    type = input.get("type", None)
-    if url is not None and type is not None:
+    type = input.get("type", "GUESS")
+    if url is not None:
         return layerurl(url, type)
     else:
         logging.error("400")
