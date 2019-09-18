@@ -34,11 +34,11 @@ def layerurl(url, type="MOCK"):
     elif type == "MOCK":
         wms = wms_layers("https://img.nj.gov/imagerywms/Natural2015?")
         wmts = wmts_layers("https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS")
-        wmts2 = wmts_layers("https://tiles.arcgis.com/tiles/nSZVuSZjHpEZZbRo/arcgis/rest/services/Waterdiepte_bij_intense_neerslag_1_per_1000_jaar/MapServer", rest=False)
+        # wmts2 = wmts_layers("https://tiles.arcgis.com/tiles/nSZVuSZjHpEZZbRo/arcgis/rest/services/Waterdiepte_bij_intense_neerslag_1_per_1000_jaar/MapServer", rest=False)
         arcrest = arcgis_exporttiles_layers("https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/")
 
         wms["layers"].extend(wmts["layers"])
-        wms["layers"].extend(wmts2["layers"])
+        # wms["layers"].extend(wmts2["layers"])
         wms["layers"].extend(arcrest["layers"])
 
         return {"messages": "This is a test messsage.", "layers": wms["layers"]}
