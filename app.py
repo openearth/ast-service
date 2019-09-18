@@ -9,12 +9,28 @@ from ast_python.ast_evapotranspiration import *
 from ast_python.web_map import *
 
 # FLASK
+from apispec import APISpec
+from apispec.ext.marshmallow import MarshmallowPlugin
+from flask_apispec.extension import FlaskApiSpec
+from flask_apispec import use_kwargs, marshal_with
+from webargs import fields
 from flask import Flask
 from flask import request, jsonify
 from flask_cors import CORS
 
+
 # FLASK app
 application = Flask(__name__)
+application.config.update({
+    'APISPEC_SPEC': APISpec(
+        title='AST2.0 Backend',
+        version='v1',
+        openapi_version="2.0.0",
+        plugins=[MarshmallowPlugin()],
+    ),
+    'APISPEC_SWAGGER_URL': '/swagger/',
+})
+docs = FlaskApiSpec(application)
 CORS(application)
 
 
@@ -23,6 +39,7 @@ CORS(application)
 def empty_view():
     content = {'please move along': 'nothing to see here, perhaps looking for /api?'}
     return jsonify(content)
+
 
 # /api/selection
 @application.route('/api/selection', methods=['GET', 'POST'])
@@ -36,6 +53,7 @@ def ast_calc_selection():
         status = 400
     return jsonify({'result': res}), status
 
+
 # /api/pluvflood
 @application.route('/api/pluvflood', methods=['GET', 'POST'])
 def ast_calc_pluvflood():
@@ -47,6 +65,7 @@ def ast_calc_pluvflood():
         res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
         status = 400
     return jsonify({'result': res}), status
+
 
 # /api/evapotranspiration
 @application.route('/api/evapotranspiration', methods=['GET', 'POST'])
@@ -60,6 +79,7 @@ def ast_calc_evapotranspiration():
         status = 400
     return jsonify({'result': res}), status
 
+
 # /api/groundwater_recharge
 @application.route('/api/groundwater_recharge', methods=['GET', 'POST'])
 def ast_calc_groundwater_recharge():
@@ -71,6 +91,7 @@ def ast_calc_groundwater_recharge():
         res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
         status = 400
     return jsonify({'result': res}), status
+
 
 # /api/heatstress/temperature
 @application.route('/api/heatstress/temperature', methods=['GET', 'POST'])
@@ -84,6 +105,7 @@ def ast_calc_heatstress_temperature():
         status = 400
     return jsonify({'result': res}), status
 
+
 # /api/heatstress/waterquality
 @application.route('/api/heatstress/waterquality', methods=['GET', 'POST'])
 def ast_calc_heatstress_waterquality():
@@ -95,6 +117,7 @@ def ast_calc_heatstress_waterquality():
         res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
         status = 400
     return jsonify({'result': res}), status
+
 
 # /api/heatstress/cost
 @application.route('/api/heatstress/cost', methods=['GET', 'POST'])
@@ -111,14 +134,11 @@ def ast_calc_heatstress_cost():
 
 # /api/measures
 @application.route('/api/measures', methods=['GET'])
-def _ast_calc_measures():
+@use_kwargs({"scenarioName": fields.Str(required=True, default="city_center")})
+def _ast_calc_measures(scenarioName):
     """Replaced by DATO store."""
     try:
         # Depending on scenario name
-        scenarioName = request.args.get('scenarioName')
-        if scenarioName == None:
-            scenarioName = 'city_center'  # default
-
         res = {}
         ast_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -139,43 +159,32 @@ def _ast_calc_measures():
         status = 400
     return jsonify({'result': res}), status
 
+
 # /api/scores
 @application.route('/api/scores', methods=['GET'])
 def ast_calc_scores():
-    try:
-        res = {}
-        ast_dir = os.path.dirname(os.path.realpath(__file__))
 
-        with open(os.path.join(ast_dir, 'tables/ast_scores.json')) as f:
-            res['scores'] = json.load(f)
-        with open(os.path.join(ast_dir, 'tables/ast_selection_scores.json')) as f:
-            res['selection_scores'] = json.load(f)
+    res = {}
+    ast_dir = os.path.dirname(os.path.realpath(__file__))
+    with open(os.path.join(ast_dir, 'tables/ast_scores.json')) as f:
+        res['scores'] = json.load(f)
+    with open(os.path.join(ast_dir, 'tables/ast_selection_scores.json')) as f:
+        res['selection_scores'] = json.load(f)
 
-        status = 200
-    except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
-        status = 400
     return jsonify({'result': res}), status
 
 
-@application.route('/api/maplayers', methods=['GET', 'POST'])
-def maplayers():
-    if request.method == "GET":
-        url = request.args.get("url", None)
-        type = request.args.get("type", "GUESS")
-    else:
-        data = request.get_json()
-        if data:
-            url = data.get("url", None)
-            type = data.get("type", "GUESS")
-        else:
-            url = None
+@application.route("/api/maplayers", methods=['GET', 'POST'])
+@use_kwargs({"url": fields.Str(required=True), "type": fields.Str()})
+def maplayers(url, **kwargs):
+    type = kwargs.get("type", "GUESS")
+    return jsonify(layerurl(url, type))
 
-    if url is not None:
-        return jsonify(layerurl(url, type))
-    else:
-        logging.error("400")
-        return jsonify({}), 400
+
+# Register documentation endpoints
+docs.register(maplayers)
+docs.register(ast_calc_scores)
+docs.register(_ast_calc_measures)
 
 
 # Main
