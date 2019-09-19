@@ -28,7 +28,8 @@ application.config.update({
         openapi_version="2.0.0",
         plugins=[MarshmallowPlugin()],
     ),
-    'APISPEC_SWAGGER_URL': '/swagger/',
+    'APISPEC_SWAGGER_URL': '/api/swagger/',
+    'APISPEC_SWAGGER_UI_URL': '/api/swagger-ui/',
 })
 docs = FlaskApiSpec(application)
 CORS(application)
