@@ -1,5 +1,6 @@
 import logging
 import requests
+from urllib.parse import urlparse
 from owslib.wms import WebMapService
 from owslib.wmts import WebMapTileService
 from urllib.parse import unquote, urlencode
@@ -58,6 +59,7 @@ def wms_layers(url):
 
     layers = []
     messages = []
+    domain = urlparse(url).netloc.split(":")[0]
 
     for layer in list(wms.contents):
         if 'EPSG:3857' in wms[layer].crsOptions:
@@ -69,7 +71,8 @@ def wms_layers(url):
             logging.warning("Layer {layer} has the wrong CRS.".format(layer=layer))
             continue
 
-        layers.append({"name": layer, "tiles": [layer_url]})
+        id = "{}_{}".format(domain, layer.lower().replace(" ","_"))
+        layers.append({"id": id, "name": layer, "tiles": [layer_url]})
 
     return {"messages": messages, "layers": layers}
 
@@ -96,6 +99,7 @@ def wmts_layers(url, rest=True):
 
     layers = []
     messages = []
+    domain = urlparse(url).netloc.split(":")[0]
 
     for layer in list(wmts.contents):
 
@@ -120,7 +124,8 @@ def wmts_layers(url, rest=True):
                 layer=layer, tilematrixset=matrixsets[0], tilematrix="{z}", row="{y}", column="{x}")
             layer_url = bind_url(url) + unquote(layer_url_data)
 
-        layers.append({"name": layer, "tiles": [layer_url]})
+        id = "{}_{}".format(domain, layer.lower().replace(" ","_"))
+        layers.append({"id": id, "name": layer, "tiles": [layer_url]})
 
     return {"messages": messages, "layers": layers}
 
@@ -135,10 +140,12 @@ def arcgis_exporttiles_layers(url):
 
     layers = []
     messages = []
+    domain = urlparse(url).netloc.split(":")[0]
 
     for layer in mapserver.get("layers", []):
         layer_url = url + unquote(template.format(layer["id"]))
-        layers.append({"name": layer["name"], "tiles": [layer_url]})
+        id = "{}_{}".format(domain, layer["name"].lower().replace(" ","_").replace(" ","_"))
+        layers.append({"id": id, "name": layer["name"], "tiles": [layer_url]})
 
     return {"messages": messages, "layers": layers}
 
