@@ -22,7 +22,7 @@ def esri_url_parser(url):
     except Exception as e:
         pass
 
-    return {"messages": "Couldn't parse url.", "layers": []}
+    return {"errors": "Couldn't parse url.", "layers": []}
 
 
 def layerurl(url, type="MOCK"):
@@ -34,17 +34,19 @@ def layerurl(url, type="MOCK"):
         return esri_url_parser(url)
     elif type == "MOCK":
         wms = wms_layers("https://img.nj.gov/imagerywms/Natural2015?")
-        wmts = wmts_layers("https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS")
+        wmts = wmts_layers(
+            "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS")
         # wmts2 = wmts_layers("https://tiles.arcgis.com/tiles/nSZVuSZjHpEZZbRo/arcgis/rest/services/Waterdiepte_bij_intense_neerslag_1_per_1000_jaar/MapServer", rest=False)
-        arcrest = arcgis_exporttiles_layers("https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/")
+        arcrest = arcgis_exporttiles_layers(
+            "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/")
 
         wms["layers"].extend(wmts["layers"])
         # wms["layers"].extend(wmts2["layers"])
         wms["layers"].extend(arcrest["layers"])
 
-        return {"messages": "This is a test messsage.", "layers": wms["layers"]}
+        return {"errors": "This is a test messsage.", "layers": wms["layers"]}
     else:
-        return {"messages": "Unknown type"}
+        return {"errors": "Unknown type"}
 
 
 # WMS example
@@ -55,26 +57,29 @@ def wms_layers(url):
     try:
         wms = WebMapService(url, version="1.1.1")
     except ServiceException as e:
-        return {"message": "Can't parse url as WMS service.", "layers": []}
+        return {"errors": "Can't parse url as WMS service.", "layers": []}
 
     layers = []
-    messages = []
+    messages = ""
     domain = urlparse(url).netloc.split(":")[0]
 
     for layer in list(wms.contents):
+
+        id = "{}_{}".format(domain, layer.lower().replace(" ", "_"))
+
         if 'EPSG:3857' in wms[layer].crsOptions:
             layer_url = wms._WebMapService_1_1_1__build_getmap_request(
                 layers=[layer], bgcolor='#FFFFFF', bbox=[], srs="EPSG:3857", size=(256, 256), format="image/png", transparent=True)
             layer_url = bind_url(url) + unquote(urlencode(layer_url))
             layer_url = layer_url.replace("bbox=", "bbox={bbox-epsg-3857}")
+            layers.append({"errors": "", "id": id, "name": layer, "tiles": [layer_url]})
+
         else:
             logging.warning("Layer {layer} has the wrong CRS.".format(layer=layer))
-            continue
+            layers.append({"errors": "EPSG-3857 CRS not supported.",
+                           "id": id, "name": layer, "tiles": []})
 
-        id = "{}_{}".format(domain, layer.lower().replace(" ","_"))
-        layers.append({"id": id, "name": layer, "tiles": [layer_url]})
-
-    return {"messages": messages, "layers": layers}
+    return {"errors": messages, "layers": layers}
 
 
 accepted_names = ["3857", "GoogleMapsCompatible"]
@@ -95,13 +100,14 @@ def wmts_layers(url, rest=True):
     try:
         wmts = WebMapTileService(url, version="1.0.0")
     except ServiceException as e:
-        return {"message": "Can't parse url as WMTS service.", "layers": []}
+        return {"errors": "Can't parse url as WMTS service.", "layers": []}
 
     layers = []
-    messages = []
+    messages = ""
     domain = urlparse(url).netloc.split(":")[0]
 
     for layer in list(wmts.contents):
+        id = "{}_{}".format(domain, layer.lower().replace(" ", "_"))
 
         matrixsets = []
         for matrix in wmts[layer].tilematrixsetlinks:
@@ -111,7 +117,8 @@ def wmts_layers(url, rest=True):
 
         # matrixsets = filter_tilematrix_crs(wmts[layer].tilematrixsetlinks)
         if len(matrixsets) == 0:
-            messages.append("Ignored layer due to wrong CRS.")
+            layers.append({"errors": "EPSG-3857 CRS not supported.",
+                           "id": id, "name": layer, "tiles": [layer_url]})
             continue
 
         # Rest based URL
@@ -124,10 +131,9 @@ def wmts_layers(url, rest=True):
                 layer=layer, tilematrixset=matrixsets[0], tilematrix="{z}", row="{y}", column="{x}")
             layer_url = bind_url(url) + unquote(layer_url_data)
 
-        id = "{}_{}".format(domain, layer.lower().replace(" ","_"))
-        layers.append({"id": id, "name": layer, "tiles": [layer_url]})
+        layers.append({"errors": "", "id": id, "name": layer, "tiles": [layer_url]})
 
-    return {"messages": messages, "layers": layers}
+    return {"errors": messages, "layers": layers}
 
 
 # ExportMap ArcGIS
@@ -139,15 +145,15 @@ def arcgis_exporttiles_layers(url):
     mapserver = requests.get(url + "?f=pjson").json()
 
     layers = []
-    messages = []
+    messages = ""
     domain = urlparse(url).netloc.split(":")[0]
 
     for layer in mapserver.get("layers", []):
         layer_url = url + unquote(template.format(layer["id"]))
-        id = "{}_{}".format(domain, layer["name"].lower().replace(" ","_").replace(" ","_"))
-        layers.append({"id": id, "name": layer["name"], "tiles": [layer_url]})
+        id = "{}_{}".format(domain, layer["name"].lower().replace(" ", "_").replace(" ", "_"))
+        layers.append({"errors": "", "id": id, "name": layer["name"], "tiles": [layer_url]})
 
-    return {"messages": messages, "layers": layers}
+    return {"errors": messages, "layers": layers}
 
 
 if __name__ == "__main__":
