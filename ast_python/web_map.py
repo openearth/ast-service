@@ -158,7 +158,7 @@ def arcgis_exporttiles_layers(url):
     domain = urlparse(url).netloc.split(":")[0]
 
     validsrs = False
-    for (k, v) in mapserver.get("spatialReference", {}):
+    for (k, v) in mapserver.get("spatialReference", {}).items():
         if "wkid" in k and v == 3857:
             validsrs = True
             break
