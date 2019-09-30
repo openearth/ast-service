@@ -145,16 +145,25 @@ def arcgis_exporttiles_layers(url):
     try:
         mapserver = requests.get(url + "?f=pjson").json()
     except Exception as e:
-        return {"errors": "Can't parse url as WMTS service.", "layers": []}
+        return {"errors": "Can't parse url as ARCGIS export tiles service.", "layers": []}
 
     layers = []
     messages = ""
     domain = urlparse(url).netloc.split(":")[0]
 
+    validsrs = False
+    for (k, v) in mapserver.get("spatialReference", {}):
+        if "wkid" in k and v == 3857:
+            validsrs = True
+            break
+
     for layer in mapserver.get("layers", []):
         layer_url = url + unquote(template.format(layer["id"]))
         id = "{}_{}".format(domain, layer["name"].lower().replace(" ", "_").replace(" ", "_"))
-        layers.append({"errors": "", "id": id, "name": layer["name"], "tiles": layer_url})
+        if validsrs:
+            layers.append({"errors": "", "id": id, "name": layer["name"], "tiles": layer_url})
+        else:
+            layers.append({"errors": "EPSG-3857 CRS not supported.", "id": id, "name": layer["name"], "tiles": ""})
 
     return {"errors": messages, "layers": layers}
 
