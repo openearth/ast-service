@@ -10,19 +10,25 @@ logging.basicConfig(level=logging.INFO)
 
 
 def esri_url_parser(url):
-    try:
-        layers = wmts_layers(url + "/WMTS")
-        return layers
-    except Exception as e:
-        pass
 
-    try:
-        layers = arcgis_exporttiles_layers(url)
-        return layers
-    except Exception as e:
-        pass
+    wmts = False
+    arcrest = False
 
-    return {"errors": "Couldn't parse url.", "layers": []}
+    layers_wmts = wmts_layers(url + "/WMTS")
+    if len(layers_wmts.get("errors", "")) == 0:
+        wmts = True
+
+    if not wmts:
+        arcrest_layers = arcgis_exporttiles_layers(url)
+        if len(arcrest_layers.get("errors", "")) == 0:
+            arcrest = True
+
+    if wmts:
+        return layers_wmts
+    elif arcrest:
+        return arcrest_layers
+    else:
+        return {"errors": "Couldn't parse url.", "layers": []}
 
 
 def layerurl(url, type="MOCK"):
