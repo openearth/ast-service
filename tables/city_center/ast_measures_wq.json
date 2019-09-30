@@ -444,6 +444,12 @@
 		"AdsorbingPollutants": 0.72,
 		"Pathogens": 0.75
 	}, {
+		"ID": 80,
+		"Measure": "Creating shadow",
+		"Nutrients": 0,
+		"AdsorbingPollutants": 0,
+		"Pathogens": 0
+	}, {
 		"ID": 81,
 		"Measure": "Levees",
 		"Nutrients": 0,
