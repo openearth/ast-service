@@ -71,7 +71,7 @@ def wms_layers(url):
 
     for layer in list(wms.contents):
 
-        id = "{}_{}".format(domain, layer.lower().replace(" ", "_"))
+        id = "WMS_{}_{}".format(domain, layer.lower().replace(" ", "_"))
 
         if 'EPSG:3857' in wms[layer].crsOptions:
             layer_url = wms._WebMapService_1_1_1__build_getmap_request(
@@ -113,7 +113,7 @@ def wmts_layers(url, rest=True):
     domain = urlparse(url).netloc.split(":")[0]
 
     for layer in list(wmts.contents):
-        id = "{}_{}".format(domain, layer.lower().replace(" ", "_"))
+        id = "WMTS_{}_{}".format(domain, layer.lower().replace(" ", "_"))
 
         matrixsets = []
         for matrix in wmts[layer].tilematrixsetlinks:
@@ -165,7 +165,7 @@ def arcgis_exporttiles_layers(url):
 
     for layer in mapserver.get("layers", []):
         layer_url = url + unquote(template.format(layer["id"]))
-        id = "{}_{}".format(domain, layer["name"].lower().replace(" ", "_").replace(" ", "_"))
+        id = "ESRI_{}_{}".format(domain, layer["name"].lower().replace(" ", "_").replace(" ", "_"))
         if validsrs:
             layers.append({"errors": "", "id": id, "name": layer["name"], "tiles": layer_url})
         else:
