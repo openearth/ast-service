@@ -9,6 +9,29 @@ from owslib.util import ServiceException
 logging.basicConfig(level=logging.INFO)
 
 
+failed_resp = {
+    "errors": "This is a test messsage.",
+    "layers": []
+}
+
+partly_resp = {
+    "errors": "",
+    "layers": [
+        {
+            "errors": "",
+            "id": "WMS_img.nj.gov_natural2015",
+            "name": "Natural2015",
+            "tiles": "https://img.nj.gov/imagerywms/Natural2015?service=WMS&version=1.1.1&request=GetMap&layers=Natural2015&styles=&width=256&height=256&srs=EPSG:3857&bbox={bbox-epsg-3857}&format=image/png&transparent=TRUE&bgcolor=0xFFFFFF&exceptions=None"
+        },
+        {
+            "errors": "EPSG-3857 CRS not supported.",
+            "id": "ESRI_server.arcgisonline.com_world_imagery",
+            "name": "World Imagery",
+            "tiles": ""
+        }
+    ]
+}
+
 def esri_url_parser(url):
 
     wmts = False
@@ -50,7 +73,11 @@ def layerurl(url, type="MOCK"):
         # wms["layers"].extend(wmts2["layers"])
         wms["layers"].extend(arcrest["layers"])
 
-        return {"errors": "This is a test messsage.", "layers": wms["layers"]}
+        return {"errors": "", "layers": wms["layers"]}
+    elif type == "MOCK2":
+        return failed_resp
+    elif type == "MOCK3":
+        return partly_resp
     else:
         return {"errors": "Unknown type"}
 
