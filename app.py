@@ -186,12 +186,12 @@ def maplayers(url, **kwargs):
 @application.route("/api/mapsetup", methods=['GET', 'POST'])
 @use_kwargs({"url": fields.Str(required=True),
              "layer": fields.Str(required=True),
-             "bbox": fields.List(fields.Float(), validate=validate.Length(equal=4)),
+             "area": fields.Dict(required=True),
              "field": fields.Str(required=True),
              "srs": fields.Int(default=28992)})
-def mapsetup(url, layer, bbox, field, **kwargs):
+def mapsetup(url, layer, area, field, **kwargs):
     """Parse WFS layer for given bounding box."""
-    return jsonify(wfs_area_parser(url, layer, bbox, field))
+    return jsonify(wfs_area_parser(url, layer, area, field))
 
 
 # Register documentation endpoints
