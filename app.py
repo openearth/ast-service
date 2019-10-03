@@ -17,7 +17,7 @@ from webargs import fields
 from flask import Flask
 from flask import request, jsonify
 from flask_cors import CORS
-
+from marshmallow import validate
 
 # FLASK app
 application = Flask(__name__)
@@ -178,8 +178,20 @@ def ast_calc_scores():
 @application.route("/api/maplayers", methods=['GET', 'POST'])
 @use_kwargs({"url": fields.Str(required=True), "type": fields.Str()})
 def maplayers(url, **kwargs):
+    """Parse given url as a possible map layer
+    and returns Mapbox compatible url."""
     type = kwargs.get("type", "GUESS")
     return jsonify(layerurl(url, type))
+
+@application.route("/api/mapsetup", methods=['GET', 'POST'])
+@use_kwargs({"url": fields.Str(required=True),
+             "layer": fields.Str(required=True),
+             "bbox": fields.List(fields.Float(), validate=validate.Length(equal=4)),
+             "field": fields.Str(required=True),
+             "srs": fields.Int(default=28992)})
+def mapsetup(url, layer, bbox, field, **kwargs):
+    """Parse WFS layer for given bounding box."""
+    return jsonify(wfs_area_parser(url, layer, bbox, field))
 
 
 # Register documentation endpoints

@@ -1,7 +1,9 @@
 import logging
 import requests
+import json
 from urllib.parse import urlparse
 from owslib.wms import WebMapService
+from owslib.wfs import WebFeatureService
 from owslib.wmts import WebMapTileService
 from urllib.parse import unquote, urlencode
 from owslib.util import bind_url
@@ -31,6 +33,22 @@ partly_resp = {
         }
     ]
 }
+
+def wfs_area_parser(url, layer, bbox, field, srs=28992):
+    """Parse WFS layer and return field in first intersecting feature with bbox."""
+    try:
+        wfs = WebFeatureService(url, version="2.0.0")
+    except Exception as e:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
+        return {"errors": "Can't parse url as WFS service.", "value": None}
+
+    response = wfs.getfeature(typename=layer, bbox=bbox, outputFormat="application/json")
+    featurecollection = json.loads(response.read())
+    for feature in featurecollection.get("features", []):
+        if field in feature.get("properties", {}):
+            return {"errors": "", "value": feature["properties"][field]}
+
+    return {"errors": "Field not found", "value": None}
+
 
 def esri_url_parser(url):
 
