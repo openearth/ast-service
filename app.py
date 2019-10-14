@@ -7,6 +7,7 @@ from ast_python.ast_pluvflood import *
 from ast_python.ast_groundwater_recharge import *
 from ast_python.ast_evapotranspiration import *
 from ast_python.web_map import *
+from errors import error_handler
 
 # FLASK
 from apispec import APISpec
@@ -34,10 +35,12 @@ application.config.update({
 docs = FlaskApiSpec(application)
 CORS(application)
 
+application.register_blueprint(error_handler)
 
 # /
 @application.route('/')
 def empty_view():
+    0/0
     content = {'please move along': 'nothing to see here, perhaps looking for /api?'}
     return jsonify(content)
 
@@ -50,7 +53,7 @@ def ast_calc_selection():
         res = selection_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -63,7 +66,7 @@ def ast_calc_pluvflood():
         res = pluvflood_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -76,7 +79,7 @@ def ast_calc_evapotranspiration():
         res = evapotranspiration_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -89,7 +92,7 @@ def ast_calc_groundwater_recharge():
         res = groundwater_recharge_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -102,7 +105,7 @@ def ast_calc_heatstress_temperature():
         res = temperature_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -115,7 +118,7 @@ def ast_calc_heatstress_waterquality():
         res = waterquality_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -128,7 +131,7 @@ def ast_calc_heatstress_cost():
         res = cost_dict(json_data)
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
@@ -156,7 +159,7 @@ def _ast_calc_measures(scenarioName):
 
         status = 200
     except Exception as e:
-        res = {'error': 'Invalid JSON request', 'code': 400, 'msg': str(e)}
+        res = {'name': 'Invalid JSON request', 'code': 400, 'description': str(e)}
         status = 400
     return jsonify({'result': res}), status
 
