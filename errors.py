@@ -2,7 +2,7 @@
 import traceback
 import json
 
-from flask import Blueprint, jsonify, abort
+from flask import Blueprint, abort
 from webargs.flaskparser import parser
 from werkzeug.exceptions import HTTPException
 
@@ -14,19 +14,19 @@ error_handler = Blueprint("errors", __name__)
 def handle_request_parsing_error(err, req, schema, error_status_code, error_headers):
     abort(422, err.messages)
 
+
 @error_handler.app_errorhandler(Exception)
 def handle_unexpected_error(error):
-    stack = traceback.format_exc()
-
-    status_code = 500
+    # stack = traceback.format_exc()
+    status_code = 400
     response = {
         "code": status_code,
-        "name": "UnexpectedException",
+        "name": error.__class__.__name__,
         "description": str(error),
         # "stack": stack
     }
 
-    return jsonify(response), status_code
+    return response, status_code
 
 
 @error_handler.app_errorhandler(HTTPException)

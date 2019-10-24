@@ -1,1 +1,0 @@
-curl --insecure -X POST -H "Content-Type: application/json" -d @test_groundwater_recharge.json https://tl-ng045.xtr.deltares.nl/api/groundwater_recharge

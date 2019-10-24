@@ -6,19 +6,23 @@ import pandas as pd
 import numpy as np
 import logging
 
+
 # Data files
 records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures.json')
 scores_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_scores.json')
 
+
 def selection_dict(d):
     return selection(**d).to_dict(orient="records")
+
 
 def selection_json(jsonstr):
     d = json.loads(jsonstr)
     df = selection(**d)
     return df.to_json(orient="records")
 
-def selection(    
+
+def selection(
     scale,
     soil,
     slope,
@@ -30,23 +34,19 @@ def selection(
 ):
 
     # construct DataFrame from list of dicts
-    scores = read_json_array(scores_file)        
+    scores = read_json_array(scores_file)
     df = pd.DataFrame(scores)
-    
+
     # convert checkboxes to index the DataFrame with
     scale_list = _checklist(scale)
-    capacity_list = _checklist(capacity) 
-    suitability_list = _checklist(suitability)    
+    capacity_list = _checklist(capacity)
+    suitability_list = _checklist(suitability)
 
-
-    if scale_list == []: 
+    if scale_list == []:
         max_scale = 0
     else:
         max_scale = df[scale_list].max(axis=1)
 
-    
-    
-    
     # include all characteristics less than or equal to subsurface
     subsurface_characteristics_range = ["high", "medium", "low", "veryLow"]
     subsurface_characteristics_index = subsurface_characteristics_range.index(
@@ -64,9 +64,9 @@ def selection(
         df["suitability1"] = 1
     else:
         df["suitability1"] = (
-        df[suitability_list].max(axis=1)
-        + float(multifunctionality) * df["enablesMultifunctionalLandUse"] * 2
-    )
+            df[suitability_list].max(axis=1)
+            + float(multifunctionality) * df["enablesMultifunctionalLandUse"] * 2
+        )
     # check what to do with roofs versus subsurface, now they can sum to 2, instead of 1
     df["suitability2"] = df[surface] + df[subsurface_characteristics_list].max(axis=1)
     df["suitability"] = df["suitability1"] * df["suitability2"].replace(0, 0.4)

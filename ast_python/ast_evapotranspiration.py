@@ -3,19 +3,23 @@ from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
 
+
 def evapotranspiration_dict(d):
     return evapotranspiration(**d)
+
 
 def evapotranspiration_json(jsonstr):
     d = json.loads(jsonstr)
     return evapotranspiration(**d)
 
+
 def evapotranspiration(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
-    records_file = join(dirname(dirname(realpath(__file__))), 'tables/'+scenarioName+'/ast_measures_evapotranspiration.json')
+    records_file = join(dirname(dirname(realpath(__file__))), 'tables/' +
+                        scenarioName+'/ast_measures_evapotranspiration.json')
     record = find_record(id, records_file)
     # check for too small inflow areas
-    if inflow <=0.01:
+    if inflow <= 0.01:
         inflow = 0.01
     storage_capacity = area * depth
     effective_depth = storage_capacity / inflow  # [m]
@@ -47,12 +51,11 @@ def evapotranspiration(id, projectArea, area, depth, inflow, returnTime, scenari
     evapotranspiration_measure = evapotranspiration_a + (evapotranspiration_b - evapotranspiration_a) * (
         effective_depth_mm - effective_depth_a
     ) / (effective_depth_b - effective_depth_a)
-    
+
     evapotranspiration_projectArea = evapotranspiration_measure * inflow / projectArea
-    
-    
+
     # API needs key/value pairs
     ret = {
-        "evapotranspiration" : evapotranspiration_projectArea
+        "evapotranspiration": evapotranspiration_projectArea
     }
     return ret

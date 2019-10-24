@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 import json
 
+
 def read_json_array(filename):
     with open(filename, 'r') as f:
         json_data = f.read()
-        return json.loads(json_data)   
-    return {} 
+        return json.loads(json_data)
+    return {}
 
-def find_record(identifier, filename):    
+
+def find_record(identifier, filename):
     # Read JSON array data
     data = read_json_array(filename)
 
@@ -18,4 +20,3 @@ def find_record(identifier, filename):
             rec = item
 
     return rec
-
