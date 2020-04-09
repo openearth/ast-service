@@ -265,6 +265,11 @@
 		"construction_m2": 360,
 		"maint_annual_frac_constr": 18.00
 	}, {
+		"ID": 72,
+		"Blue Green measures": "Bioretention cell",
+		"construction_m2": 360,
+		"maint_annual_frac_constr": 36
+	}, {
 		"ID": 15,
 		"Blue Green measures": "Extensive green roof",
 		"construction_m2": 1200,
