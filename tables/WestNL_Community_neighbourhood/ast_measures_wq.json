@@ -32,9 +32,9 @@
 	}, {
 		"ID": 6,
 		"Measure": "Bioswales/Infiltrating filter swales on silty soil",
-		"Nutrients": 0,
-		"AdsorbingPollutants": 0,
-		"Pathogens": 0
+		"Nutrients": 0.8,
+		"AdsorbingPollutants": 0.9,
+		"Pathogens": 0.9
 	}, {
 		"ID": 7,
 		"Measure": "Cooling with water elements: fountains",
