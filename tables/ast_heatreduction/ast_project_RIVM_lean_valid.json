@@ -1,0 +1,98 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"id": "81450e64ebd1a031ed6259240f4456db",
+			"type": "Feature",
+			"properties": {
+				"name": "Area-1",
+				"measure": "3",
+				"areaWidth": "99",
+				"areaRadius": "1"
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							4.3820900630049096, 51.985901845152796
+						], [
+							4.382979101233758, 51.98613237885144
+						], [
+							4.383914930944286, 51.98472034130111
+						], [
+							4.3830539676147, 51.98445521907678
+						], [
+							4.3820900630049096, 51.985901845152796
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+
+		{
+			"id": "527727ff46121100df9add2cacbb67d2",
+			"type": "Feature",
+			"properties": {
+				"name": "Area-2",
+				"measure": "6",
+				"areaWidth": "1",
+				"areaRadius": "0.1"
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						4.380938992442964, 51.9862995150483
+					], [
+						4.378992466640938, 51.98579234122673
+					]
+				],
+				"type": "LineString"
+			}
+		},
+
+		{
+			"id": "1ecc81ac9e5e25c68a6bf0dd31d00173",
+			"type": "Feature",
+			"properties": {
+				"name": "Area-3",
+				"measure": "29",
+				"areaWidth": "0.6",
+				"areaRadius": "0.5"
+			},
+			"geometry": {
+				"coordinates": [
+					4.380648885236013, 51.986645312088655
+				],
+				"type": "Point"
+			}
+		},
+
+		{
+			"id": "8d1c02226f50f6a8cf498bed70569ad8",
+			"type": "Feature",
+			"properties": {
+				"area": 149065.19978420797,
+				"isProjectArea": true
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							4.377785246305905, 51.98631680496064
+						], [
+							4.382380170211945, 51.98754437189211
+						], [
+							4.3848414023635485, 51.98385580653735
+						], [
+							4.379759847007165, 51.98292209024601
+						], [
+							4.377785246305905, 51.98631680496064
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		}
+	]
+}

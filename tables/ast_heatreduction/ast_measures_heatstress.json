@@ -1,0 +1,219 @@
+[
+	{
+		"measure": 46,
+		"Blue Green measures": "Storage tank or underground water storage",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 80,
+		"Blue Green measures": "Creating shadow",
+		"heatReductionFactor": 90
+	}, {
+		"measure": 10,
+		"Blue Green measures": "Deep groundwater infiltration",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 81,
+		"Blue Green measures": "Levees",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 7,
+		"Blue Green measures": "Fountains, waterfalls, water facades",
+		"heatReductionFactor": 40
+	}, {
+		"measure": 11,
+		"Blue Green measures": "Ditch and swales",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 22,
+		"Blue Green measures": "Infiltration field and strips with surface storage",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 82,
+		"Blue Green measures": "Gravel layer",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 16,
+		"Blue Green measures": "Green roofs",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 14,
+		"Blue Green measures": "Green facades",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 45,
+		"Blue Green measures": "Lower streets",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 33,
+		"Blue Green measures": "Infiltration boxes",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 83,
+		"Blue Green measures": "Small quay",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 62,
+		"Blue Green measures": "Cool building materials",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 19,
+		"Blue Green measures": "Create extra surface water (m2)",
+		"heatReductionFactor": 20
+	}, {
+		"measure": 32,
+		"Blue Green measures": "Storage by creating extra freeboard",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 20,
+		"Blue Green measures": "Drainage-Infiltration-Transport (DIT) drains",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 91,
+		"Blue Green measures": "Remove pavement to plant green",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 29,
+		"Blue Green measures": "Rain barrels",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 84,
+		"Blue Green measures": "Drought resistant species",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 57,
+		"Blue Green measures": "Smart irrigation measures",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 25,
+		"Blue Green measures": "Urban forest",
+		"heatReductionFactor": 90
+	}, {
+		"measure": 42,
+		"Blue Green measures": "Green roofs with drainage delay",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 3,
+		"Blue Green measures": "Adding trees in streetscape",
+		"heatReductionFactor": 90
+	}, {
+		"measure": 4,
+		"Blue Green measures": "Urban wetland",
+		"heatReductionFactor": 90
+	}, {
+		"measure": 6,
+		"Blue Green measures": "Bioswales (with drainage)",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 90,
+		"Blue Green measures": "Permeable pavement (storage)",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 40,
+		"Blue Green measures": "Water roof",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 26,
+		"Blue Green measures": "Permeable pavement systems (infiltration)",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 71,
+		"Blue Green measures": "Rainwater detention pond (wet pond)",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 41,
+		"Blue Green measures": "Water square",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 87,
+		"Blue Green measures": "Quay",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 88,
+		"Blue Green measures": "Building as levee",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 89,
+		"Blue Green measures": "Temporary levee",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 92,
+		"Blue Green measures": "Lowering of terrace",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 93,
+		"Blue Green measures": "Lowering part of garden",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 94,
+		"Blue Green measures": "Urban parks",
+		"heatReductionFactor": 2
+	}, {
+		"measure": 8,
+		"Blue Green measures": "Cooling with water elements: ponds",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 13,
+		"Blue Green measures": "Floating  puri-plants (floatlands)",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 23,
+		"Blue Green measures": "Infiltration trenche",
+		"heatReductionFactor": 20
+	}, {
+		"measure": 24,
+		"Blue Green measures": "Infilttration shafts",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 27,
+		"Blue Green measures": "Private green garden",
+		"heatReductionFactor": 20
+	}, {
+		"measure": 30,
+		"Blue Green measures": "Rainwater storage below buildings",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 31,
+		"Blue Green measures": "Retention soil filter",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 35,
+		"Blue Green measures": "Surface drains",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 37,
+		"Blue Green measures": "Systems for rainwater harvesting",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 39,
+		"Blue Green measures": "Urban agriculture",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 51,
+		"Blue Green measures": "Improve soil infiltration capacity",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 53,
+		"Blue Green measures": "Use of groundwater (aquifer storage and recovery)",
+		"heatReductionFactor": 0
+	}, {
+		"measure": 61,
+		"Blue Green measures": "Wetting surfaces (of gardens, roofs, roads)",
+		"heatReductionFactor": 20
+	}, {
+		"measure": 95,
+		"Blue Green measures": "Rain gardens",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 12,
+		"Blue Green measures": "Extra intensive green roof",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 72,
+		"Blue Green measures": "Bioretention cell",
+		"heatReductionFactor": 10
+	}, {
+		"measure": 15,
+		"Blue Green measures": "Extensive green roof",
+		"heatReductionFactor": 10
+	}
+]
