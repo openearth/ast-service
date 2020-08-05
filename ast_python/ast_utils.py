@@ -29,7 +29,7 @@ def find_record(identifier, filename):
 
     return rec
 
-# ast_heatreduction utils
+""" # ast_heatreduction utils
 # read configuration file
 def read_config(): 
        # Default config file (relative path)
@@ -147,3 +147,4 @@ def write_array_grid(RasterGrid, RasterName, array, nodataval=-9999., output_typ
 
 
 
+ """
