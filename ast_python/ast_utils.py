@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from .wcs_utils import *
-import osgeo.ogr as ogr
-import osgeo.osr as osr
-from osgeo import gdal
-from osgeo import gdalconst
+#from .wcs_utils import *
+#import osgeo.ogr as ogr
+#import osgeo.osr as osr
+#from osgeo import gdal
+#from osgeo import gdalconst
 import json
 import configparser
 import os
