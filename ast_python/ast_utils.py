@@ -57,7 +57,7 @@ def cut_wcs(xst, yst, xend, yend, layername, owsurl, outfname, crs=4326, all_box
 	l.line()
 	l.getraster(outfname, all_box=all_box)
 	l = None
-	print('Writing: {}'.format(outfname))
+	logging.info('Writing: {}'.format(outfname))
 
 
 def makeTempDir(dir):
@@ -75,7 +75,7 @@ def gdf_to_shp(gdf, layername, fieldName, dir):
     source = driver.CreateDataSource(shpfile)
 
     #open the memory data source with writing access
-    print('Writing: {}'.format(shpfile))
+    logging.info('Writing: {}'.format(shpfile))
     srs = osr.SpatialReference()
     srs.ImportFromEPSG(28992)
     layer = source.CreateLayer(layername, srs, ogr.wkbPolygon)
@@ -117,7 +117,7 @@ def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
     band.SetNoDataValue(NoData_value)
     band.FlushCache()
 	
-    print('Writing: {}'.format(rasterout))	
+    logging.info('Writing: {}'.format(rasterout))	
     gdal.RasterizeLayer(target_ds,[1], lyr,options = ['ALL_TOUCHED=TRUE','ATTRIBUTE={}'.format(field)])
     # Return band if necessary	
     if read:
