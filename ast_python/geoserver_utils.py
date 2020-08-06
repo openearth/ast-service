@@ -24,10 +24,10 @@ def geoserver_upload_gtif(layername, resturl, user, password, gtifpath, sld_styl
     return wmslay
 
 # Cleanup temporary layers and stores
-def cleanup_temp(cf, workspace='TEMP'):
+def cleanup_temp(rest_url, user, password, workspace='TEMP'):
 
     # Connect and get workspace
-    cat = Catalog(cf.get('GeoServer', 'rest_url'), username=cf.get('GeoServer', 'user'), password=cf.get('GeoServer', 'pass'))
+    cat = Catalog(rest_url, username=user, password=password)
     
     # Layers
     layers = cat.get_layers()
