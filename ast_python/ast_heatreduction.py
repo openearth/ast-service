@@ -6,6 +6,7 @@ from .ast_utils import *
 import pandas as pd
 import json
 import numpy as np
+import os
 from os.path import join, dirname, realpath, abspath
 import time
 from osgeo import gdal
@@ -53,7 +54,8 @@ def extract_layers(geojson, measures):
 
 # main
 def ast_heatreduction(collection):  
-
+    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
+    print ('os environments', os.environ)
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
     logging.info('read the temp')
