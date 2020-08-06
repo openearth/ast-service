@@ -57,8 +57,6 @@ def ast_heatreduction(collection):
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
     gdf = gpd.GeoDataFrame.from_features(collection["features"])
-    print ('gdf')
-    print (gdf.crs)
     #read measures table
     measures_fname = "ast_measures_heatstress.json"
     measures = pd.read_json(os.path.join(json_dir, measures_fname))

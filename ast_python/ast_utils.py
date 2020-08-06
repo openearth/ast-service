@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-#from .wcs_utils import *
-#import osgeo.ogr as ogr
-#import osgeo.osr as osr
-#from osgeo import gdal
-#from osgeo import gdalconst
+from .wcs_utils import *
+import osgeo.ogr as ogr
+import osgeo.osr as osr
+from osgeo import gdal
+from osgeo import gdalconst
 import json
 import configparser
 import os
@@ -29,7 +29,7 @@ def find_record(identifier, filename):
 
     return rec
 
-""" # ast_heatreduction utils
+# ast_heatreduction utils
 # read configuration file
 def read_config(): 
        # Default config file (relative path)
@@ -103,14 +103,12 @@ def gdf_to_shp(gdf, layername, fieldName, dir):
 def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
 	# Read geometry from given raster
     data = gdal.Open(rasterin, gdalconst.GA_ReadOnly)
-    print ('data', data)
     geo_transform = data.GetGeoTransform()
     x_res = data.RasterXSize
     y_res = data.RasterYSize 
 
 	# Read features and rasterize to output
     shp = ogr.Open(vectorin)
-    print ('shp', shp)
     lyr = shp.GetLayer()
     target_ds = gdal.GetDriverByName('GTiff').Create(rasterout, x_res, y_res, 1, gdal.GDT_Byte, [ 'COMPRESS=LZW', 'TILED=YES' ])
     target_ds.SetGeoTransform(geo_transform)
@@ -119,8 +117,7 @@ def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
     band.SetNoDataValue(NoData_value)
     band.FlushCache()
 	
-    print('Writing: {}'.format(rasterout))
-    #gdal.RasterizeLayer(target_ds, [1], lyr, options=["ATTRIBUTE={}".format(field)])	
+    print('Writing: {}'.format(rasterout))	
     gdal.RasterizeLayer(target_ds,[1], lyr,options = ['ALL_TOUCHED=TRUE','ATTRIBUTE={}'.format(field)])
     # Return band if necessary	
     if read:
@@ -147,4 +144,3 @@ def write_array_grid(RasterGrid, RasterName, array, nodataval=-9999., output_typ
 
 
 
- """
