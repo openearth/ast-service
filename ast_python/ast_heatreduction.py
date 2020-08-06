@@ -56,6 +56,7 @@ def ast_heatreduction(collection):
 
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
+    logging.info('read the temp')
     gdf = gpd.GeoDataFrame.from_features(collection["features"])
     #read measures table
     measures_fname = "ast_measures_heatstress.json"
@@ -72,10 +73,12 @@ def ast_heatreduction(collection):
     bbox = extract_bbox(reprojgdf)
      #make tempdir 
     caseTmpDir = makeTempDir(tmp) 
-    print ('case {}'.format(caseTmpDir))
+    
+    logging.info('case {}'.format(caseTmpDir))
     # Get PET_potential WCS from geoserver
     PETfname = os.path.join(caseTmpDir, 'PET_original.tif')
     cut_wcs(*bbox, layername = "NKWK:PET_potential", owsurl = owsurl, outfname = PETfname)
+    logging.info('cut wcs')
     
 
     # get the reduct layers from the geojson
