@@ -7,7 +7,7 @@ from ast_python.ast_pluvflood import pluvflood_dict
 from ast_python.ast_groundwater_recharge import groundwater_recharge_dict
 from ast_python.ast_evapotranspiration import evapotranspiration_dict
 from ast_python.web_map import layerurl, wfs_area_parser
-from ast_python.ast_heatreduction import ast_heatreduction
+#from ast_python.ast_heatreduction import ast_heatreduction
 from errors import error_handler
 
 # FLASK
@@ -17,7 +17,7 @@ from flask_apispec.extension import FlaskApiSpec
 from flask_apispec import use_kwargs
 from webargs import fields
 from flask import Flask, redirect, url_for, request, jsonify
-from flask_cors import CORS
+#from flask_cors import CORS
 import json
 
 
@@ -134,12 +134,12 @@ def ast_calc_heatstress_cost(**kwargs):
     return {'result': res}
 # heatreduction
 # /api/heatstress/reduction
-@application.route('/api/heatstress/reduction', methods=['GET', 'POST'])
+""" @application.route('/api/heatstress/reduction', methods=['GET', 'POST'])
 def ast_calc_heatstress_reduction():
     req = request.get_json()
     collection = req.get("data")
     res = ast_heatreduction(collection)
-    return jsonify(res)
+    return jsonify(res) """
 
 
 
@@ -187,7 +187,7 @@ docs.register(ast_calc_heatstress_waterquality)
 docs.register(ast_calc_heatstress_cost)
 docs.register(maplayers)
 docs.register(ast_calc_scores)
-docs.register(ast_calc_heatstress_reduction)
+#docs.register(ast_calc_heatstress_reduction)
 
 
 # Main

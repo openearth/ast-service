@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from .wcs_utils import *
+""" from .wcs_utils import *
 import osgeo.ogr as ogr
 import osgeo.osr as osr
 from osgeo import gdal
-from osgeo import gdalconst
+from osgeo import gdalconst """
 import json
 import configparser
 import os
@@ -31,7 +31,7 @@ def find_record(identifier, filename):
 
 # ast_heatreduction utils
 # read configuration file
-def read_config(): 
+""" def read_config(): 
        # Default config file (relative path)
     cfile=os.path.join(os.path.dirname(os.path.realpath(__file__)), '../config.txt')
     cf = configparser.RawConfigParser()
@@ -142,5 +142,5 @@ def write_array_grid(RasterGrid, RasterName, array, nodataval=-9999., output_typ
 	band.SetNoDataValue(nodataval)  
 	return RasterName
 
-
+ """
 
