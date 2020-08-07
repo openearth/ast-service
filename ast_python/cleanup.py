@@ -1,6 +1,8 @@
 import os
 from geoserver.catalog import Catalog
 import configparser
+import shutil
+
 
 # Read default configuration from file
 def read_config():
@@ -10,8 +12,20 @@ def read_config():
     return cf
 	
     
+def cleanup_temp_directories(cf):
+    tmp_dir = cf.get('Directories', 'temp_dir')
     
-	
+    subdirs = os.listdir(tmp_dir)
+    print (subdirs)
+    
+    for dir in subdirs:
+        print (dir)
+        dir = tmp_dir + '/' + dir
+        try:
+            shutil.rmtree(dir, ignore_errors=False, onerror=None)
+            print ('remove temp directories')
+        except:
+            print ('Error while deleting directories')
 # Cleanup temporary layers and stores
 
 def cleanup_temp(cf, workspace='TEMP'):
@@ -46,3 +60,4 @@ def cleanup_temp(cf, workspace='TEMP'):
 print ('I am in')
 cf = read_config()
 cleanup_temp(cf)
+cleanup_temp_directories(cf)
