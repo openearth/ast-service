@@ -17,7 +17,7 @@ from flask_apispec.extension import FlaskApiSpec
 from flask_apispec import use_kwargs
 from webargs import fields
 from flask import Flask, redirect, url_for, request, jsonify
-#from flask_cors import CORS
+from flask_cors import CORS
 import json
 
 
@@ -34,7 +34,7 @@ application.config.update({
     'APISPEC_SWAGGER_UI_URL': '/api/swagger-ui/',
 })
 docs = FlaskApiSpec(application)
-#CORS(application)
+CORS(application)
 
 application.register_blueprint(error_handler)
 
