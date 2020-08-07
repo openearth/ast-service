@@ -55,8 +55,8 @@ def extract_layers(geojson, measures):
 # main
 def ast_heatreduction(collection): 
     # Server path for proj lib
-    if not os.environ['PROJ_LIB']:
-        os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
+    #if not os.environ['PROJ_LIB']:
+    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
     
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
