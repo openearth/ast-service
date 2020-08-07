@@ -39,12 +39,22 @@ def extract_layers(geojson, measures):
     for index, layer in buffered_layers.iterrows():
         buffered_layer = layer.copy()
         if layer.geometry.geom_type == "Point":
-           buffered_layer.geometry =  buffered_layer.geometry.buffer(float(buffered_layer.areaRadius))
-           buffered_layers.loc[index, 'geometry'] = buffered_layer.geometry
-
+            
+            try: 
+                buffered_layer.geometry =  buffered_layer.geometry.buffer(float(buffered_layer.areaRadius))
+                buffered_layers.loc[index, 'geometry'] = buffered_layer.geometry
+                
+            except:
+                print ('didnt work')
+                buffered_layer.geometry =  buffered_layer.geometry.buffer(1)
         if (layer.geometry.geom_type == "Polygon" or layer.geometry.geom_type == "LineString"):
-            buffered_layer.geometry =  buffered_layer.geometry.buffer(float(buffered_layer.areaWidth))
-            buffered_layers.loc[index, 'geometry'] = buffered_layer.geometry
+            try:
+
+                buffered_layer.geometry =  buffered_layer.geometry.buffer(float(buffered_layer.areaWidth))
+                buffered_layers.loc[index, 'geometry'] = buffered_layer.geometry
+            except:
+                print ('didnt work')
+                buffered_layer.geometry =  buffered_layer.geometry.buffer(5)
 
     buffered_layers.sort_values(by=['heatReductionFactor'], ascending=True, inplace=True )  
     buffered_layers.reset_index(inplace=True)       
