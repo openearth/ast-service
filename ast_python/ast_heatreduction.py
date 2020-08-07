@@ -66,7 +66,8 @@ def extract_layers(geojson, measures):
 def ast_heatreduction(collection): 
     # Server path for proj lib
     #if not os.environ['PROJ_LIB']:
-    #    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
+    #Only for the server
+    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
     
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
@@ -128,7 +129,7 @@ def ast_heatreduction(collection):
     PETdifflyrname = 'PET_diff_{}'.format(unique_id)
     wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffoutfname)
     
-    #diffStats = 
+    
     # PET NEW
     PETvalues = PETvalues - PETvalues*reductValues
 
@@ -142,28 +143,29 @@ def ast_heatreduction(collection):
     band = PEToriginal.GetRasterBand(1)
     newStats = band.GetStatistics(True, True)
 
+    # Calc stats diff
+    
+    diffStats = list(np.array(newStats) - np.array(oldStats))
+
     #prepare response
     response = {
         "layers":[{
             "id": "pet_new",
             "title": "PET new",
             "layerName": wmsNew ,
-            "baseUrl": owsurl,
-            "tileSize": ""
+            "baseUrl": owsurl
         },
         {
             "id": "pet_diff",
             "title": "PET differences",
             "layerName": wmsDiff ,
-            "baseUrl": owsurl,
-            "tileSize": ""
+            "baseUrl": owsurl
         },
         {
             "id": "pet_original",
             "title": "PET original",
             "layerName": wmsOrig ,
-            "baseUrl": owsurl,
-            "tileSize": ""
+            "baseUrl": owsurl
         }],
         "oldStats": {
             "min": oldStats[0],
@@ -175,6 +177,12 @@ def ast_heatreduction(collection):
             "max": newStats[1],
             "mean": newStats[2]
         },
+        "diffStats": {
+            "min": diffStats[0],
+            "max": diffStats[1],
+            "mean": diffStats[2]
+        }
+
     }
 
     return response
