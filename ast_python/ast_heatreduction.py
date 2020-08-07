@@ -56,7 +56,7 @@ def extract_layers(geojson, measures):
 def ast_heatreduction(collection): 
     # Server path for proj lib
     #if not os.environ['PROJ_LIB']:
-    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
+    #    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
     
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
@@ -65,10 +65,7 @@ def ast_heatreduction(collection):
     #read measures table
     measures_fname = "ast_measures_heatstress.json"
     measures = pd.read_json(os.path.join(json_dir, measures_fname))
-    
-    
-    
-     
+
     #reproject
     reprojgdf = gdf.copy()
     reprojgdf.crs = {'init':'epsg:4326'}
@@ -89,10 +86,14 @@ def ast_heatreduction(collection):
     wmsOrig = geoserver_upload_gtif(PETlyrname, resturl, user, password, PETfname)
 
     # get the reduct layers from the geojson
-    reductLayers = extract_layers(reprojgdf, measures)
+    try:
+        reductLayers = extract_layers(reprojgdf, measures)
+    except Exception as e:
+        logging.info ('Please retry again by providing measures')
+        res = json.dumps({'error_html' : 'Please retry again by providing measures'})
+        return res
 
-    
-   
+
     PEToriginal = gdal.Open(PETfname)
     band = PEToriginal.GetRasterBand(1)
     #Calc stats of PET original
