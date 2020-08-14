@@ -147,7 +147,7 @@
 		}, {
 			"ID": 94,
 			"Blue Green measures": "Urban parks",
-			"heatReductionFactor": 2
+			"heatReductionFactor": 20
 		}, {
 			"ID": 8,
 			"Blue Green measures": "Cooling with water elements: ponds",
