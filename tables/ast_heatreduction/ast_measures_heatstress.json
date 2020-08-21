@@ -1,6 +1,12 @@
 [
 	{
-		"measure": 46,
+		"measure": 0,
+		"Blue Green measures": "None",
+		"heatReductionFactor": 0
+	}, {"measure": 0,
+		"Blue Green measures": "Unknown",
+		"heatReductionFactor": 0
+	}, {		"measure": 46,
 		"Blue Green measures": "Storage tank or underground water storage",
 		"heatReductionFactor": 0
 	}, {
