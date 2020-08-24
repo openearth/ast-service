@@ -132,6 +132,18 @@
 		"Col7": 100,
 		"Col8": 100
 	}, {
+		"ID": 94,
+		"name": "Urban park",
+		"Col0": 1,
+		"Col1": 100,
+		"Col2": 100,
+		"Col3": 100,
+		"Col4": 100,
+		"Col5": 100,
+		"Col6": 100,
+		"Col7": 100,
+		"Col8": 100
+	}, {
 		"ID": 26,
 		"name": "Pervious Pavement (inf.)",
 		"Col0": 1,
