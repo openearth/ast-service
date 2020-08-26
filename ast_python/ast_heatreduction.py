@@ -94,7 +94,7 @@ def ast_heatreduction(collection):
     logging.info('cut wcs')
     #PET ORIGINAL : upload to geoserver
     PETlyrname = 'PET_original_{}'.format(unique_id)
-    wmsOrig = geoserver_upload_gtif(PETlyrname, resturl, user, password, PETfname)
+    wmsOrig = geoserver_upload_gtif(PETlyrname, resturl, user, password, PETfname, 'PET')
 
     # get the reduct layers from the geojson
     try:
@@ -127,7 +127,7 @@ def ast_heatreduction(collection):
     PETdiffoutfname = os.path.join(caseTmpDir, 'PET_diff.tif')
     write_array_grid (PETfname, PETdiffoutfname, PETdiffvalues)
     PETdifflyrname = 'PET_diff_{}'.format(unique_id)
-    wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffoutfname)
+    wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffoutfname, 'PET potential')
     
     
     # PET NEW
@@ -136,7 +136,7 @@ def ast_heatreduction(collection):
     PEToutfname = os.path.join(caseTmpDir, 'PET_new.tif')
     write_array_grid (PETfname, PEToutfname, PETvalues)
     PETnewlyrname = 'PET_new_{}'.format(unique_id)
-    wmsNew = geoserver_upload_gtif(PETnewlyrname, resturl, user, password, PEToutfname)
+    wmsNew = geoserver_upload_gtif(PETnewlyrname, resturl, user, password, PEToutfname, 'PET')
 
     # Calc stats new
     PETnew = gdal.Open(PEToutfname)
