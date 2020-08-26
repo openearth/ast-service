@@ -127,7 +127,7 @@ def ast_heatreduction(collection):
     PETdiffoutfname = os.path.join(caseTmpDir, 'PET_diff.tif')
     write_array_grid (PETfname, PETdiffoutfname, PETdiffvalues)
     PETdifflyrname = 'PET_diff_{}'.format(unique_id)
-    wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffoutfname, 'PET potential')
+    wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffoutfname, 'PET_potential')
     
     
     # PET NEW
