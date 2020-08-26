@@ -140,7 +140,7 @@ def ast_heatreduction(collection):
 
     # Calc stats new
     PETnew = gdal.Open(PEToutfname)
-    band = PEToriginal.GetRasterBand(1)
+    band = PETnew.GetRasterBand(1)
     newStats = band.GetStatistics(True, True)
 
     # Calc stats diff
