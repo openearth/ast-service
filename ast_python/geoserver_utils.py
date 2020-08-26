@@ -4,7 +4,7 @@ from geoserver.catalog import Catalog
 
 # Upload raster file to GeoServer
 
-def geoserver_upload_gtif(layername, resturl, user, password, gtifpath, sld_style = 'PET potential', workspace='TEMP'):
+def geoserver_upload_gtif(layername, resturl, user, password, gtifpath, sld_style, workspace='TEMP'):
     
     # Connect and get workspace
     cat = Catalog(resturl, username=user, password=password)
