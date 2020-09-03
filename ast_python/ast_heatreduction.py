@@ -64,14 +64,10 @@ def extract_layers(geojson, measures):
 
 # main
 def ast_heatreduction(collection): 
-    # Server path for proj lib
-    #if not os.environ['PROJ_LIB']:
-    #Only for the server
-    os.environ['PROJ_LIB'] = "/usr/local/proj-6.0.0/share/proj/"
     
     #read the configuration
     tmp, json_dir, owsurl, resturl, user, password, layer= read_config()
-    logging.info('read the temp')
+    print('read the temp')
     gdf = gpd.GeoDataFrame.from_features(collection["features"])
     #read measures table
     measures_fname = "ast_measures_heatstress.json"
@@ -87,59 +83,77 @@ def ast_heatreduction(collection):
     caseTmpDir = makeTempDir(tmp)
     unique_id = int(1000000*time.time()) 
     
-    logging.info('case {}'.format(caseTmpDir))
-    # Get PET_potential WCS from geoserver
-    PETfname = os.path.join(caseTmpDir, 'PET_original.tif')
-    cut_wcs(*bbox, layername = "NKWK:PET_potential", owsurl = owsurl, outfname = PETfname)
-    logging.info('cut wcs')
-    #PET ORIGINAL : upload to geoserver
-    PETlyrname = 'PET_original_{}'.format(unique_id)
-    wmsOrig = geoserver_upload_gtif(PETlyrname, resturl, user, password, PETfname, 'PET')
+    print('case {}'.format(caseTmpDir))
+
+    #PET_current from geoserver
+    PETcurfname = os.path.join(caseTmpDir, 'PET_current.tif')
+    cut_wcs(*bbox, layername = "NKWK:PET_current", owsurl = owsurl, outfname = PETcurfname)
+    print('cut PET current wcs')
+    #cut on the area : upload to geoserver
+    PETcurlyrname = 'PET_current_cut_{}'.format(unique_id)
+    wmsCur = geoserver_upload_gtif(PETcurlyrname, resturl, user, password, PETcurfname, 'PET')
+    #read PET current values
+    PETcurrent = gdal.Open(PETcurfname)
+    band = PETcurrent.GetRasterBand(1)
+    #Calc stats of PET current
+    oldStats = band.GetStatistics(True, True)
+    currentValues = band.ReadAsArray().astype(float)
+
+    
+    #PET_potential from geoserver
+    PETpotenfname = os.path.join(caseTmpDir, 'PET_potential.tif')
+    cut_wcs(*bbox, layername = "NKWK:PET_potential", owsurl = owsurl, outfname = PETpotenfname)
+    print('cut PET potential wcs')
+    #cut on the area : upload to geoserver
+    PETpotenlyrname = 'PET_potential_cut_{}'.format(unique_id)
+    wmsPoten = geoserver_upload_gtif(PETpotenlyrname, resturl, user, password, PETpotenfname, 'PET')
+    #read PET potential values
+    PETpoten = gdal.Open(PETpotenfname)
+    band = PETpoten.GetRasterBand(1)
+    #Calc stats of PET potential
+    oldStats = band.GetStatistics(True, True)
+    potenValues = band.ReadAsArray().astype(float)
 
     # get the reduct layers from the geojson
     try:
         reductLayers = extract_layers(reprojgdf, measures)
     except Exception as e:
-        logging.info ('Please retry again by providing measures')
-        res = json.dumps({'error_html' : 'Please retry again by providing measures'})
+        print ('Please provide meausures and try again')
+        res = json.dumps({'error_html' : 'Please provide meausures and try again'})
         return res
 
 
-    PEToriginal = gdal.Open(PETfname)
-    band = PEToriginal.GetRasterBand(1)
-    #Calc stats of PET original
-    oldStats = band.GetStatistics(True, True)
-
-    PETvalues = band.ReadAsArray().astype(float)
+ 
 
     gdf_to_shp(reductLayers,'reduct_layer', "factor", caseTmpDir)
     #rasterize the reduct shapefile
     infname = os.path.join(caseTmpDir, 'reduct_layer.shp')
     outfname = os.path.join(caseTmpDir, 'reduct.tif')
-    rasterize(PETfname, infname, outfname)
+    rasterize(PETpotenfname, infname, outfname)
 
     reductLayer = gdal.Open(outfname)
     band = reductLayer.GetRasterBand(1)
     reductValues = band.ReadAsArray().astype(float)
     reductValues = reductValues * 0.01
+    
     #PET DIFF
-    PETdiffvalues = PETvalues*reductValues
-    PETdiffoutfname = os.path.join(caseTmpDir, 'PET_diff.tif')
-    write_array_grid (PETfname, PETdiffoutfname, PETdiffvalues)
+    diffValues = potenValues*reductValues
+    PETdiffname = os.path.join(caseTmpDir, 'PET_diff.tif')
+    write_array_grid (PETpotenfname, PETdiffname, diffValues)
     PETdifflyrname = 'PET_diff_{}'.format(unique_id)
-    wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffoutfname, 'PET_potential')
+    wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffname, 'PET_potential')
     
     
-    # PET NEW
-    PETvalues = PETvalues - PETvalues*reductValues
+    #PET NEW 
+    newValues = currentValues - potenValues*reductValues
 
-    PEToutfname = os.path.join(caseTmpDir, 'PET_new.tif')
-    write_array_grid (PETfname, PEToutfname, PETvalues)
+    PETnewfname = os.path.join(caseTmpDir, 'PET_new.tif')
+    write_array_grid (PETpotenfname, PETnewfname, newValues)
     PETnewlyrname = 'PET_new_{}'.format(unique_id)
-    wmsNew = geoserver_upload_gtif(PETnewlyrname, resturl, user, password, PEToutfname, 'PET')
+    wmsNew = geoserver_upload_gtif(PETnewlyrname, resturl, user, password, PETnewfname, 'PET')
 
     # Calc stats new
-    PETnew = gdal.Open(PEToutfname)
+    PETnew = gdal.Open(PETnewfname)
     band = PETnew.GetRasterBand(1)
     newStats = band.GetStatistics(True, True)
 
@@ -162,9 +176,15 @@ def ast_heatreduction(collection):
             "baseUrl": owsurl
         },
         {
-            "id": "pet_original",
-            "title": "PET original",
-            "layerName": wmsOrig ,
+            "id": "pet_potential",
+            "title": "PET potential",
+            "layerName": wmsPoten ,
+            "baseUrl": owsurl
+        },
+        {
+            "id": "pet_current",
+            "title": "PET current",
+            "layerName": wmsCur ,
             "baseUrl": owsurl
         }],
         "oldStats": {
