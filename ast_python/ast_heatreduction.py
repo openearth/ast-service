@@ -61,6 +61,31 @@ def extract_layers(geojson, measures):
     
     return buffered_layers
 
+# read layer from geoserver, cut it, open it as array, get statistics
+def wcs_2_array(dir, file, bbox, layer, owsurl, layer_cut, unique_id, resturl, user, password):
+    fname = os.path.join(dir, file)
+    cut_wcs(*bbox, layername = layer, owsurl = owsurl, outfname = fname)
+    print(layer)
+    #upload to geoserver
+    cut_layer = '{0}{1}'.format(layer_cut, unique_id)
+    wmslayer = geoserver_upload_gtif(cut_layer, resturl, user, password, fname, 'PET')
+    #read values
+    raster = gdal.Open(fname)
+    band = raster.GetRasterBand(1)
+    #Get nodata value
+    nodata = band.GetNoDataValue()
+    print ('nodata', nodata)
+
+
+    #Calc stats 
+    stats = band.GetStatistics(True, True)
+    values = band.ReadAsArray().astype(float) # deal with no data when I am reading the array. check gdal
+    print ('values', values)
+    values = np.ma.masked_equal(values, nodata)
+    print ('masked values', values)
+    return (values, stats, wmslayer)
+
+
 
 # main
 def ast_heatreduction(collection): 
@@ -85,34 +110,14 @@ def ast_heatreduction(collection):
     
     print('case {}'.format(caseTmpDir))
 
-    #PET_current from geoserver
-    PETcurfname = os.path.join(caseTmpDir, 'PET_current.tif')
-    cut_wcs(*bbox, layername = "NKWK:PET_current", owsurl = owsurl, outfname = PETcurfname)
-    print('cut PET current wcs')
-    #cut on the area : upload to geoserver
-    PETcurlyrname = 'PET_current_cut_{}'.format(unique_id)
-    wmsCur = geoserver_upload_gtif(PETcurlyrname, resturl, user, password, PETcurfname, 'PET')
-    #read PET current values
-    PETcurrent = gdal.Open(PETcurfname)
-    band = PETcurrent.GetRasterBand(1)
-    #Calc stats of PET current
-    oldStats = band.GetStatistics(True, True)
-    currentValues = band.ReadAsArray().astype(float)
 
+
+    #PET current
+    currentValues, currentStats, wmsCur = wcs_2_array(caseTmpDir, 'PET_current.tif', bbox, "NKWK:PET_current", owsurl, 'PET_current_cut_', unique_id, resturl, user, password)
+    #old stats= potenStats?
+    potenValues, potenStats, wmsPoten = wcs_2_array(caseTmpDir, 'PET_potential.tif', bbox, "NKWK:PET_potential", owsurl, 'PET_potential_cut_', unique_id, resturl, user, password)
     
-    #PET_potential from geoserver
-    PETpotenfname = os.path.join(caseTmpDir, 'PET_potential.tif')
-    cut_wcs(*bbox, layername = "NKWK:PET_potential", owsurl = owsurl, outfname = PETpotenfname)
-    print('cut PET potential wcs')
-    #cut on the area : upload to geoserver
-    PETpotenlyrname = 'PET_potential_cut_{}'.format(unique_id)
-    wmsPoten = geoserver_upload_gtif(PETpotenlyrname, resturl, user, password, PETpotenfname, 'PET')
-    #read PET potential values
-    PETpoten = gdal.Open(PETpotenfname)
-    band = PETpoten.GetRasterBand(1)
-    #Calc stats of PET potential
-    oldStats = band.GetStatistics(True, True)
-    potenValues = band.ReadAsArray().astype(float)
+    
 
     # get the reduct layers from the geojson
     try:
@@ -129,7 +134,8 @@ def ast_heatreduction(collection):
     #rasterize the reduct shapefile
     infname = os.path.join(caseTmpDir, 'reduct_layer.shp')
     outfname = os.path.join(caseTmpDir, 'reduct.tif')
-    rasterize(PETpotenfname, infname, outfname)
+    rasterin = os.path.join(caseTmpDir, 'PET_potential.tif')
+    rasterize(rasterin, infname, outfname)
 
     reductLayer = gdal.Open(outfname)
     band = reductLayer.GetRasterBand(1)
@@ -139,27 +145,27 @@ def ast_heatreduction(collection):
     #PET DIFF
     diffValues = potenValues*reductValues
     PETdiffname = os.path.join(caseTmpDir, 'PET_diff.tif')
-    write_array_grid (PETpotenfname, PETdiffname, diffValues)
+    write_array_grid (rasterin, PETdiffname, diffValues)
     PETdifflyrname = 'PET_diff_{}'.format(unique_id)
     wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffname, 'PET_potential')
     
     
     #PET NEW 
     newValues = currentValues - potenValues*reductValues
-
+    print ('newValues', newValues)
     PETnewfname = os.path.join(caseTmpDir, 'PET_new.tif')
-    write_array_grid (PETpotenfname, PETnewfname, newValues)
+    write_array_grid (rasterin, PETnewfname, newValues)
     PETnewlyrname = 'PET_new_{}'.format(unique_id)
     wmsNew = geoserver_upload_gtif(PETnewlyrname, resturl, user, password, PETnewfname, 'PET')
 
     # Calc stats new
     PETnew = gdal.Open(PETnewfname)
-    band = PETnew.GetRasterBand(1)
-    newStats = band.GetStatistics(True, True)
+    newband = PETnew.GetRasterBand(1)
+    newStats = newband.GetStatistics(True, True)
 
     # Calc stats diff
     
-    diffStats = list(np.array(newStats) - np.array(oldStats))
+    diffStats = list(np.array(newStats) - np.array(potenStats))
 
     #prepare response
     response = {
@@ -188,9 +194,9 @@ def ast_heatreduction(collection):
             "baseUrl": owsurl
         }],
         "oldStats": {
-            "min": oldStats[0],
-            "max": oldStats[1],
-            "mean": oldStats[2]
+            "min": currentStats[0],
+            "max": currentStats[1],
+            "mean": currentStats[2]
         },
         "newStats": {
             "min": newStats[0],
@@ -202,7 +208,7 @@ def ast_heatreduction(collection):
             "max": diffStats[1],
             "mean": diffStats[2]
         }
-
+        
     }
 
     return response
