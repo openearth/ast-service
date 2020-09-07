@@ -105,7 +105,9 @@ def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
     data = gdal.Open(rasterin, gdalconst.GA_ReadOnly)
     geo_transform = data.GetGeoTransform()
     x_res = data.RasterXSize
-    y_res = data.RasterYSize 
+    y_res = data.RasterYSize
+    print ('resolution')
+    print (x_res, y_res) 
 
 	# Read features and rasterize to output
     shp = ogr.Open(vectorin)
@@ -126,7 +128,7 @@ def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
     target_ds = None
 
 # Write array to grid file
-def write_array_grid(RasterGrid, RasterName, array, nodataval=-9999., output_type=gdal.GDT_Byte):
+def write_array_grid(RasterGrid, RasterName, array, nodataval=255, output_type=gdal.GDT_Byte):
 	SourceRaster = gdal.Open(RasterGrid)
 	GeoTrans = SourceRaster.GetGeoTransform()    
 	projection = osr.SpatialReference()
@@ -139,7 +141,7 @@ def write_array_grid(RasterGrid, RasterName, array, nodataval=-9999., output_typ
 	Raster.SetProjection(projection.ExportToWkt())	
 	band = Raster.GetRasterBand(1)    
 	band.WriteArray(array)
-	band.SetNoDataValue(nodataval)  
+	band.SetNoDataValue(nodataval)
 	return RasterName
 
 
