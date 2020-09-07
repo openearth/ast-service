@@ -145,7 +145,7 @@ def ast_heatreduction(collection):
     #PET DIFF
     diffValues = potenValues*reductValues
     PETdiffname = os.path.join(caseTmpDir, 'PET_diff.tif')
-    write_array_grid (rasterin, PETdiffname, diffValues)
+    write_array_grid (rasterin, PETdiffname, diffValues, nodataval = 128)
     PETdifflyrname = 'PET_diff_{}'.format(unique_id)
     wmsDiff = geoserver_upload_gtif(PETdifflyrname, resturl, user, password, PETdiffname, 'PET_potential')
     
@@ -154,7 +154,7 @@ def ast_heatreduction(collection):
     newValues = currentValues - potenValues*reductValues
     print ('newValues', newValues)
     PETnewfname = os.path.join(caseTmpDir, 'PET_new.tif')
-    write_array_grid (rasterin, PETnewfname, newValues)
+    write_array_grid (rasterin, PETnewfname, newValues, nodataval = 255)
     PETnewlyrname = 'PET_new_{}'.format(unique_id)
     wmsNew = geoserver_upload_gtif(PETnewlyrname, resturl, user, password, PETnewfname, 'PET')
 
@@ -179,12 +179,6 @@ def ast_heatreduction(collection):
             "id": "pet_diff",
             "title": "PET differences",
             "layerName": wmsDiff ,
-            "baseUrl": owsurl
-        },
-        {
-            "id": "pet_potential",
-            "title": "PET potential",
-            "layerName": wmsPoten ,
             "baseUrl": owsurl
         },
         {
