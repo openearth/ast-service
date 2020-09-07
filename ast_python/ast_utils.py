@@ -128,21 +128,22 @@ def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
     target_ds = None
 
 # Write array to grid file
-def write_array_grid(RasterGrid, RasterName, array, nodataval=255, output_type=gdal.GDT_Byte):
-	SourceRaster = gdal.Open(RasterGrid)
-	GeoTrans = SourceRaster.GetGeoTransform()    
-	projection = osr.SpatialReference()
-	projection.ImportFromWkt(SourceRaster.GetProjectionRef())  	
-	xsize=SourceRaster.RasterXSize 
-	ysize=SourceRaster.RasterYSize	
-	driver = gdal.GetDriverByName('GTiff')
-	Raster = driver.Create(RasterName , xsize, ysize, 1, output_type, [ 'COMPRESS=LZW', 'TILED=YES' ])
-	Raster.SetGeoTransform(GeoTrans)
-	Raster.SetProjection(projection.ExportToWkt())	
-	band = Raster.GetRasterBand(1)    
-	band.WriteArray(array)
-	band.SetNoDataValue(nodataval)
-	return RasterName
+def write_array_grid(RasterGrid, RasterName, array, nodataval, output_type=gdal.GDT_Byte):
+    SourceRaster = gdal.Open(RasterGrid)
+    GeoTrans = SourceRaster.GetGeoTransform()    
+    projection = osr.SpatialReference()
+    projection.ImportFromWkt(SourceRaster.GetProjectionRef())  	
+    xsize=SourceRaster.RasterXSize 
+    ysize=SourceRaster.RasterYSize	
+    driver = gdal.GetDriverByName('GTiff')
+    Raster = driver.Create(RasterName , xsize, ysize, 1, output_type, [ 'COMPRESS=LZW', 'TILED=YES' ])
+    Raster.SetGeoTransform(GeoTrans)
+    Raster.SetProjection(projection.ExportToWkt())	
+    band = Raster.GetRasterBand(1)    
+    band.WriteArray(array)
+    band.SetNoDataValue(nodataval)
+    print ('nodataval', nodataval)
+    return RasterName
 
 
 
