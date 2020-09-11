@@ -66,7 +66,7 @@ def makeTempDir(dir):
         return tmpdir
 
 # geodataframe to shapeflie
-def gdf_to_shp(gdf, layername, fieldName, dir):
+def gdf_to_shp(gdf, layername, dir, fieldName = None ):
     
     features = gdf.copy()
     #create an output datasouce in memory
@@ -79,16 +79,19 @@ def gdf_to_shp(gdf, layername, fieldName, dir):
     srs = osr.SpatialReference()
     srs.ImportFromEPSG(28992)
     layer = source.CreateLayer(layername, srs, ogr.wkbPolygon)
+    
     layer.CreateField(ogr.FieldDefn(fieldName, ogr.OFTInteger64))
-    
-   
-    
+
     for index, row in features.iterrows(): 
         feat = row.copy()
         feature = ogr.Feature(layer.GetLayerDefn())
-        factor = feat.heatReductionFactor
-        
-        feature.SetField(fieldName, factor)
+
+        if fieldName == 'id':
+            field_value = 1
+            
+        else:
+            field_value = feat.heatReductionFactor
+        feature.SetField(fieldName, field_value)
         wkt = feat.geometry.wkt
         geom = ogr.CreateGeometryFromWkt(wkt)
         feature.SetGeometryDirectly(geom)
@@ -105,9 +108,7 @@ def rasterize(rasterin, vectorin,  rasterout, field = 'factor', read = False):
     data = gdal.Open(rasterin, gdalconst.GA_ReadOnly)
     geo_transform = data.GetGeoTransform()
     x_res = data.RasterXSize
-    y_res = data.RasterYSize
-    print ('resolution')
-    print (x_res, y_res) 
+    y_res = data.RasterYSize 
 
 	# Read features and rasterize to output
     shp = ogr.Open(vectorin)
@@ -142,7 +143,6 @@ def write_array_grid(RasterGrid, RasterName, array, nodataval, output_type=gdal.
     band = Raster.GetRasterBand(1)    
     band.WriteArray(array)
     band.SetNoDataValue(nodataval)
-    print ('nodataval', nodataval)
     return RasterName
 
 
