@@ -3,35 +3,35 @@
 		{
 			"ID": 80,
 			"Blue Green measures": "Creating shadow",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 70
 		}, {
 			"ID": 25,
 			"Blue Green measures": "Urban forest",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 70
 		}, {
 			"ID": 3,
 			"Blue Green measures": "Adding trees in streetscape",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 70
 		}, {
 			"ID": 94,
 			"Blue Green measures": "Urban parks",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 70
 		}, {
 			"ID": 7,
 			"Blue Green measures": "Fountains, waterfalls, water facades",
-			"heatReductionFactor": 30
+			"heatReductionFactor": 25
 		}, {
 			"ID": 4,
 			"Blue Green measures": "Urban wetland",
-			"heatReductionFactor": 30
+			"heatReductionFactor": 25
 		}, {
 			"ID": 27,
 			"Blue Green measures": "Private green garden",
-			"heatReductionFactor": 30
+			"heatReductionFactor": 25
 		}, {
 			"ID": 61,
 			"Blue Green measures": "Wetting surfaces (of gardens, roofs, roads)",
-			"heatReductionFactor": 30
+			"heatReductionFactor": 25
 		}, {
 			"ID": 11,
 			"Blue Green measures": "Ditch and swales",
