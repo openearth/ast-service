@@ -3,19 +3,19 @@
 		{
 			"ID": 80,
 			"Blue Green measures": "Creating shadow",
-			"heatReductionFactor": 90
+			"heatReductionFactor": 80
 		}, {
 			"ID": 25,
 			"Blue Green measures": "Urban forest",
-			"heatReductionFactor": 90
+			"heatReductionFactor": 80
 		}, {
 			"ID": 3,
 			"Blue Green measures": "Adding trees in streetscape",
-			"heatReductionFactor": 90
+			"heatReductionFactor": 80
 		}, {
 			"ID": 94,
 			"Blue Green measures": "Urban parks",
-			"heatReductionFactor": 90
+			"heatReductionFactor": 80
 		}, {
 			"ID": 7,
 			"Blue Green measures": "Fountains, waterfalls, water facades",
