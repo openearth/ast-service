@@ -2,19 +2,19 @@
 		{
 			"measure": 80,
 			"Blue Green measures": "Creating shadow",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 75
 		}, {
 			"measure": 25,
 			"Blue Green measures": "Urban forest",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 75
 		}, {
 			"measure": 3,
 			"Blue Green measures": "Adding trees in streetscape",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 75
 		}, {
 			"measure": 94,
 			"Blue Green measures": "Urban parks",
-			"heatReductionFactor": 80
+			"heatReductionFactor": 75
 		}, {
 			"measure": 7,
 			"Blue Green measures": "Fountains, waterfalls, water facades",
