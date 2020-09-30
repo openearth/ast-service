@@ -215,5 +215,9 @@
 			"measure": 53,
 			"Blue Green measures": "Use of groundwater (aquifer storage and recovery)",
 			"heatReductionFactor": 0
+		}, {
+			"measure": 0,
+			"Blue Green measures": "Empty or None",
+			"heatReductionFactor": 0
 		}
 	]
