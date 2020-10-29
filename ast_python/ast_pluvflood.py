@@ -2,7 +2,7 @@
 from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
-import math import e
+from math import e
 
 def pluvflood_dict(d):
     return pluvflood(**d)
