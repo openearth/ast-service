@@ -10,6 +10,10 @@ def pluvflood_dict(d):
 def pluvflood2_dict(d):
     return pluvflood2(**d)
 
+def pluvflood_param_dict(d):
+    return pluvflood_param(**d)
+
+
 def pluvflood_json(jsonstr):
     d = json.loads(jsonstr)
     return pluvflood(**d)
@@ -108,6 +112,16 @@ def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # API needs key/value pairs
     ret = {
         "Fmeas_area": return_time_projectArea,
+        "Perc_RA": 50.0,
+        "A_p_perc": 50.0
+        }
+    return ret
+    
+def pluvflood_param(scenarioName):
+    # Data file
+
+    # API needs key/value pairs
+    ret = {
         "Perc_RA": 50.0,
         "A_p_perc": 50.0
         }
