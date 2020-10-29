@@ -115,7 +115,7 @@ def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
 
     # API needs key/value pairs
     ret = {
-        "Fmeas_area": return_time_projectArea,
+        "Fmeas_area": F_meas,
         "Perc_RA": 50.0,
         "A_p_perc": 50.0
         }
