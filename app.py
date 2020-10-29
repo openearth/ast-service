@@ -5,6 +5,7 @@ from ast_python.ast_selection import selection_dict
 from ast_python.ast_heatstress import temperature_dict, waterquality_dict, cost_dict
 from ast_python.ast_pluvflood import pluvflood_dict
 from ast_python.ast_pluvflood import pluvflood2_dict
+from ast_python.ast_pluvflood import pluvflood_param_dict
 from ast_python.ast_groundwater_recharge import groundwater_recharge_dict
 from ast_python.ast_evapotranspiration import evapotranspiration_dict
 from ast_python.web_map import layerurl, wfs_area_parser
@@ -87,6 +88,12 @@ def ast_calc_pluvflood2(**kwargs):
     res = pluvflood2_dict(kwargs)
     return {'result': res}
 
+# /api/pluvflood_param
+@application.route('/api/pluvflood_param', methods=['GET', 'POST'])
+@use_kwargs({"scenarioName": fields.Str(required=True)})
+def ast_calc_pluvflood_param(**kwargs):
+    res = pluvflood_param_dict(kwargs)
+    return {'result': res}
 
 # /api/evapotranspiration
 @application.route('/api/evapotranspiration', methods=['GET', 'POST'])
@@ -195,6 +202,7 @@ def mapsetup(url, layer, area, field, **kwargs):
 docs.register(ast_calc_selection)
 docs.register(ast_calc_pluvflood)
 docs.register(ast_calc_pluvflood2)
+docs.register(ast_calc_pluvflood_param)
 docs.register(ast_calc_evapotranspiration)
 docs.register(ast_calc_groundwater_recharge)
 docs.register(ast_calc_heatstress_temperature)
