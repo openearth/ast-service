@@ -14,7 +14,7 @@ def pluvflood_json(jsonstr):
 
 
 
-def pluvflood(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
     records_file = join(dirname(dirname(realpath(__file__))), 'tables/' +
                         scenarioName+'/ast_measures_pluvflood.json')
