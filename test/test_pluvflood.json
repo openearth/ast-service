@@ -1,9 +1,9 @@
 {
-	"scenarioName": "city_center",
+	"scenarioName": "Burnaby_current",
     "projectArea": 8000.0,
     "inflow": 200.0,
     "returnTime": 2.0,
     "area": 100.0,
     "depth": 0.5,
-    "id": 3
+    "id": 23
 }
