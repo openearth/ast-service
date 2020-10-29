@@ -4,6 +4,7 @@ import os
 from ast_python.ast_selection import selection_dict
 from ast_python.ast_heatstress import temperature_dict, waterquality_dict, cost_dict
 from ast_python.ast_pluvflood import pluvflood_dict
+from ast_python.ast_pluvflood2 import pluvflood2_dict
 from ast_python.ast_groundwater_recharge import groundwater_recharge_dict
 from ast_python.ast_evapotranspiration import evapotranspiration_dict
 from ast_python.web_map import layerurl, wfs_area_parser
@@ -71,6 +72,19 @@ def ast_calc_selection(**kwargs):
              "id": fields.Int(required=True)})
 def ast_calc_pluvflood(**kwargs):
     res = pluvflood_dict(kwargs)
+    return {'result': res}
+
+# /api/pluvflood2
+@application.route('/api/pluvflood2', methods=['GET', 'POST'])
+@use_kwargs({"scenarioName": fields.Str(required=True),
+             "projectArea": fields.Float(required=True),
+             "inflow": fields.Float(required=True),
+             "returnTime": fields.Float(required=True),
+             "area": fields.Float(required=True),
+             "depth": fields.Float(required=True),
+             "id": fields.Int(required=True)})
+def ast_calc_pluvflood2(**kwargs):
+    res = pluvflood_dict2(kwargs)
     return {'result': res}
 
 
@@ -180,6 +194,7 @@ def mapsetup(url, layer, area, field, **kwargs):
 # Register documentation endpoints
 docs.register(ast_calc_selection)
 docs.register(ast_calc_pluvflood)
+docs.register(ast_calc_pluvflood2)
 docs.register(ast_calc_evapotranspiration)
 docs.register(ast_calc_groundwater_recharge)
 docs.register(ast_calc_heatstress_temperature)
