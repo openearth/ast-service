@@ -2,7 +2,6 @@
 from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
-from math import e
 
 def pluvflood_dict(d):
     return pluvflood(**d)
@@ -111,7 +110,7 @@ def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     Perc_RA = 50
     A_p_perc = 10
     A_p =  A_p_perc * projectArea
-    F_meas = ( A_p * e**(multiplication_factor*area) / A_p + Perc_RA /100 * (projectArea – A_p) ) /( A_p + Perc_RA / 100 (projectArea – A_P))
+    F_meas = ( A_p * 2.718281**(multiplication_factor*area) / A_p + Perc_RA /100 * (projectArea – A_p) ) /( A_p + Perc_RA / 100 (projectArea – A_P))
 
 
     # API needs key/value pairs
