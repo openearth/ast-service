@@ -4,7 +4,7 @@ import os
 from ast_python.ast_selection import selection_dict
 from ast_python.ast_heatstress import temperature_dict, waterquality_dict, cost_dict
 from ast_python.ast_pluvflood import pluvflood_dict
-from ast_python.ast_pluvflood2 import pluvflood2_dict
+from ast_python.ast_pluvflood import pluvflood2_dict
 from ast_python.ast_groundwater_recharge import groundwater_recharge_dict
 from ast_python.ast_evapotranspiration import evapotranspiration_dict
 from ast_python.web_map import layerurl, wfs_area_parser
