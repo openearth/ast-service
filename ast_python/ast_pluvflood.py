@@ -2,7 +2,7 @@
 from os.path import join, dirname, realpath
 import json
 from ast_python.ast_utils import *
-
+import math import e
 
 def pluvflood_dict(d):
     return pluvflood(**d)
@@ -106,8 +106,14 @@ def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
         effective_depth_mm - effective_depth_a
     ) / (effective_depth_b - effective_depth_a)
     return_time_inflow = returnTime * multiplication_factor
-    return_time_projectArea = (return_time_inflow * inflow / (projectArea) +
+    #return_time_projectArea = (return_time_inflow * inflow / (projectArea) +
                                returnTime * (projectArea - inflow) / projectArea) - returnTime
+    Perc_RA = 50
+    A_p_perc = 10
+    A_p =  A_p_perc * projectArea
+    F_meas = ( A_p * e^(multiplication_factor*area) / A_p + Perc_RA /100 * (projectArea – A_p) ) /
+		( A_p + Perc_RA / 100 (projectArea – A_P))
+
 
     # API needs key/value pairs
     ret = {
