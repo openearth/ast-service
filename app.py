@@ -90,7 +90,13 @@ def ast_calc_pluvflood2(**kwargs):
 
 # /api/pluvflood_param
 @application.route('/api/pluvflood_param', methods=['GET', 'POST'])
-@use_kwargs({"scenarioName": fields.Str(required=True)})
+@use_kwargs({"scenarioName": fields.Str(required=True),
+             "projectArea": fields.Float(required=True),
+             "inflow": fields.Float(required=True),
+             "returnTime": fields.Float(required=True),
+             "area": fields.Float(required=True),
+             "depth": fields.Float(required=True),
+             "id": fields.Int(required=True)})
 def ast_calc_pluvflood_param(**kwargs):
     res = pluvflood_param_dict(kwargs)
     return {'result': res}
