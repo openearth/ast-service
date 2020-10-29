@@ -117,7 +117,7 @@ def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
         }
     return ret
     
-def pluvflood_param(scenarioName):
+def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
 
     # API needs key/value pairs
