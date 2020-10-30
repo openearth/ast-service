@@ -84,7 +84,7 @@ def ast_calc_pluvflood(**kwargs):
              "area": fields.Float(required=True),
              "depth": fields.Float(required=True),
              "id": fields.Int(required=True)})
-def ast_calc_pluvflood2(**kwargs):
+def ast_calc_pluvflood_fmeas(**kwargs):
     res = pluvflood_fmeas_dict(kwargs)
     return {'result': res}
 
