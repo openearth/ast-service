@@ -10,8 +10,8 @@ def pluvflood_dict(d):
     return pluvflood(**d)
 
 
-def pluvflood2_dict(d):
-    return pluvflood2(**d)
+def pluvflood_fmeas_dict(d):
+    return pluvflood_fmeas(**d)
 
 
 def pluvflood_param_dict(d):
@@ -25,7 +25,7 @@ def pluvflood_json(jsonstr):
 
 def pluvflood_fmeas_json(jsonstr):
     d = json.loads(jsonstr)
-    return pluvflood2(**d)
+    return pluvflood_fmeas(**d)
 
 
 def pluvflood_param_json(jsonstr):
