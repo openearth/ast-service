@@ -4,7 +4,7 @@ import os
 from ast_python.ast_selection import selection_dict
 from ast_python.ast_heatstress import temperature_dict, waterquality_dict, cost_dict
 from ast_python.ast_pluvflood import pluvflood_dict
-from ast_python.ast_pluvflood import pluvflood2_dict
+from ast_python.ast_pluvflood import pluvflood_fmeas_dict
 from ast_python.ast_pluvflood import pluvflood_param_dict
 from ast_python.ast_groundwater_recharge import groundwater_recharge_dict
 from ast_python.ast_evapotranspiration import evapotranspiration_dict
@@ -75,8 +75,8 @@ def ast_calc_pluvflood(**kwargs):
     res = pluvflood_dict(kwargs)
     return {'result': res}
 
-# /api/pluvflood2
-@application.route('/api/pluvflood2', methods=['GET', 'POST'])
+# /api/pluvflood_fmeas
+@application.route('/api/pluvflood_fmeas', methods=['GET', 'POST'])
 @use_kwargs({"scenarioName": fields.Str(required=True),
              "projectArea": fields.Float(required=True),
              "inflow": fields.Float(required=True),
@@ -85,7 +85,7 @@ def ast_calc_pluvflood(**kwargs):
              "depth": fields.Float(required=True),
              "id": fields.Int(required=True)})
 def ast_calc_pluvflood2(**kwargs):
-    res = pluvflood2_dict(kwargs)
+    res = pluvflood_fmeas_dict(kwargs)
     return {'result': res}
 
 # /api/pluvflood_param
@@ -207,7 +207,7 @@ def mapsetup(url, layer, area, field, **kwargs):
 # Register documentation endpoints
 docs.register(ast_calc_selection)
 docs.register(ast_calc_pluvflood)
-docs.register(ast_calc_pluvflood2)
+docs.register(ast_calc_pluvflood_fmeas)
 docs.register(ast_calc_pluvflood_param)
 docs.register(ast_calc_evapotranspiration)
 docs.register(ast_calc_groundwater_recharge)

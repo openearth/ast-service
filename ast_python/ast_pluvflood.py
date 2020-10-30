@@ -23,7 +23,7 @@ def pluvflood_json(jsonstr):
     return pluvflood(**d)
 
 
-def pluvflood2_json(jsonstr):
+def pluvflood_fmeas_json(jsonstr):
     d = json.loads(jsonstr)
     return pluvflood2(**d)
 
@@ -84,7 +84,7 @@ def pluvflood(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     return ret
 
 
-def pluvflood2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
     records_file = join(
         dirname(dirname(realpath(__file__))),
@@ -143,7 +143,7 @@ def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioNa
 
     # API needs key/value pairs
     ret = {
-        "Perc_RA": params["perc_RA"],
+        "Frac_RA": params["perc_RA"]/100,
         "A_p": area_paved,
     }
     return ret
