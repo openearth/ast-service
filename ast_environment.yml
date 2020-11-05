@@ -8,8 +8,10 @@ dependencies:
   - matplotlib==3.*
   - pandas==1.*
   - scipy==1.*
+  - rasterio=1.1.*  
   - shapely==1.*
   - geopandas==0.8.*
+  - rasterstats
   - pip
   - pip:
       - apispec==2.0.2
@@ -17,7 +19,8 @@ dependencies:
       - flask-apispec==0.10.0
       - flask-cors==3.0
       - flask-login==0.4
-      - gsconfig-py3==1.0
+      - gsconfig-py3==1.*
+      - rasterstats
       - owslib==0.18.*
       - simplejson==3.*
       - webargs==6.1
