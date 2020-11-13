@@ -173,6 +173,9 @@ def ast_heatreduction(collection):
     #diffStats = list(np.array(newStats) - np.array(potenStats))
 
     #prepare response
+
+    #### TODO temporary hardcoded external path of geoserver
+    owsurl = 'http://ast-backend.deltares.nl/geoserver/ows?'
     response = {
         "layers":[{
             "id": "pet_new",
