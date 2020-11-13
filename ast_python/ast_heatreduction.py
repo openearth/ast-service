@@ -174,8 +174,7 @@ def ast_heatreduction(collection):
 
     #prepare response
 
-    #### TODO temporary hardcoded external path of geoserver
-    owsurl = 'http://ast-backend.deltares.nl/geoserver/ows?'
+
     response = {
         "layers":[{
             "id": "pet_new",
