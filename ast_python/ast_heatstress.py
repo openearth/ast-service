@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from os.path import join, dirname, realpath
 import json
+from os.path import dirname, join, realpath
+
 from ast_python.ast_utils import *
 
 
@@ -15,11 +16,13 @@ def temperature_json(jsonstr):
 
 def temperature(id, projectArea, area, scenarioName):
     # Data file
-    records_file_temp = join(dirname(dirname(realpath(__file__))),
-                             'tables/'+scenarioName+'/ast_measures_temperature.json')
+    records_file_temp = join(
+        dirname(dirname(realpath(__file__))),
+        "tables/" + scenarioName + "/ast_measures_temperature.json",
+    )
     record = find_record(id, records_file_temp)
-    #temp_reduction_local = float(record["Value_T"])
-    #temp_reduction = temp_reduction_local * area / projectArea
+    # temp_reduction_local = float(record["Value_T"])
+    # temp_reduction = temp_reduction_local * area / projectArea
     temp_reduction_local = float(record["GreenOrBlue"])
     temp_coolspot_potential = float(record["Coolspot_potential"])
 
@@ -31,10 +34,7 @@ def temperature(id, projectArea, area, scenarioName):
         coolspot = 0
 
     # API needs key/value pairs
-    ret = {
-        "coolSpot": coolspot,
-        "tempReduction": temp_reduction
-    }
+    ret = {"coolSpot": coolspot, "tempReduction": temp_reduction}
     return ret
 
 
@@ -49,8 +49,10 @@ def cost_json(jsonstr):
 
 def cost(id, area, scenarioName):
     # Data file
-    records_file_cost = join(dirname(dirname(realpath(__file__))),
-                             'tables/'+scenarioName+'/ast_measures_cost.json')
+    records_file_cost = join(
+        dirname(dirname(realpath(__file__))),
+        "tables/" + scenarioName + "/ast_measures_cost.json",
+    )
     record = find_record(id, records_file_cost)
     construction_unit_cost = float(record["construction_m2"])
     maintenance_unit_cost = float(record["maint_annual_frac_constr"])
@@ -58,10 +60,7 @@ def cost(id, area, scenarioName):
     maintenance_cost = 0.01 * maintenance_unit_cost * construction_cost
 
     # API needs key/value pairs
-    ret = {
-        "maintenanceCost": maintenance_cost,
-        "constructionCost": construction_cost
-    }
+    ret = {"maintenanceCost": maintenance_cost, "constructionCost": construction_cost}
     return ret
 
 
@@ -73,13 +72,16 @@ def waterquality_json(jsonstr):
     d = json.loads(jsonstr)
     return waterquality(**d)
 
+
 # def waterquality(id, area, scenarioName):
 
 
 def waterquality(id, projectArea, area, scenarioName):
     # Data file
-    records_file_wq = join(dirname(dirname(realpath(__file__))),
-                           'tables/'+scenarioName+'/ast_measures_wq.json')
+    records_file_wq = join(
+        dirname(dirname(realpath(__file__))),
+        "tables/" + scenarioName + "/ast_measures_wq.json",
+    )
     record = find_record(id, records_file_wq)
     capture_unit = float(record["Nutrients"])
     settling_unit = float(record["AdsorbingPollutants"])
@@ -92,6 +94,6 @@ def waterquality(id, projectArea, area, scenarioName):
     ret = {
         "filteringUnit": filtering_unit,
         "settlingUnit": settling_unit,
-        "captureUnit": capture_unit
+        "captureUnit": capture_unit,
     }
     return ret

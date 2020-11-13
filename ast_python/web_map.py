@@ -1,21 +1,18 @@
-import logging
-import requests
 import json
-from urllib.parse import urlparse
-from owslib.wms import WebMapService
+import logging
+from urllib.parse import unquote, urlencode, urlparse
+
+import requests
+from owslib.util import ServiceException, bind_url
 from owslib.wfs import WebFeatureService
+from owslib.wms import WebMapService
 from owslib.wmts import WebMapTileService
-from urllib.parse import unquote, urlencode
-from owslib.util import bind_url
-from owslib.util import ServiceException
 from shapely.geometry import shape
+
 logging.basicConfig(level=logging.INFO)
 
 
-failed_resp = {
-    "errors": "This is a test messsage.",
-    "layers": []
-}
+failed_resp = {"errors": "This is a test messsage.", "layers": []}
 
 partly_resp = {
     "errors": "",
@@ -24,16 +21,17 @@ partly_resp = {
             "errors": "",
             "id": "WMS_img.nj.gov_natural2015",
             "name": "Natural2015",
-            "tiles": "https://img.nj.gov/imagerywms/Natural2015?service=WMS&version=1.1.1&request=GetMap&layers=Natural2015&styles=&width=256&height=256&srs=EPSG:3857&bbox={bbox-epsg-3857}&format=image/png&transparent=TRUE&bgcolor=0xFFFFFF&exceptions=None"
+            "tiles": "https://img.nj.gov/imagerywms/Natural2015?service=WMS&version=1.1.1&request=GetMap&layers=Natural2015&styles=&width=256&height=256&srs=EPSG:3857&bbox={bbox-epsg-3857}&format=image/png&transparent=TRUE&bgcolor=0xFFFFFF&exceptions=None",
         },
         {
             "errors": "EPSG-3857 CRS not supported.",
             "id": "ESRI_server.arcgisonline.com_world_imagery",
             "name": "World Imagery",
-            "tiles": ""
-        }
-    ]
+            "tiles": "",
+        },
+    ],
 }
+
 
 def wfs_area_parser(url, layer, area, field, srs=28992):
     """Parse WFS layer and return field in first intersecting feature with bbox."""
@@ -46,7 +44,9 @@ def wfs_area_parser(url, layer, area, field, srs=28992):
     point = geom.centroid
     bbox = [point.x, point.y, point.x, point.y]
 
-    response = wfs.getfeature(typename=layer, bbox=bbox, outputFormat="application/json")
+    response = wfs.getfeature(
+        typename=layer, bbox=bbox, outputFormat="application/json"
+    )
     featurecollection = json.loads(response.read())
     for feature in featurecollection.get("features", []):
         if field in feature.get("properties", {}):
@@ -87,10 +87,12 @@ def layerurl(url, type="MOCK"):
     elif type == "MOCK":
         wms = wms_layers("https://img.nj.gov/imagerywms/Natural2015?")
         wmts = wmts_layers(
-            "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS")
+            "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS"
+        )
         # wmts2 = wmts_layers("https://tiles.arcgis.com/tiles/nSZVuSZjHpEZZbRo/arcgis/rest/services/Waterdiepte_bij_intense_neerslag_1_per_1000_jaar/MapServer", rest=False)
         arcrest = arcgis_exporttiles_layers(
-            "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/")
+            "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/"
+        )
 
         wms["layers"].extend(wmts["layers"])
         # wms["layers"].extend(wmts2["layers"])
@@ -123,17 +125,30 @@ def wms_layers(url):
 
         id = "WMS_{}_{}".format(domain, layer.lower().replace(" ", "_"))
 
-        if 'EPSG:3857' in wms[layer].crsOptions:
+        if "EPSG:3857" in wms[layer].crsOptions:
             layer_url = wms._WebMapService_1_1_1__build_getmap_request(
-                layers=[layer], bgcolor='#FFFFFF', bbox=[], srs="EPSG:3857", size=(256, 256), format="image/png", transparent=True)
+                layers=[layer],
+                bgcolor="#FFFFFF",
+                bbox=[],
+                srs="EPSG:3857",
+                size=(256, 256),
+                format="image/png",
+                transparent=True,
+            )
             layer_url = bind_url(url) + unquote(urlencode(layer_url))
             layer_url = layer_url.replace("bbox=", "bbox={bbox-epsg-3857}")
             layers.append({"errors": "", "id": id, "name": layer, "tiles": layer_url})
 
         else:
             logging.warning("Layer {layer} has the wrong CRS.".format(layer=layer))
-            layers.append({"errors": "EPSG-3857 CRS not supported.",
-                           "id": id, "name": layer, "tiles": []})
+            layers.append(
+                {
+                    "errors": "EPSG-3857 CRS not supported.",
+                    "id": id,
+                    "name": layer,
+                    "tiles": [],
+                }
+            )
 
     return {"errors": messages, "layers": layers}
 
@@ -145,7 +160,9 @@ def filter_tilematrix_crs(tilematrixsetlinks):
     def check_name(tilematrix):
         return any(name in tilematrix for name in accepted_names)
 
-    tilematrices = [tilematrix for tilematrix in tilematrixsetlinks if check_name(tilematrix)]
+    tilematrices = [
+        tilematrix for tilematrix in tilematrixsetlinks if check_name(tilematrix)
+    ]
     return tilematrices
 
 
@@ -173,18 +190,34 @@ def wmts_layers(url, rest=True):
 
         # matrixsets = filter_tilematrix_crs(wmts[layer].tilematrixsetlinks)
         if len(matrixsets) == 0:
-            layers.append({"errors": "EPSG-3857 CRS not supported.",
-                           "id": id, "name": layer, "tiles": layer_url})
+            layers.append(
+                {
+                    "errors": "EPSG-3857 CRS not supported.",
+                    "id": id,
+                    "name": layer,
+                    "tiles": layer_url,
+                }
+            )
             continue
 
         # Rest based URL
         if wmts.restonly or rest:
             logging.info("Rest only layer.")
             layer_url = wmts.buildTileResource(
-                layer=layer, tilematrixset=matrixsets[0], tilematrix="{z}", row="{y}", column="{x}")
+                layer=layer,
+                tilematrixset=matrixsets[0],
+                tilematrix="{z}",
+                row="{y}",
+                column="{x}",
+            )
         else:
             layer_url_data = wmts.buildTileRequest(
-                layer=layer, tilematrixset=matrixsets[0], tilematrix="{z}", row="{y}", column="{x}")
+                layer=layer,
+                tilematrixset=matrixsets[0],
+                tilematrix="{z}",
+                row="{y}",
+                column="{x}",
+            )
             layer_url = bind_url(url) + unquote(layer_url_data)
 
         layers.append({"errors": "", "id": id, "name": layer, "tiles": layer_url})
@@ -201,7 +234,10 @@ def arcgis_exporttiles_layers(url):
     try:
         mapserver = requests.get(url + "?f=pjson").json()
     except Exception as e:
-        return {"errors": "Can't parse url as ARCGIS export tiles service.", "layers": []}
+        return {
+            "errors": "Can't parse url as ARCGIS export tiles service.",
+            "layers": [],
+        }
 
     layers = []
     messages = ""
@@ -215,11 +251,22 @@ def arcgis_exporttiles_layers(url):
 
     for layer in mapserver.get("layers", []):
         layer_url = url + unquote(template.format(layer["id"]))
-        id = "ESRI_{}_{}".format(domain, layer["name"].lower().replace(" ", "_").replace(" ", "_"))
+        id = "ESRI_{}_{}".format(
+            domain, layer["name"].lower().replace(" ", "_").replace(" ", "_")
+        )
         if validsrs:
-            layers.append({"errors": "", "id": id, "name": layer["name"], "tiles": layer_url})
+            layers.append(
+                {"errors": "", "id": id, "name": layer["name"], "tiles": layer_url}
+            )
         else:
-            layers.append({"errors": "EPSG-3857 CRS not supported.", "id": id, "name": layer["name"], "tiles": ""})
+            layers.append(
+                {
+                    "errors": "EPSG-3857 CRS not supported.",
+                    "id": id,
+                    "name": layer["name"],
+                    "tiles": "",
+                }
+            )
 
     return {"errors": messages, "layers": layers}
 
@@ -233,7 +280,9 @@ if __name__ == "__main__":
     # url = "https://tiles.arcgis.com/tiles/nSZVuSZjHpEZZbRo/arcgis/rest/services/Waterdiepte_bij_intense_neerslag_1_per_1000_jaar/MapServer/WMTS"
     # print(wmts_layers(url))
 
-    url = "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/"
+    url = (
+        "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/"
+    )
     # arcgis_exporttiles_layers(url)
 
     layers = layerurl("", "MOCK")["layers"]

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from os.path import join, dirname, realpath
 import json
+from os.path import dirname, join, realpath
+
 from ast_python.ast_utils import *
 
 
@@ -13,10 +14,14 @@ def groundwater_recharge_json(jsonstr):
     return groundwater_recharge(**d)
 
 
-def groundwater_recharge(id, projectArea, area, depth, inflow, returnTime, scenarioName):
-        # Data file
-    records_file = join(dirname(dirname(realpath(__file__))), 'tables/' +
-                        scenarioName+'/ast_measures_groundwater_recharge.json')
+def groundwater_recharge(
+    id, projectArea, area, depth, inflow, returnTime, scenarioName
+):
+    # Data file
+    records_file = join(
+        dirname(dirname(realpath(__file__))),
+        "tables/" + scenarioName + "/ast_measures_groundwater_recharge.json",
+    )
     record = find_record(id, records_file)
     # check for too small inflow areas
     if inflow <= 0.01:
@@ -34,7 +39,7 @@ def groundwater_recharge(id, projectArea, area, depth, inflow, returnTime, scena
         40.0,
         50.0,
         100.0,
-        1.00E+12,
+        1.00e12,
     ]
 
     for i in range(len(effective_depth_list)):
@@ -49,14 +54,16 @@ def groundwater_recharge(id, projectArea, area, depth, inflow, returnTime, scena
     groundwater_recharge_a = float(record[f"Col{index_a}"])
     groundwater_recharge_b = float(record[f"Col{index_b}"])
 
-    groundwater_recharge_measure = groundwater_recharge_a + (groundwater_recharge_b - groundwater_recharge_a) * (
-        effective_depth_mm - effective_depth_a
-    ) / (effective_depth_b - effective_depth_a)
+    groundwater_recharge_measure = groundwater_recharge_a + (
+        groundwater_recharge_b - groundwater_recharge_a
+    ) * (effective_depth_mm - effective_depth_a) / (
+        effective_depth_b - effective_depth_a
+    )
 
-    groundwater_recharge_projectArea = groundwater_recharge_measure * inflow / projectArea
+    groundwater_recharge_projectArea = (
+        groundwater_recharge_measure * inflow / projectArea
+    )
 
     # API needs key/value pairs
-    ret = {
-        "groundwater_recharge": groundwater_recharge_projectArea
-    }
+    ret = {"groundwater_recharge": groundwater_recharge_projectArea}
     return ret

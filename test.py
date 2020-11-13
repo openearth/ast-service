@@ -1,10 +1,11 @@
-import unittest
 import json
+import unittest
+
 import pandas as pd
 
-from ast_python.ast_heatstress import temperature_json, cost_json, waterquality_json
-from ast_python.ast_selection import selection_json
+from ast_python.ast_heatstress import cost_json, temperature_json, waterquality_json
 from ast_python.ast_pluvflood import pluvflood_json
+from ast_python.ast_selection import selection_json
 
 
 class TestAST(unittest.TestCase):
@@ -24,18 +25,16 @@ class TestAST(unittest.TestCase):
         with open("test/test_heatstress_cost.json") as f:
             jsonstr = f.read()
         res = cost_json(jsonstr)
-        self.assertAlmostEqual(res['maintenanceCost'], 15.0)
-        self.assertAlmostEqual(res['constructionCost'], 500.0)
+        self.assertAlmostEqual(res["maintenanceCost"], 15.0)
+        self.assertAlmostEqual(res["constructionCost"], 500.0)
 
     def test_heatstress_waterquality(self):
         with open("test/test_heatstress_waterquality.json") as f:
             jsonstr = f.read()
-        res = waterquality_json(
-            jsonstr
-        )
-        self.assertAlmostEqual(res['captureUnit'], 90.0)
-        self.assertAlmostEqual(res['settlingUnit'], 93.0)
-        self.assertAlmostEqual(res['filteringUnit'], 95.0)
+        res = waterquality_json(jsonstr)
+        self.assertAlmostEqual(res["captureUnit"], 90.0)
+        self.assertAlmostEqual(res["settlingUnit"], 93.0)
+        self.assertAlmostEqual(res["filteringUnit"], 95.0)
 
     def test_selection(self):
         with open("test/test_selection.json") as f:

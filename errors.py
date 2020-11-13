@@ -1,6 +1,6 @@
 """Application error handlers."""
-import traceback
 import json
+import traceback
 
 from flask import Blueprint, abort
 from webargs.flaskparser import parser
@@ -17,13 +17,13 @@ def handle_request_parsing_error(err, req, schema, error_status_code, error_head
 
 @error_handler.app_errorhandler(Exception)
 def handle_unexpected_error(error):
-    # stack = traceback.format_exc()
+    stack = traceback.format_exc()
     status_code = 400
     response = {
         "code": status_code,
         "name": error.__class__.__name__,
         "description": str(error),
-        # "stack": stack
+        "stack": stack,
     }
 
     return response, status_code
@@ -35,10 +35,8 @@ def handle_exception(e):
     # start with the correct headers and status code from the error
     response = e.get_response()
     # replace the body with JSON
-    response.data = json.dumps({
-        "code": e.code,
-        "name": e.name,
-        "description": e.description,
-    })
+    response.data = json.dumps(
+        {"code": e.code, "name": e.name, "description": e.description,}
+    )
     response.content_type = "application/json"
     return response

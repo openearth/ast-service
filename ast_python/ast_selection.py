@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
-from os.path import join, dirname, realpath
 import json
-from ast_python.ast_utils import *
-import pandas as pd
-import numpy as np
 import logging
+from os.path import dirname, join, realpath
 
+import numpy as np
+import pandas as pd
+
+from ast_python.ast_utils import *
 
 # Data files
-records_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_measures.json')
-scores_file = join(dirname(dirname(realpath(__file__))), 'tables/ast_scores.json')
+records_file = join(dirname(dirname(realpath(__file__))), "tables/ast_measures.json")
+scores_file = join(dirname(dirname(realpath(__file__))), "tables/ast_scores.json")
 
 
 def selection_dict(d):
@@ -23,14 +24,7 @@ def selection_json(jsonstr):
 
 
 def selection(
-    scale,
-    soil,
-    slope,
-    multifunctionality,
-    surface,
-    subsurface,
-    capacity,
-    suitability,
+    scale, soil, slope, multifunctionality, surface, subsurface, capacity, suitability,
 ):
 
     # construct DataFrame from list of dicts

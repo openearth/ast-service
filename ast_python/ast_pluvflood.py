@@ -143,7 +143,7 @@ def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioNa
 
     # API needs key/value pairs
     ret = {
-        "Frac_RA": params["perc_RA"]/100,
+        "Frac_RA": params["perc_RA"] / 100,
         "A_p": area_paved,
     }
     return ret
