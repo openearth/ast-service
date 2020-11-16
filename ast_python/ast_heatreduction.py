@@ -17,7 +17,7 @@ from .geoserver_utils import geoserver_upload_gtif
 
 
 # All utils that are referred to the AST_heatreduction
-def bufferBbox(bbox, size=100):
+def bufferBbox(bbox, size=250):
     return [bbox[0] - size, bbox[1] - size, bbox[2] + size, bbox[3] + size]
 
 
