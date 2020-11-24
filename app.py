@@ -262,6 +262,7 @@ docs.register(ast_calc_heatstress_temperature)
 docs.register(ast_calc_heatstress_waterquality)
 docs.register(ast_calc_heatstress_cost)
 docs.register(maplayers)
+docs.register(mapsetup)
 docs.register(ast_calc_scores)
 docs.register(ast_calc_heatstress_reduction)
 
