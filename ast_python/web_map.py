@@ -36,7 +36,7 @@ partly_resp = {
 def wfs_area_parser(url, layer, area, field, epsg: int = 4326):
     """Parse WFS layer and return field in first intersecting feature with bbox."""
     try:
-        wfs = WebFeatureService(url, version="2.0.0")
+        wfs = WebFeatureService(url, version="2.18.0")
     except Exception as e:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
         return {"errors": "Can't parse url as WFS service.", "value": None}
 
