@@ -33,19 +33,20 @@ partly_resp = {
 }
 
 
-def wfs_area_parser(url, layer, area, field, srs=28992):
+def wfs_area_parser(url, layer, area, field, epsg: int = 4326):
     """Parse WFS layer and return field in first intersecting feature with bbox."""
     try:
-        wfs = WebFeatureService(url, version="2.18.0")
+        wfs = WebFeatureService(url, version="2.0.0")
     except Exception as e:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
         return {"errors": "Can't parse url as WFS service.", "value": None}
 
     geom = shape(area.get("geometry", {}))
     point = geom.centroid
-    bbox = [point.x, point.y, point.x, point.y]
-
+    bbox = [point.x, point.y, point.x + 0.000001, point.y + 0.000001, f"EPSG:{epsg}"]
     response = wfs.getfeature(
-        typename=layer, bbox=bbox, outputFormat="application/json"
+        typename=layer,
+        bbox=bbox,
+        outputFormat="application/json",
     )
     featurecollection = json.loads(response.read())
     for feature in featurecollection.get("features", []):
