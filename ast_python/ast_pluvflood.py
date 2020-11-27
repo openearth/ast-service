@@ -134,7 +134,7 @@ def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioNa
     return ret
 
 
-def pluvflood_param(id, projectArea, area = 0, depth = 0, inflow = 0, returnTime = 0, scenarioName):
+def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
     params_file = join(
         dirname(dirname(realpath(__file__))),
