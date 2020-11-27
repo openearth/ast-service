@@ -112,11 +112,11 @@ def ast_calc_pluvflood_fmeas(**kwargs):
     {
         "scenarioName": fields.Str(required=True),
         "projectArea": fields.Float(required=True),
-        "inflow": fields.Float(required=False),
-        "returnTime": fields.Float(required=False),
-        "area": fields.Float(required=False),
-        "depth": fields.Float(required=False),
-        "id": fields.Int(required=False),
+        "inflow": fields.Float(required=True),
+        "returnTime": fields.Float(required=True),
+        "area": fields.Float(required=True),
+        "depth": fields.Float(required=True),
+        "id": fields.Int(required=True),
     }
 )
 def ast_calc_pluvflood_param(**kwargs):
