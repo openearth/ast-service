@@ -121,6 +121,10 @@ def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioNa
     multiplication_factor = recurrence_a + (recurrence_b - recurrence_a) * (
         effective_depth_mm - effective_depth_a
     ) / (effective_depth_b - effective_depth_a)
+
+    if multiplication_factor <= 0.0001:
+        multiplication_factor = 0.0001
+
     Fmeas_area = inflow * math.log(multiplication_factor)
 
     # API needs key/value pairs
