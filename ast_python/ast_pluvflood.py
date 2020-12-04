@@ -143,7 +143,7 @@ def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioNa
     with open(params_file) as f:
         params = json.load(f)
 
-    area_paved = projectArea * params["perc_paved"]
+    area_paved = projectArea * params["perc_paved"] / 100
 
     # API needs key/value pairs
     ret = {
