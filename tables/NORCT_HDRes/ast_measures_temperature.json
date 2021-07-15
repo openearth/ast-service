@@ -4,6 +4,7 @@
 		"Name": "Adding green in streetscape: grass/herbs",
 		"Value_T": 0.5,
 		"Coolspot_potential": 0,
+		"Range_T": "0.6 tot 1.6",
 		"GreenOrBlue": 1
 	}, {
 		"ID": 2,
@@ -31,6 +32,7 @@
 		"Name": "Bank infiltration",
 		"Value_T": 0,
 		"Coolspot_potential": 0,
+		"Range_T": 0,
 		"GreenOrBlue": 1
 	}, {
 		"ID": 6,
@@ -86,6 +88,7 @@
 		"Name": "Floating  puri-plants (floatlands)",
 		"Value_T": 0,
 		"Coolspot_potential": 0,
+		"Range_T": 0,
 		"GreenOrBlue": 0
 	}, {
 		"ID": 14,
@@ -232,12 +235,14 @@
 		"Name": "Specific seasonal storage facilities (larger ones)",
 		"Value_T": 0,
 		"Coolspot_potential": 0,
+		"Range_T": 0,
 		"GreenOrBlue": 0
 	}, {
 		"ID": 35,
 		"Name": "Surface drains",
 		"Value_T": 0,
 		"Coolspot_potential": 0,
+		"Range_T": 0,
 		"GreenOrBlue": 0
 	}, {
 		"ID": 36,
@@ -258,6 +263,7 @@
 		"Name": "Tree pit bioretention",
 		"Value_T": 1.1,
 		"Coolspot_potential": 1,
+		"Range_T": 4,
 		"GreenOrBlue": 1
 	}, {
 		"ID": 39,
@@ -348,6 +354,7 @@
 		"Name": "Improve soil infiltration capacity",
 		"Value_T": 0,
 		"Coolspot_potential": 0,
+		"Range_T": 0,
 		"GreenOrBlue": 0
 	}, {
 		"ID": 52,
@@ -424,6 +431,7 @@
 		"Name": "Cool paving and building materials",
 		"Value_T": 2,
 		"Coolspot_potential": 0,
+		"Range_T": 2,
 		"GreenOrBlue": 1
 	}, {
 		"ID": 63,
