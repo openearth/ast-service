@@ -42,8 +42,8 @@
 	}, {
 		"ID": 12,
 		"Blue Green measures": "Extra intensive green roof",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 473.6120583,
+		"maint_annual_frac_constr": 18.02272727
 	}, {
 		"ID": 13,
 		"Blue Green measures": "Floating  puri-plants (floatlands)",
@@ -62,8 +62,8 @@
 	}, {
 		"ID": 16,
 		"Blue Green measures": "Green roofs",
-		"construction_m2": 473.6120583,
-		"maint_annual_frac_constr": 18.02272727
+		"construction_m2": 132,
+		"maint_annual_frac_constr": 5
 	}, {
 		"ID": 19,
 		"Blue Green measures": "Create extra surface water (m2)",
