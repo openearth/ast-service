@@ -2,23 +2,23 @@
 	{
 		"ID": 1,
 		"Blue Green measures": "Adding grass/herbs in streetscape",
-		"construction_m2": 30.25,
-		"maint_annual_frac_constr": 3.64
+		"construction_m2": 59.3091464,
+		"maint_annual_frac_constr": 21.62734422
 	}, {
 		"ID": 3,
 		"Blue Green measures": "Adding trees in streetscape",
-		"construction_m2": 12.54,
-		"maint_annual_frac_constr": 0.034
+		"construction_m2": 118.4030146,
+		"maint_annual_frac_constr": 90
 	}, {
 		"ID": 4,
 		"Blue Green measures": "Urban wetland",
-		"construction_m2": 66,
-		"maint_annual_frac_constr": 5.00
+		"construction_m2": 118.4030146,
+		"maint_annual_frac_constr": 33.16363636
 	}, {
 		"ID": 6,
 		"Blue Green measures": "Bioswales (with drainage)",
 		"construction_m2": 82.5,
-		"maint_annual_frac_constr": 1.00
+		"maint_annual_frac_constr": 1
 	}, {
 		"ID": 7,
 		"Blue Green measures": "Fountains, waterfalls, water facades",
@@ -52,18 +52,18 @@
 	}, {
 		"ID": 14,
 		"Blue Green measures": "Green facades",
-		"construction_m2": 3300,
-		"maint_annual_frac_constr": 10.00
+		"construction_m2": 1184.030146,
+		"maint_annual_frac_constr": 10.02525253
 	}, {
 		"ID": 15,
 		"Blue Green measures": "Extensive green roof",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 269.0977604,
+		"maint_annual_frac_constr": 30.83333333
 	}, {
 		"ID": 16,
 		"Blue Green measures": "Green roofs",
-		"construction_m2": 132,
-		"maint_annual_frac_constr": 5.00
+		"construction_m2": 473.6120583,
+		"maint_annual_frac_constr": 18.02272727
 	}, {
 		"ID": 19,
 		"Blue Green measures": "Create extra surface water (m2)",
@@ -77,13 +77,13 @@
 	}, {
 		"ID": 22,
 		"Blue Green measures": "Infiltration field and strips with surface storage",
-		"construction_m2": 66,
-		"maint_annual_frac_constr": 0.83
+		"construction_m2": 215.2782083,
+		"maint_annual_frac_constr": 26.875
 	}, {
 		"ID": 23,
 		"Blue Green measures": "Infiltration trenche",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 419.7925063,
+		"maint_annual_frac_constr": 20.51282051
 	}, {
 		"ID": 24,
 		"Blue Green measures": "Infilttration shafts",
@@ -93,12 +93,12 @@
 		"ID": 25,
 		"Blue Green measures": "Urban forest",
 		"construction_m2": 1.1,
-		"maint_annual_frac_constr": 5.00
+		"maint_annual_frac_constr": 5
 	}, {
 		"ID": 26,
 		"Blue Green measures": "Permeable pavement systems (infiltration)",
-		"construction_m2": 110,
-		"maint_annual_frac_constr": 0.42
+		"construction_m2": 279.8616708,
+		"maint_annual_frac_constr": 1.057692308
 	}, {
 		"ID": 27,
 		"Blue Green measures": "Private green garden",
@@ -107,23 +107,23 @@
 	}, {
 		"ID": 28,
 		"Blue Green measures": "Rainwater retention pond",
-		"construction_m2": 66,
-		"maint_annual_frac_constr": 0.83
+		"construction_m2": 269.0977604,
+		"maint_annual_frac_constr": 1.46
 	}, {
 		"ID": 29,
 		"Blue Green measures": "Rain barrels",
-		"construction_m2": 385,
-		"maint_annual_frac_constr": 0.00
+		"construction_m2": 430.5564167,
+		"maint_annual_frac_constr": 6.875
 	}, {
 		"ID": 30,
 		"Blue Green measures": "Rainwater storage below buildings",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 947.2241167,
+		"maint_annual_frac_constr": 0.3125
 	}, {
 		"ID": 31,
 		"Blue Green measures": "Retention soil filter",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 419.7925063,
+		"maint_annual_frac_constr": 22.56410256
 	}, {
 		"ID": 32,
 		"Blue Green measures": "Storage by creating extra freeboard",
@@ -132,23 +132,23 @@
 	}, {
 		"ID": 33,
 		"Blue Green measures": "Infiltration boxes",
-		"construction_m2": 522.5,
-		"maint_annual_frac_constr": 1.12
+		"construction_m2": 893.4045646,
+		"maint_annual_frac_constr": 1.987951807
 	}, {
 		"ID": 35,
 		"Blue Green measures": "Surface drains",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 5933.605617,
+		"maint_annual_frac_constr": 9.977324263
 	}, {
 		"ID": 36,
 		"Blue Green measures": "Swale",
-		"construction_m2": 82.5,
-		"maint_annual_frac_constr": 1.00
+		"construction_m2": 505.9037896,
+		"maint_annual_frac_constr": 9.361702128
 	}, {
 		"ID": 37,
 		"Blue Green measures": "Systems for rainwater harvesting",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 947.2241167,
+		"maint_annual_frac_constr": 1.875
 	}, {
 		"ID": 39,
 		"Blue Green measures": "Urban agriculture",
@@ -157,33 +157,33 @@
 	}, {
 		"ID": 40,
 		"Blue Green measures": "Water roof",
-		"construction_m2": 257.345,
-		"maint_annual_frac_constr": 0.00
+		"construction_m2": 139.9308354,
+		"maint_annual_frac_constr": 4.230769231
 	}, {
 		"ID": 41,
 		"Blue Green measures": "Water square",
-		"construction_m2": 1815,
+		"construction_m2": 1420.836175,
 		"maint_annual_frac_constr": 0.11
 	}, {
 		"ID": 42,
 		"Blue Green measures": "Green roofs with drainage delay",
 		"construction_m2": 88,
-		"maint_annual_frac_constr": 6.00
+		"maint_annual_frac_constr": 6
 	}, {
 		"ID": 45,
 		"Blue Green measures": "Lower streets",
 		"construction_m2": 33,
-		"maint_annual_frac_constr": 7.50
+		"maint_annual_frac_constr": 7.5
 	}, {
 		"ID": 46,
 		"Blue Green measures": "Storage tank or underground water storage",
 		"construction_m2": 489.5,
-		"maint_annual_frac_constr": 1.60
+		"maint_annual_frac_constr": 1.6
 	}, {
 		"ID": 51,
 		"Blue Green measures": "Improve soil infiltration capacity",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 139.9308354,
+		"maint_annual_frac_constr": 0.423076923
 	}, {
 		"ID": 53,
 		"Blue Green measures": "Use of groundwater (aquifer storage and recovery)",
@@ -207,23 +207,23 @@
 	}, {
 		"ID": 68,
 		"Blue Green measures": "Tree cells",
-		"construction_m2": 1.1,
-		"maint_annual_frac_constr": 5.00
+		"construction_m2": 861.1128333,
+		"maint_annual_frac_constr": 1.7
 	}, {
 		"ID": 70,
 		"Blue Green measures": "Infiltration recreation field",
-		"construction_m2": 66,
-		"maint_annual_frac_constr": 0.83
+		"construction_m2": 32.29173125,
+		"maint_annual_frac_constr": 4.320987654
 	}, {
 		"ID": 71,
 		"Blue Green measures": "Rainwater detention pond (wet pond)",
-		"construction_m2": 44,
-		"maint_annual_frac_constr": 0.50
+		"construction_m2": 129.166925,
+		"maint_annual_frac_constr": 14.70833333
 	}, {
 		"ID": 72,
 		"Blue Green measures": "Bioretention cell",
-		"construction_m2": 0,
-		"maint_annual_frac_constr": 0
+		"construction_m2": 2152.782083,
+		"maint_annual_frac_constr": 3
 	}, {
 		"ID": 73,
 		"Blue Green measures": "Green open space",
@@ -253,7 +253,7 @@
 		"ID": 84,
 		"Blue Green measures": "Drought resistant species",
 		"construction_m2": 30.25,
-		"maint_annual_frac_constr": 0.00
+		"maint_annual_frac_constr": 0
 	}, {
 		"ID": 87,
 		"Blue Green measures": "Quay",
@@ -263,12 +263,12 @@
 		"ID": 88,
 		"Blue Green measures": "Building as levee",
 		"construction_m2": 82.5,
-		"maint_annual_frac_constr": 0.00
+		"maint_annual_frac_constr": 0
 	}, {
 		"ID": 89,
 		"Blue Green measures": "Temporary levee",
 		"construction_m2": 165,
-		"maint_annual_frac_constr": 0.00
+		"maint_annual_frac_constr": 0
 	}, {
 		"ID": 90,
 		"Blue Green measures": "Permeable pavement (storage)",
@@ -288,7 +288,7 @@
 		"ID": 93,
 		"Blue Green measures": "Lowering part of garden",
 		"construction_m2": 27.5,
-		"maint_annual_frac_constr": 4.00
+		"maint_annual_frac_constr": 4
 	}, {
 		"ID": 94,
 		"Blue Green measures": "Urban parks",
