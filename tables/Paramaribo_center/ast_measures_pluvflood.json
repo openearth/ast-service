@@ -1,1 +1,111 @@
-[{"ID":6,"name":"Bioswale","Col1":3.74,"Col2":6.43,"Col3":16.49,"Col4":39.86,"Col5":74.8,"Col6":94.07,"Col7":84.65},{"ID":15,"name":"Extensive green roofs","Col1":1.66,"Col2":2.02,"Col3":2.69,"Col4":3.28,"Col5":3.88,"Col6":4.44,"Col7":6.97},{"ID":22,"name":"Rain garden","Col1":1.8,"Col2":2.37,"Col3":2.94,"Col4":3.34,"Col5":3.65,"Col6":3.78,"Col7":4.02},{"ID":23,"name":"Infiltration trench","Col1":2.38,"Col2":3.87,"Col3":8.48,"Col4":16.26,"Col5":26.35,"Col6":44.73,"Col7":55.45},{"ID":28,"name":"Rainwater retention pond","Col1":1.51,"Col2":1.93,"Col3":2.63,"Col4":3.18,"Col5":3.68,"Col6":4.16,"Col7":6.02},{"ID":40,"name":"Water roof","Col1":1.13,"Col2":1.3,"Col3":1.56,"Col4":1.72,"Col5":1.83,"Col6":1.92,"Col7":2.14},{"ID":45,"name":"Hollow roads","Col1":1.13,"Col2":1.3,"Col3":1.56,"Col4":1.72,"Col5":1.83,"Col6":1.92,"Col7":2.14},{"ID":72,"name":"Bioretention cell","Col1":1.7,"Col2":2.3,"Col3":2.9,"Col4":3.31,"Col5":3.6,"Col6":3.78,"Col7":4.02},{"ID":90,"name":"Permeable parking","Col1":1.89,"Col2":2.59,"Col3":4.12,"Col4":5.08,"Col5":5.99,"Col6":6.72,"Col7":7.71}]
+[
+	{
+		"ID": 6,
+		"name": "Bioswale",
+		"Col0": 0,
+		"Col1": 3.74,
+		"Col2": 6.43,
+		"Col3": 16.49,
+		"Col4": 39.86,
+		"Col5": 74.8,
+		"Col6": 94.07,
+		"Col7": 84.65,
+		"Col8": 84.65
+	}, {
+		"ID": 15,
+		"name": "Extensive green roofs",
+		"Col0": 0,
+		"Col1": 1.66,
+		"Col2": 2.02,
+		"Col3": 2.69,
+		"Col4": 3.28,
+		"Col5": 3.88,
+		"Col6": 4.44,
+		"Col7": 6.97,
+		"Col8": 6.97
+	}, {
+		"ID": 22,
+		"name": "Rain garden",
+		"Col0": 0,
+		"Col1": 1.8,
+		"Col2": 2.37,
+		"Col3": 2.94,
+		"Col4": 3.34,
+		"Col5": 3.65,
+		"Col6": 3.78,
+		"Col7": 4.02,
+		"Col8": 4.02
+	}, {
+		"ID": 23,
+		"name": "Infiltration trench",
+		"Col0": 0,
+		"Col1": 2.38,
+		"Col2": 3.87,
+		"Col3": 8.48,
+		"Col4": 16.26,
+		"Col5": 26.35,
+		"Col6": 44.73,
+		"Col7": 55.45,
+		"Col8": 55.45
+	}, {
+		"ID": 28,
+		"name": "Rainwater retention pond",
+		"Col0": 0,
+		"Col1": 1.51,
+		"Col2": 1.93,
+		"Col3": 2.63,
+		"Col4": 3.18,
+		"Col5": 3.68,
+		"Col6": 4.16,
+		"Col7": 6.02,
+		"Col8": 6.02
+	}, {
+		"ID": 40,
+		"name": "Water roof",
+		"Col0": 0,
+		"Col1": 1.13,
+		"Col2": 1.3,
+		"Col3": 1.56,
+		"Col4": 1.72,
+		"Col5": 1.83,
+		"Col6": 1.92,
+		"Col7": 2.14,
+		"Col8": 2.14
+	}, {
+		"ID": 45,
+		"name": "Hollow roads",
+		"Col0": 0,
+		"Col1": 1.13,
+		"Col2": 1.3,
+		"Col3": 1.56,
+		"Col4": 1.72,
+		"Col5": 1.83,
+		"Col6": 1.92,
+		"Col7": 2.14,
+		"Col8": 2.14
+	}, {
+		"ID": 72,
+		"name": "Bioretention cell",
+		"Col0": 0,
+		"Col1": 1.7,
+		"Col2": 2.3,
+		"Col3": 2.9,
+		"Col4": 3.31,
+		"Col5": 3.6,
+		"Col6": 3.78,
+		"Col7": 4.02,
+		"Col8": 4.02
+	}, {
+		"ID": 90,
+		"name": "Permeable parking",
+		"Col0": 0,
+		"Col1": 1.89,
+		"Col2": 2.59,
+		"Col3": 4.12,
+		"Col4": 5.08,
+		"Col5": 5.99,
+		"Col6": 6.72,
+		"Col7": 7.71,
+		"Col8": 7.71
+	}
+]

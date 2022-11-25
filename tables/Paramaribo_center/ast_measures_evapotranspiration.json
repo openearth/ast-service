@@ -1,1 +1,111 @@
-[{"ID":6,"name":"Bioswale","Col1":4.72,"Col2":4.77,"Col3":4.76,"Col4":4.72,"Col5":4.77,"Col6":4.78,"Col7":4.78},{"ID":15,"name":"Extensive green roofs","Col1":249.4,"Col2":302.74,"Col3":365.48,"Col4":401.83,"Col5":426.58,"Col6":443.87,"Col7":488.38},{"ID":22,"name":"Rain garden","Col1":3.27,"Col2":3.93,"Col3":4.46,"Col4":4.65,"Col5":4.74,"Col6":4.77,"Col7":4.8},{"ID":23,"name":"Infiltration trench","Col1":-2.03,"Col2":-2.01,"Col3":-2.07,"Col4":-2.08,"Col5":-2.08,"Col6":-2.09,"Col7":-2.09},{"ID":28,"name":"Rainwater retention pond","Col1":-1.85,"Col2":-1.81,"Col3":-1.76,"Col4":-1.74,"Col5":-1.72,"Col6":-1.71,"Col7":-1.67},{"ID":40,"name":"Water roof","Col1":65.32,"Col2":125.33,"Col3":189.68,"Col4":221.96,"Col5":241.23,"Col6":254.39,"Col7":285.7},{"ID":45,"name":"Hollow roads","Col1":29.94,"Col2":57.44,"Col3":86.94,"Col4":101.73,"Col5":110.56,"Col6":116.59,"Col7":130.94},{"ID":72,"name":"Bioretention cell","Col1":2.91,"Col2":3.8,"Col3":4.43,"Col4":4.64,"Col5":4.73,"Col6":4.77,"Col7":4.8},{"ID":90,"name":"Permeable parking","Col1":2.38,"Col2":2.44,"Col3":2.5,"Col4":2.52,"Col5":2.53,"Col6":2.54,"Col7":2.54}]
+[
+	{
+		"ID": 6,
+		"name": "Bioswale",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 0.34,
+		"Col3": 0.58,
+		"Col4": 0.78,
+		"Col5": 0.85,
+		"Col6": 0.88,
+		"Col7": 0.89,
+		"Col8": 0.9
+	}, {
+		"ID": 15,
+		"name": "Extensive green roofs",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 81.65,
+		"Col3": 105.05,
+		"Col4": 132.74,
+		"Col5": 149.27,
+		"Col6": 160.36,
+		"Col7": 168.25,
+		"Col8": 188.86
+	}, {
+		"ID": 22,
+		"name": "Infiltration fields and strips with surface storage",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 0.11,
+		"Col3": 0.35,
+		"Col4": 0.62,
+		"Col5": 0.79,
+		"Col6": 0.88,
+		"Col7": 0.94,
+		"Col8": 1.05
+	}, {
+		"ID": 23,
+		"name": "Infiltration trench",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 0.02,
+		"Col3": 0.16,
+		"Col4": 0.29,
+		"Col5": 0.35,
+		"Col6": 0.37,
+		"Col7": 0.38,
+		"Col8": 0.39
+	}, {
+		"ID": 28,
+		"name": "Rainwater retention pond",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 0.11,
+		"Col3": 0.35,
+		"Col4": 0.62,
+		"Col5": 0.79,
+		"Col6": 0.88,
+		"Col7": 0.94,
+		"Col8": 1.05
+	}, {
+		"ID": 40,
+		"name": "Water roof",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 33.84,
+		"Col3": 62.21,
+		"Col4": 92.98,
+		"Col5": 110.31,
+		"Col6": 121.52,
+		"Col7": 129.62,
+		"Col8": 148.99
+	}, {
+		"ID": 45,
+		"name": "Hollow roads",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 18.2,
+		"Col3": 22.98,
+		"Col4": 26.32,
+		"Col5": 27.55,
+		"Col6": 28.09,
+		"Col7": 28.35,
+		"Col8": 28.63
+	}, {
+		"ID": 72,
+		"name": "Bioretention cell",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": 0.36,
+		"Col3": 0.45,
+		"Col4": 0.5,
+		"Col5": 0.5,
+		"Col6": 0.5,
+		"Col7": 0.5,
+		"Col8": 0.5
+	}, {
+		"ID": 90,
+		"name": "Permeable pavement (storage)",
+		"Col0": 607.16,
+		"Col1": 0,
+		"Col2": -2.91,
+		"Col3": -2.7,
+		"Col4": -2.5,
+		"Col5": -2.41,
+		"Col6": -2.36,
+		"Col7": -2.33,
+		"Col8": -2.3
+	}
+]
