@@ -151,3 +151,65 @@ def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioNa
         "A_p": area_paved,
     }
     return ret
+
+def pluvflood_v2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+    # Data file
+    records_file = join(
+        dirname(dirname(realpath(__file__))),
+        "tables/" + scenarioName + "/ast_measures_pluvflood.json",
+    )
+    record = find_record(id, records_file)
+    params_file = join(
+        dirname(dirname(realpath(__file__))),
+        "tables/" + scenarioName + "/ast_pluvflood_param.json",
+    )
+    with open(params_file) as f:
+        params = json.load(f)
+        
+    # check for too small inflow areas
+    if inflow <= 0.01:
+        inflow = 0.01
+    storage_capacity = area * depth
+    effective_depth = storage_capacity / inflow  # [m]
+    effective_depth_mm = effective_depth * 1000.0
+    effective_depth_list = [
+        0.0,
+        5.0,
+        10.0,
+        20.0,
+        30.0,
+        40.0,
+        50.0,
+        100.0,
+        1.00e12,
+    ]
+
+    for i in range(len(effective_depth_list)):
+        if effective_depth_list[i] <= effective_depth_mm:
+            index_a = i
+            index_b = i + 1
+            effective_depth_a = effective_depth_list[index_a]
+            effective_depth_b = effective_depth_list[index_b]
+        else:
+            break
+
+    recurrence_a = float(record[f"Col{index_a}"])
+    recurrence_b = float(record[f"Col{index_b}"])
+
+    multiplication_factor = recurrence_a + (recurrence_b - recurrence_a) * (
+        effective_depth_mm - effective_depth_a
+    ) / (effective_depth_b - effective_depth_a)
+
+    #different implementation starts here
+    area_paved = projectArea * params["perc_paved"] / 100
+    frac_RA = params["perc_RA"] / 100
+    
+    Fmeas_area = inflow * math.log(multiplication_factor)
+    
+    Ftot =  np.round(
+                ((area_paved * np.exp(Fmeas_area / area_paved)) + frac_RA * (projectArea - area_paved))
+                / (area_paved + frac_RA * (projectArea - area_paved)),2)
+
+    # API needs key/value pairs
+    ret = {"returnTime": Ftot}
+    return ret
