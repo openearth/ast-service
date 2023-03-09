@@ -84,7 +84,7 @@ def pluvflood(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     return ret
 
 
-def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+def pluvflood_fmeas_old(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
     records_file = join(
         dirname(dirname(realpath(__file__))),
@@ -152,7 +152,7 @@ def pluvflood_param(id, projectArea, area, depth, inflow, returnTime, scenarioNa
     }
     return ret
 
-def pluvflood_v2(id, projectArea, area, depth, inflow, returnTime, scenarioName):
+def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioName):
     # Data file
     records_file = join(
         dirname(dirname(realpath(__file__))),
