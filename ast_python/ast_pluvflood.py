@@ -206,10 +206,10 @@ def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioNa
     
     Fmeas_area = inflow * math.log(multiplication_factor)
     
-    Ftot =    ((area_paved * np.exp(Fmeas_area / area_paved)) + frac_RA * (projectArea - area_paved))
-                / (area_paved + frac_RA * (projectArea - area_paved))
+    Ftot = np.around(((area_paved * np.exp(Fmeas_area / area_paved)) + frac_RA * (projectArea - area_paved)) / (area_paved + frac_RA * (projectArea - area_paved)), decimals=4)
 
     # API needs key/value pairs
-    ret = {"Fmeas_area": Ftot,
+    ret = {
+        "Fmeas_area": Ftot,
     }
     return ret
