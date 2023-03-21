@@ -211,5 +211,5 @@ def pluvflood_fmeas(id, projectArea, area, depth, inflow, returnTime, scenarioNa
                 / (area_paved + frac_RA * (projectArea - area_paved)),2)
 
     # API needs key/value pairs
-    ret = {"returnTime": Ftot}
+    ret = {"Fmeas_area": Ftot}
     return ret
