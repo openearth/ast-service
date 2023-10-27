@@ -10,8 +10,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 8,
 		"name": "Cooling with water elements: ponds",
@@ -23,8 +22,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 13,
 		"name": "Floating  puri-plants (floatlands)",
@@ -36,8 +34,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 14,
 		"name": "Groene gevels",
@@ -49,8 +46,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 57,
 		"name": "Slim beregeningsbeleid/smart irrigation",
@@ -62,8 +58,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 61,
 		"name": "Wetting surfaces (of gardens, roofs, roads)",
@@ -75,8 +70,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 62,
 		"name": "Koele materialen (hoge albedo)",
@@ -88,8 +82,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 80,
 		"name": "Creeren van schaduw",
@@ -101,8 +94,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 81,
 		"name": "Dijken",
@@ -114,8 +106,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 83,
 		"name": "Kades (lage dijkjes)",
@@ -127,8 +118,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 84,
 		"name": "Droogtebestendige planten en bomen",
@@ -140,8 +130,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 86,
 		"name": "Superdijk (komt te vervallen)",
@@ -153,8 +142,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 87,
 		"name": "Kademuur",
@@ -166,8 +154,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 88,
 		"name": "Gebouw als waterkering",
@@ -179,8 +166,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 89,
 		"name": "Tijdelijke kering",
@@ -192,8 +178,7 @@
 		"Col5": 0,
 		"Col6": 0,
 		"Col7": 0,
-		"Col8": 0,
-		"Col9": 0
+		"Col8": 0
 	}, {
 		"ID": 3,
 		"name": "Adding trees to streetscape",
