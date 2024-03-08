@@ -1,0 +1,29 @@
+---
+# TODO Either do an svn checkout, or delete files first
+# Or do rsync
+- name: Copy file with owner and permissions
+  synchronize:
+    src: "{{ playbook_dir }}/../"
+    dest: /opt/ast/
+    archive: true
+    delete: true
+
+- name: Set correct permissions
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: pywps
+    group: pywps
+    mode: 0755
+    recurse: true
+  with_items:
+    - /opt/ast/
+  tags:
+    - pywps
+    - conf
+
+- name: Create Conda environment from environment file.
+  command: "/opt/bin/micromamba create --file /opt/ast/ast_environment.yml -y -p /opt/venv"
+  tags:
+    - pywps
+    - conda

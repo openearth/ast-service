@@ -44,6 +44,7 @@ CORS(application)
 
 application.register_blueprint(error_handler)
 
+
 # /
 @application.route("/")
 def empty_view():

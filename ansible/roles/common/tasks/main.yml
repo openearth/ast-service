@@ -1,0 +1,24 @@
+---
+- name: Install common packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - mc
+    - htop
+    - tar
+    - gzip
+    - bzip2
+    - gcc
+  tags:
+    - common
+
+- name: Add service group
+  group:
+    name: "pywps"
+    state: present
+
+- name: Add service user
+  user:
+    name: "pywps"
+    group: "pywps"

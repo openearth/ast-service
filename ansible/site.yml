@@ -1,0 +1,8 @@
+---
+- name: Install AST
+  hosts: all
+  roles:
+    - common
+    - micromamba
+    - deploy
+    - uwsgi

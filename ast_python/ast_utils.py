@@ -3,7 +3,7 @@ import configparser
 import json
 import os
 import tempfile
-from os.path import abspath, dirname, join, realpath
+from os.path import dirname, join, realpath
 
 import osgeo.ogr as ogr
 import osgeo.osr as osr

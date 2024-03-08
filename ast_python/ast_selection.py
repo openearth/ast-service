@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import json
-import logging
 from os.path import dirname, join, realpath
 
 import numpy as np

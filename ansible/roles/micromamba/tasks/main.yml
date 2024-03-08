@@ -1,0 +1,27 @@
+---
+- name: Create folders used by PyWPS and set owner
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: pywps
+    group: pywps
+    mode: 0755
+  with_items:
+    - /opt
+  tags:
+    - pywps
+    - conf
+
+- name: Unarchive micromamba
+  ansible.builtin.unarchive:
+    src: https://micro.mamba.pm/api/micromamba/linux-64/latest
+    dest: /opt
+    remote_src: yes
+    include:
+      - bin/micromamba
+    creates: /opt/bin/micromamba
+
+- name: Changing perm of "/foo/bar.sh", adding "+x"
+  file:
+    dest: /opt/bin/micromamba
+    mode: a+x

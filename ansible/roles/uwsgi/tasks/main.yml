@@ -1,0 +1,85 @@
+---
+- name: Install common packages
+  ansible.legacy.package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - nginx
+  tags:
+    - common
+
+- name: Create folders used by PyWPS and set owner
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: pywps
+    group: pywps
+    mode: 0755
+  with_items:
+    - /etc/uwsgi
+    - /etc/uwsgi/vassals
+  tags:
+    - pywps
+    - conf
+
+- name: Create folders used by PyWPS and set owner
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: pywps
+    group: nginx
+    mode: 0775
+  with_items:
+    - /var/log/uwsgi
+    - /var/run/uwsgi/
+  tags:
+    - pywps
+    - conf
+
+- name: Copy uwsgi service
+  template:
+    src: ./templates/uwsgi.service.j2
+    dest: "/etc/systemd/system/uwsgi.service"
+  tags:
+    - pywps
+    - conf
+
+- name: Copy nginx config to remote
+  template:
+    src: ./templates/uwsgi.conf.j2
+    dest: "/etc/nginx/conf.d/uwsgi.conf"
+  tags:
+    - pywps
+    - conf
+
+- name: Copy uwsgi config
+  template:
+    src: ./templates/emperor.ini.j2
+    dest: "/etc/uwsgi/emperor.ini"
+  tags:
+    - pywps
+    - conf
+
+- name: Copy uwsgi config vassal
+  template:
+    src: ./templates/pywps_uwsgi.ini.j2
+    dest: "/etc/uwsgi/vassals/pywps_uwsgi.ini"
+  tags:
+    - pywps
+    - conf
+
+- name: Just force systemd to reread configs (2.4 and above)
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+
+- name: Enable and start uwsgi
+  ansible.builtin.systemd_service:
+    name: uwsgi
+    state: restarted
+    enabled: true
+
+- name: Enable and start nginx
+  ansible.builtin.systemd_service:
+    name: nginx
+    state: restarted
+    enabled: true

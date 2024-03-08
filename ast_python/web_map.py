@@ -3,7 +3,7 @@ import logging
 from urllib.parse import unquote, urlencode, urlparse
 
 import requests
-from owslib.util import ServiceException, bind_url
+from owslib.util import bind_url
 from owslib.wfs import WebFeatureService
 from owslib.wms import WebMapService
 from owslib.wmts import WebMapTileService
@@ -37,7 +37,7 @@ def wfs_area_parser(url, layer, area, field, epsg: int = 4326):
     """Parse WFS layer and return field in first intersecting feature with bbox."""
     try:
         wfs = WebFeatureService(url, version="2.0.0")
-    except Exception as e:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
+    except Exception:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
         return {"errors": "Can't parse url as WFS service.", "value": None}
 
     geom = shape(area.get("geometry", {}))
@@ -115,7 +115,7 @@ def wms_layers(url):
 
     try:
         wms = WebMapService(url, version="1.1.1")
-    except Exception as e:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
+    except Exception:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
         return {"errors": "Can't parse url as WMS service.", "layers": []}
 
     layers = []
@@ -173,7 +173,7 @@ def wmts_layers(url, rest=True):
     """Retrieve layers from WMS url."""
     try:
         wmts = WebMapTileService(url, version="1.0.0")
-    except Exception as e:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
+    except Exception:  # OWSLIB will fail hard on random urls as it expects at least parsable xml
         return {"errors": "Can't parse url as WMTS service.", "layers": []}
 
     layers = []
@@ -234,7 +234,7 @@ def arcgis_exporttiles_layers(url):
     template = "export?bbox={{bbox-epsg-3857}}&bboxSR=EPSG%3A3857&layers=show:{}&size=256,256&imageSR=EPSG%3A3857&format=png&transparent=true&dpi=&f=image"
     try:
         mapserver = requests.get(url + "?f=pjson").json()
-    except Exception as e:
+    except Exception:
         return {
             "errors": "Can't parse url as ARCGIS export tiles service.",
             "layers": [],

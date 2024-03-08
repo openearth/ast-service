@@ -1,0 +1,21 @@
+[uwsgi]
+
+# PyWPS related settings
+chdir           = /opt/ast
+wsgi-file       = wsgi.py
+home            = /opt/venv
+logto           = /var/log/uwsgi/pywps.log
+
+# UWSGI related settings
+processes       = 4
+socket          = /var/run/uwsgi/uwsgi.sock
+chmod-socket    = 664
+vacuum          = true
+enable-threads  = true
+uid             = ast
+gid             = nginx
+max-requests    = 100
+
+# Stats
+stats           = :1717
+stats-http      = true

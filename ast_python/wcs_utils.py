@@ -28,19 +28,9 @@
 
 # Adapted from RI2DE
 
-import logging
-import math
-import os
-import string
-import tempfile
-from random import choice
 
 import numpy as np
-import simplejson as json
-from osgeo import gdal
 from owslib.wcs import WebCoverageService
-from pyproj import Proj, transform
-from scipy.ndimage import map_coordinates
 from shapely import wkt
 
 

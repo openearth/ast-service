@@ -1,7 +1,7 @@
 import configparser
 import os
 import shutil
-from os.path import abspath, dirname, join, realpath
+from os.path import dirname, join, realpath
 import logging
 from geoserver.catalog import Catalog
 

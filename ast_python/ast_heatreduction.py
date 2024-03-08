@@ -2,15 +2,12 @@ import json
 import logging
 import os
 import time
-from os.path import abspath, dirname, join, realpath
 
 import geopandas as gpd
 import numpy as np
 import pandas as pd
-from geopandas import GeoSeries
 from osgeo import gdal
 from rasterstats import zonal_stats
-from shapely.geometry import box
 
 from .ast_utils import *
 from .geoserver_utils import geoserver_upload_gtif
@@ -61,7 +58,7 @@ def extract_layers(geojson, measures):
                 )
                 buffered_layers.loc[index, "geometry"] = buffered_layer.geometry
 
-            except Exception as e:
+            except Exception:
                 logging.exception("Buffering layer didn't work")
                 buffered_layer.geometry = buffered_layer.geometry.buffer(1)
         if layer.geometry.geom_type == "LineString":
@@ -71,7 +68,7 @@ def extract_layers(geojson, measures):
                     float(buffered_layer.areaWidth)
                 )
                 buffered_layers.loc[index, "geometry"] = buffered_layer.geometry
-            except Exception as e:
+            except Exception:
                 logging.exception("Buffering layer didn't work")
                 buffered_layer.geometry = buffered_layer.geometry.buffer(5)
 
@@ -182,7 +179,7 @@ def ast_heatreduction(collection):
     # get the reduct layers from the geojson
     try:
         reductLayers = extract_layers(reprojgdf, measures)
-    except Exception as e:
+    except Exception:
         res = json.dumps({"error_html": "Please provide meausures and try again"})
         return res
 

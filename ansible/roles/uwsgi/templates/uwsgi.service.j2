@@ -1,0 +1,19 @@
+[Unit]
+Description=uWSGI instance to serve PyWPS4 processes
+After=syslog.target
+
+[Service]
+User=ast
+Group=nginx
+WorkingDirectory=/opt/venv
+Environment=PYTHONHOME=/opt/venv
+ExecStart=/opt/venv/bin/uwsgi --ini /etc/uwsgi/emperor.ini
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+StandardError=syslog
+RuntimeDirectory=uwsgi
+
+[Install]
+WantedBy=multi-user.target
