@@ -40,7 +40,7 @@ application.config.update(
     }
 )
 docs = FlaskApiSpec(application)
-CORS(application)
+#CORS(application)
 
 application.register_blueprint(error_handler)
 

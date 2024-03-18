@@ -84,7 +84,6 @@ def makeTempDir(dir):
 
 # geodataframe to shapeflie
 def gdf_to_shp(gdf, layername, dir, fieldName=None):
-
     features = gdf.copy()
     # create an output datasouce in memory
     driver = ogr.GetDriverByName("ESRI Shapefile")
