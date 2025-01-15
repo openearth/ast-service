@@ -4,7 +4,7 @@
 		"Name": "Adding green in streetscape: grass/herbs",
 		"Value_T": 0.5,
 		"Coolspot_potential": 0,
-		"Range_T": "?",
+		"Range_T": 1,
 		"GreenOrBlue": 1
 	}, {
 		"ID": 2,
