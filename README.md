@@ -8,6 +8,9 @@ When rolled out, it should be live at https://ast-backend.deltares.nl.
 ## Installation
 Ideally you use something like `micromamba` to create a new environment and install the dependencies from the `ast_environment.yml` file with `micromamba create -n ast --file ast_environment.yml`.
 
+## Setting
+Rename the config.txt.example to config.txt and fill it in before running.
+
 ## Running
 When installed and in the right environment (`micromamba activate ast`), you should be able to run `python app.py` and have a live server to test with.
 

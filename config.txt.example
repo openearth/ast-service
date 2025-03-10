@@ -1,0 +1,10 @@
+[Directories]
+temp_dir = 
+json_dir = 
+[GeoServer]
+ows_url = 
+ows_public_url = 
+rest_url = 
+user = 
+pass = 
+layername = 
