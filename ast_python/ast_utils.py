@@ -3,7 +3,8 @@ import configparser
 import json
 import os
 import tempfile
-from os.path import dirname, join, realpath
+import logging
+from pathlib import Path
 
 import osgeo.ogr as ogr
 import osgeo.osr as osr
@@ -36,14 +37,12 @@ def find_record(identifier, filename):
 # read configuration file
 def read_config():
     # Default config file (relative path)
-    cfile = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../config.txt")
+    cfile = Path(__file__).absolute().parent.parent /  "config.txt"
     cf = configparser.RawConfigParser()
     cf.read(cfile)
 
-    temp_dir = join(dirname(realpath(__file__)), cf.get("Directories", "temp_dir"))
-    json_dir = join(
-        dirname(realpath(__file__)), cf.get("Directories", "json_dir")
-    )  # gives the absolute path of the  dir
+    temp_dir = Path(__file__).absolute().parent.parent / cf.get("Directories", "temp_dir")
+    json_dir = Path(__file__).absolute().parent.parent / cf.get("Directories", "json_dir") # gives the absolute path of the  dir
 
     ows_url = cf.get("GeoServer", "ows_url")
     ows_url = cf.get("GeoServer", "ows_url")
@@ -78,7 +77,7 @@ def cut_wcs(xst, yst, xend, yend, layername, owsurl, outfname, crs=4326, all_box
 
 def makeTempDir(dir):
     # Temporary folder setup
-    tmpdir = tempfile.mkdtemp(dir=dir)
+    tmpdir = tempfile.mkdtemp(dir=dir, )
     return tmpdir
 
 

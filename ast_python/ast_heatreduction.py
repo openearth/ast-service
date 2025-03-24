@@ -9,7 +9,14 @@ import pandas as pd
 from osgeo import gdal
 from rasterstats import zonal_stats
 
-from .ast_utils import *
+from .ast_utils import (
+    makeTempDir,
+    cut_wcs,
+    read_config,
+    gdf_to_shp,
+    rasterize,
+    write_array_grid,
+)
 from .geoserver_utils import geoserver_upload_gtif
 
 
@@ -37,7 +44,6 @@ def extract_bbox(gdf):
 
 # returns lines, polygons, points.
 def extract_layers(geojson, measures):
-
     # extract all the geomtypes of the geojson
     geom_types = geojson.geometry.geom_type
     # drop the row of the project area
@@ -51,7 +57,6 @@ def extract_layers(geojson, measures):
     for index, layer in buffered_layers.iterrows():
         buffered_layer = layer.copy()
         if layer.geometry.geom_type == "Point":
-
             try:
                 buffered_layer.geometry = buffered_layer.geometry.buffer(
                     float(buffered_layer.areaRadius)
@@ -63,7 +68,6 @@ def extract_layers(geojson, measures):
                 buffered_layer.geometry = buffered_layer.geometry.buffer(1)
         if layer.geometry.geom_type == "LineString":
             try:
-
                 buffered_layer.geometry = buffered_layer.geometry.buffer(
                     float(buffered_layer.areaWidth)
                 )
@@ -114,8 +118,7 @@ def wcs_2_array(
 
 
 # main
-def ast_heatreduction(collection):
-
+def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
     # read the configuration
     (
         tmp,
@@ -127,6 +130,7 @@ def ast_heatreduction(collection):
         layer,
         ows_public_url,
     ) = read_config()
+
     gdf = gpd.GeoDataFrame.from_features(collection["features"])
     # read measures table
     measures_fname = "ast_measures_heatstress.json"
@@ -135,9 +139,11 @@ def ast_heatreduction(collection):
     # reproject
     reprojgdf = gdf.copy()
     reprojgdf.crs = {"init": "epsg:4326"}
-    reprojgdf = reprojgdf.to_crs("EPSG:28992")
+    utm_crs = reprojgdf.estimate_utm_crs()
+    reprojgdf = reprojgdf.to_crs(utm_crs)
     # get the bounding box from the geojson and buffer it
     bbox = extract_bbox(reprojgdf)
+    
     # make tempdir & unique id every time
     caseTmpDir = makeTempDir(tmp)
     unique_id = int(1000000 * time.time())
@@ -153,7 +159,7 @@ def ast_heatreduction(collection):
         "PET_current.tif",
         bbox,
         projectArea,
-        "NKWK:PET_current",
+        PETCurrentLayerName,  # "NKWK:PET_current",
         owsurl,
         "PET_current_cut_",
         unique_id,
@@ -167,7 +173,7 @@ def ast_heatreduction(collection):
         "PET_potential.tif",
         bbox,
         projectArea,
-        "NKWK:PET_potential",
+        PETPotentialLayerName,  # "NKWK:PET_potential",
         owsurl,
         "PET_potential_cut_",
         unique_id,
@@ -223,7 +229,6 @@ def ast_heatreduction(collection):
     # diffStats = list(np.array(newStats) - np.array(potenStats))
 
     # prepare response
-
 
     response = {
         "layers": [

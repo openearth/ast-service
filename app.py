@@ -4,11 +4,12 @@ import os
 # FLASK
 from apispec import APISpec
 from apispec.ext.marshmallow import MarshmallowPlugin
-from flask import Flask, jsonify, redirect, request, url_for
+from flask import Flask, jsonify, redirect, request, url_for, abort
 from flask_apispec import use_kwargs
 from flask_apispec.extension import FlaskApiSpec
 from flask_cors import CORS
 from webargs import fields
+
 
 from ast_python.ast_evapotranspiration import evapotranspiration_dict
 from ast_python.ast_groundwater_recharge import groundwater_recharge_dict
@@ -27,6 +28,7 @@ from errors import error_handler
 
 # FLASK app
 application = Flask(__name__)
+# CORS(application)
 application.config.update(
     {
         "APISPEC_SPEC": APISpec(
@@ -40,7 +42,7 @@ application.config.update(
     }
 )
 docs = FlaskApiSpec(application)
-#CORS(application)
+# CORS(application)
 
 application.register_blueprint(error_handler)
 
@@ -205,14 +207,21 @@ def ast_calc_heatstress_cost(**kwargs):
     return {"result": res}
 
 
-# heatreduction
-# /api/heatstress/reduction
-@application.route("/api/heatstress/reduction", methods=["GET", "POST"])
-def ast_calc_heatstress_reduction():
-    req = request.get_json()
-    collection = req.get("data")
-    res = ast_heatreduction(collection)
-    return jsonify(res)
+@application.route("/api/heatstress/reduction", methods=["POST"])
+@use_kwargs(
+    {
+        "data": fields.Dict(required=True, metadata={"location": "json"}),
+        "PETCurrentLayerName": fields.Str(required=False,load_default="NKWK:PET_current"),
+        "PETPotentialLayerName": fields.Str(required=False,load_default="NKWK:PET_potential"),
+    },
+)
+def ast_calc_heatstress_reduction(data, PETCurrentLayerName, PETPotentialLayerName):
+    if request.is_json:
+        req = request.get_json()
+        collection = req.get("data")
+        res = ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName)
+        return jsonify(res)
+    abort(400)
 
 
 # /api/scores
