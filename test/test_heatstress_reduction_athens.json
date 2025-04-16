@@ -1,0 +1,99 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"id": "5d90d95671229d0864b5c6036ed02916",
+			"type": "Feature",
+			"properties": {
+				"name": "Area-1",
+				"hidden": false,
+				"apiData": {
+					"constructionCost": 844538.100954152,
+					"maintenanceCost": 45689.51126161962,
+					"coolSpot": 1,
+					"tempReduction": 0.3241049798719172,
+					"captureUnit": 0,
+					"filteringUnit": 0,
+					"settlingUnit": 0,
+					"Fmeas_area": 0,
+					"groundwater_recharge": 0,
+					"evapotranspiration": 0,
+					"storageCapacity": 20598.49026717444
+				},
+				"measure": "80",
+				"color": "#E20E0E",
+				"defaultInflow": 1,
+				"defaultDepth": 1,
+				"defaultWidth": 2,
+				"defaultRadius": 1,
+				"areaInflow": 1,
+				"areaDepth": 1,
+				"areaWidth": 2,
+				"areaRadius": 1,
+				"area": 20598.49026717444
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							23.725981091886013,
+							37.98454183314222
+						],
+						[
+							23.72754992711637,
+							37.98321482452597
+						],
+						[
+							23.72751166284229,
+							37.985295804619525
+						],
+						[
+							23.72636373462481,
+							37.98538628067571
+						],
+						[
+							23.725981091886013,
+							37.98454183314222
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		},
+		{
+			"id": "3b1290207ca6896c4ba831ede50b5061",
+			"type": "Feature",
+			"properties": {
+				"area": 181131.73479977692,
+				"isProjectArea": true
+			},
+			"geometry": {
+				"coordinates": [
+					[
+						[
+							23.72488341307357,
+							37.986084310612426
+						],
+						[
+							23.724368428942512,
+							37.98274409791486
+						],
+						[
+							23.730119085070896,
+							37.98198301552348
+						],
+						[
+							23.73007616972646,
+							37.98535708737772
+						],
+						[
+							23.72488341307357,
+							37.986084310612426
+						]
+					]
+				],
+				"type": "Polygon"
+			}
+		}
+	]
+}
