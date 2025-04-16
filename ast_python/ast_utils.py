@@ -70,7 +70,8 @@ def cut_wcs(xst, yst, xend, yend, layername, owsurl, outfname, crs=4326, all_box
     linestr = "LINESTRING ({} {}, {} {})".format(xst, yst, xend, yend)
     l = LS(linestr, crs, owsurl, layername)
     l.line()
-    l.getraster(outfname, all_box=all_box)
+    crs = f"EPSG:{crs}"
+    l.getraster(outfname, crs=crs, all_box=all_box)
     l = None
     logging.info("Writing: {}".format(outfname))
 
@@ -92,7 +93,7 @@ def gdf_to_shp(gdf, layername, dir, fieldName=None):
     # open the memory data source with writing access
     logging.info("Writing: {}".format(shpfile))
     srs = osr.SpatialReference()
-    srs.ImportFromEPSG(28992)
+    srs.ImportFromEPSG(4326)
     layer = source.CreateLayer(layername, srs, ogr.wkbPolygon)
 
     layer.CreateField(ogr.FieldDefn(fieldName, ogr.OFTInteger64))

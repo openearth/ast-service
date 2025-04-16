@@ -54,13 +54,15 @@ class WCS:
         self.width = self.cx
         self.height = self.cy
 
-    def getw(self, fn):
+    def getw(self, fn, crs):
         """Downloads raster and returns filename of written GEOTIFF in the tmp dir."""
+        print("wcs crs: ", self.crs)
+        print("bbox: ",self.bbox)
         gc = self.wcs.getCoverage(
             identifier=self.id,
             bbox=self.bbox,
             format="GeoTIFF",
-            crs=self.crs,
+            crs=crs,
             width=self.width,
             height=self.height,
         )
@@ -189,7 +191,7 @@ class LS:
             num=self.subdiv,
         )
 
-    def getraster(self, fname, all_box=False):
+    def getraster(self, fname, crs="EPSG:4326", all_box=False):
         """Returns values of line intersection on downlaoded geotiff from wcs."""
-        self.gs.getw(fname)
+        self.gs.getw(fname, crs)
         return

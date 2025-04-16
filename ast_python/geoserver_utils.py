@@ -16,6 +16,7 @@ def geoserver_upload_gtif(
     # Create store
     print("Uploading {} at geoserver".format(layername))
     print("workspace: ", ws)
+    print("layername: ", layername)
     ft = cat.create_coveragestore(layername, workspace=ws, data=gtifpath)
 
     # Associate SLD styling to it

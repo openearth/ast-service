@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from osgeo import gdal
 from rasterstats import zonal_stats
+from shapely.geometry import box
 
 from .ast_utils import (
     makeTempDir,
@@ -36,10 +37,15 @@ def get_project_area(gdf, tmp):
 
 def extract_bbox(gdf):
     projectArea = gdf.copy()
+    utm_crs = projectArea.estimate_utm_crs()
+    projectArea = projectArea.to_crs(utm_crs)
     projectArea = projectArea[(projectArea.isProjectArea == True)]
     bounds = projectArea.total_bounds
     buffered_bbox = bufferBbox(bounds)
-    return buffered_bbox
+    buffered_bbox_geom = box(*buffered_bbox)
+    bbox_gdf = gpd.GeoDataFrame([], geometry=[buffered_bbox_geom], crs=utm_crs)
+    return bbox_gdf.to_crs(4326).total_bounds
+    
 
 
 # returns lines, polygons, points.
@@ -136,13 +142,16 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
     measures_fname = "ast_measures_heatstress.json"
     measures = pd.read_json(os.path.join(json_dir, measures_fname))
 
+    gdf = gdf.set_crs(epsg=4326)
+
     # reproject
-    reprojgdf = gdf.copy()
-    reprojgdf.crs = {"init": "epsg:4326"}
-    utm_crs = reprojgdf.estimate_utm_crs()
-    reprojgdf = reprojgdf.to_crs(utm_crs)
+    # reprojgdf = gdf.copy()
+    # reprojgdf.crs = {"init": "epsg:4326"}
+    # utm_crs = reprojgdf.estimate_utm_crs()
+    # reprojgdf = reprojgdf.to_crs(utm_crs)
     # get the bounding box from the geojson and buffer it
-    bbox = extract_bbox(reprojgdf)
+    bbox = extract_bbox(gdf)
+    print(bbox)
     
     # make tempdir & unique id every time
     caseTmpDir = makeTempDir(tmp)
@@ -151,7 +160,7 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
     print("case {}".format(caseTmpDir))
 
     # Project area
-    projectArea = get_project_area(reprojgdf, caseTmpDir)
+    projectArea = get_project_area(gdf, caseTmpDir)
 
     # PET current
     currentValues, currentStats, wmsCur = wcs_2_array(
@@ -184,7 +193,7 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
 
     # get the reduct layers from the geojson
     try:
-        reductLayers = extract_layers(reprojgdf, measures)
+        reductLayers = extract_layers(gdf, measures)
     except Exception:
         res = json.dumps({"error_html": "Please provide meausures and try again"})
         return res

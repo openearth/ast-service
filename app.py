@@ -253,7 +253,7 @@ def maplayers(url, **kwargs):
         "layer": fields.Str(required=True),
         "area": fields.Dict(required=True),
         "field": fields.Str(required=True),
-        "srs": fields.Int(default=28992),
+        "srs": fields.Int(default=4326),
     }
 )
 def mapsetup(url, layer, area, field, **kwargs):
