@@ -216,12 +216,9 @@ def ast_calc_heatstress_cost(**kwargs):
     },
 )
 def ast_calc_heatstress_reduction(data, PETCurrentLayerName, PETPotentialLayerName):
-    if request.is_json:
-        req = request.get_json()
-        collection = req.get("data")
-        res = ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName)
-        return jsonify(res)
-    abort(400)
+    res = ast_heatreduction(data, PETCurrentLayerName, PETPotentialLayerName)
+    return jsonify(res)
+  
 
 
 # /api/scores

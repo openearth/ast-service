@@ -32,9 +32,10 @@
 import numpy as np
 from owslib.wcs import WebCoverageService
 from shapely import wkt
+import logging
 
 
-## TO READ WCS outputs
+## Initializes WCS object to get metadata etc and to get grid.
 class WCS:
     """WCS object to get metadata etc and to get grid."""
 
@@ -45,6 +46,7 @@ class WCS:
         # _, self.format, self.identifier = self.layer.keywords
         self.cx, self.cy = map(int, self.layer.grid.highlimits)
         self.crs = self.layer.boundingboxes[0]["nativeSrs"]
+        #logging.info("crs from layer reading, nativeSrs: {}".format(self.crs))
         self.bbox = self.layer.boundingboxes[0]["bbox"]
         self.lx, self.ly, self.hx, self.hy = map(float, self.bbox)
         self.resx, self.resy = (
@@ -54,15 +56,13 @@ class WCS:
         self.width = self.cx
         self.height = self.cy
 
-    def getw(self, fn, crs):
+    def getw(self, fn):
         """Downloads raster and returns filename of written GEOTIFF in the tmp dir."""
-        print("wcs crs: ", self.crs)
-        print("bbox: ",self.bbox)
         gc = self.wcs.getCoverage(
             identifier=self.id,
             bbox=self.bbox,
             format="GeoTIFF",
-            crs=crs,
+            crs=self.crs,
             width=self.width,
             height=self.height,
         )
@@ -72,16 +72,13 @@ class WCS:
         return fn
 
 
-## TO handle transects
+## TO handle transects, inputs in it the wcs object. 
 class LS:
     """Intersection on grid line"""
 
-    def __init__(self, awkt, crs, host, layer, sampling=1):
-        self.wwkt = awkt
-        self.crs = crs
-        self.gs = WCS(
-            host, layer
-        )  # Initiates WCS service to get some parameters about the grid.
+    def __init__(self, awkt, wcs_object=None, sampling=1, ):
+        self.wwkt = awkt 
+        self.gs = wcs_object
         self.sampling = sampling
 
     def line(self):
@@ -191,7 +188,7 @@ class LS:
             num=self.subdiv,
         )
 
-    def getraster(self, fname, crs="EPSG:4326", all_box=False):
+    def getraster(self, fname, all_box=False):
         """Returns values of line intersection on downlaoded geotiff from wcs."""
-        self.gs.getw(fname, crs)
+        self.gs.getw(fname)
         return

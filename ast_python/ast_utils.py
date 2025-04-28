@@ -64,18 +64,6 @@ def read_config():
     )
 
 
-# Cut a raster layer
-# TODO crs=28992
-def cut_wcs(xst, yst, xend, yend, layername, owsurl, outfname, crs=4326, all_box=False):
-    linestr = "LINESTRING ({} {}, {} {})".format(xst, yst, xend, yend)
-    l = LS(linestr, crs, owsurl, layername)
-    l.line()
-    crs = f"EPSG:{crs}"
-    l.getraster(outfname, crs=crs, all_box=all_box)
-    l = None
-    logging.info("Writing: {}".format(outfname))
-
-
 def makeTempDir(dir):
     # Temporary folder setup
     tmpdir = tempfile.mkdtemp(dir=dir, )
@@ -83,7 +71,7 @@ def makeTempDir(dir):
 
 
 # geodataframe to shapeflie
-def gdf_to_shp(gdf, layername, dir, fieldName=None):
+def gdf_to_shp(gdf, layername, dir, fieldName=None, epsg_code=28992):
     features = gdf.copy()
     # create an output datasouce in memory
     driver = ogr.GetDriverByName("ESRI Shapefile")
@@ -93,7 +81,7 @@ def gdf_to_shp(gdf, layername, dir, fieldName=None):
     # open the memory data source with writing access
     logging.info("Writing: {}".format(shpfile))
     srs = osr.SpatialReference()
-    srs.ImportFromEPSG(4326)
+    srs.ImportFromEPSG(epsg_code)
     layer = source.CreateLayer(layername, srs, ogr.wkbPolygon)
 
     layer.CreateField(ogr.FieldDefn(fieldName, ogr.OFTInteger64))

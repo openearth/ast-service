@@ -8,11 +8,11 @@ import numpy as np
 import pandas as pd
 from osgeo import gdal
 from rasterstats import zonal_stats
-from shapely.geometry import box
+from .wcs_utils import *
+
 
 from .ast_utils import (
     makeTempDir,
-    cut_wcs,
     read_config,
     gdf_to_shp,
     rasterize,
@@ -37,14 +37,10 @@ def get_project_area(gdf, tmp):
 
 def extract_bbox(gdf):
     projectArea = gdf.copy()
-    utm_crs = projectArea.estimate_utm_crs()
-    projectArea = projectArea.to_crs(utm_crs)
     projectArea = projectArea[(projectArea.isProjectArea == True)]
     bounds = projectArea.total_bounds
     buffered_bbox = bufferBbox(bounds)
-    buffered_bbox_geom = box(*buffered_bbox)
-    bbox_gdf = gpd.GeoDataFrame([], geometry=[buffered_bbox_geom], crs=utm_crs)
-    return bbox_gdf.to_crs(4326).total_bounds
+    return buffered_bbox
     
 
 
@@ -96,8 +92,7 @@ def wcs_2_array(
     file,
     bbox,
     proj_area,
-    layer,
-    owsurl,
+    wcs_object,
     layer_cut,
     unique_id,
     resturl,
@@ -105,7 +100,15 @@ def wcs_2_array(
     password,
 ):
     fname = os.path.join(dir, file)
-    cut_wcs(*bbox, layername=layer, owsurl=owsurl, outfname=fname)
+    
+    
+    linestr = "LINESTRING ({} {}, {} {})".format(bbox[0], bbox[1], bbox[2], bbox[3])
+    l = LS(linestr, wcs_object)
+    l.line()
+    l.getraster(fname, all_box=False)
+    l = None
+    logging.info("Writing: {}".format(fname))
+   
 
     # upload to geoserver
     cut_layer = "{0}{1}".format(layer_cut, unique_id)
@@ -115,6 +118,7 @@ def wcs_2_array(
     band = raster.GetRasterBand(1)
     # Get nodata value
     nodata = band.GetNoDataValue()
+    
     # Calc stats
     stats = zonal_stats(proj_area, fname, stats="min mean max")[0]
 
@@ -136,31 +140,47 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
         layer,
         ows_public_url,
     ) = read_config()
+    
 
     gdf = gpd.GeoDataFrame.from_features(collection["features"])
     # read measures table
     measures_fname = "ast_measures_heatstress.json"
     measures = pd.read_json(os.path.join(json_dir, measures_fname))
 
-    gdf = gdf.set_crs(epsg=4326)
-
+    
     # reproject
-    # reprojgdf = gdf.copy()
-    # reprojgdf.crs = {"init": "epsg:4326"}
-    # utm_crs = reprojgdf.estimate_utm_crs()
-    # reprojgdf = reprojgdf.to_crs(utm_crs)
+    reprojgdf = gdf.copy()
+    reprojgdf = reprojgdf.set_crs(epsg=4326)
+    try:
+        #initiate the wcs object
+        # First: instantiate WCS to read CRS
+        wcs_current_meta = WCS(owsurl, PETCurrentLayerName)
+        wcs_potential_meta = WCS(owsurl, PETPotentialLayerName)
+
+        # Check CRS match
+        if wcs_current_meta.crs != wcs_potential_meta.crs:
+            raise ValueError("CRS mismatch between PET_current and PET_potential layers!")
+
+    except Exception as e:
+        logging.exception("Error reading WCS layers or checking CRS")
+        return json.dumps({
+            "error_html": "Failed to read PET layers or CRS mismatch. Please check your input layers.",
+            "details": str(e),
+        })
+        
+    
+    reprojgdf = reprojgdf.to_crs(wcs_current_meta.crs)
+   
     # get the bounding box from the geojson and buffer it
-    bbox = extract_bbox(gdf)
-    print(bbox)
+    bbox = extract_bbox(reprojgdf)
+    logging.info("bbox after reprojection: {}".format(bbox))
     
     # make tempdir & unique id every time
     caseTmpDir = makeTempDir(tmp)
     unique_id = int(1000000 * time.time())
 
-    print("case {}".format(caseTmpDir))
-
     # Project area
-    projectArea = get_project_area(gdf, caseTmpDir)
+    projectArea = get_project_area(reprojgdf, caseTmpDir)
 
     # PET current
     currentValues, currentStats, wmsCur = wcs_2_array(
@@ -168,8 +188,7 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
         "PET_current.tif",
         bbox,
         projectArea,
-        PETCurrentLayerName,  # "NKWK:PET_current",
-        owsurl,
+        wcs_current_meta,
         "PET_current_cut_",
         unique_id,
         resturl,
@@ -182,8 +201,7 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
         "PET_potential.tif",
         bbox,
         projectArea,
-        PETPotentialLayerName,  # "NKWK:PET_potential",
-        owsurl,
+        wcs_potential_meta,
         "PET_potential_cut_",
         unique_id,
         resturl,
@@ -193,12 +211,12 @@ def ast_heatreduction(collection, PETCurrentLayerName, PETPotentialLayerName):
 
     # get the reduct layers from the geojson
     try:
-        reductLayers = extract_layers(gdf, measures)
+        reductLayers = extract_layers(reprojgdf, measures)
     except Exception:
         res = json.dumps({"error_html": "Please provide meausures and try again"})
         return res
-
-    gdf_to_shp(reductLayers, "reduct_layer", caseTmpDir, "factor")
+    epsg_code = int(wcs_current_meta.crs.split(":")[1])
+    gdf_to_shp(reductLayers, "reduct_layer", caseTmpDir, "factor", epsg_code)
 
     # rasterize the reduct shapefile
     infname = os.path.join(caseTmpDir, "reduct_layer.shp")

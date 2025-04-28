@@ -1,4 +1,4 @@
-{
+{"data": {
 	"type": "FeatureCollection",
 	"features": [
 		{
@@ -96,4 +96,8 @@
 			}
 		}
 	]
+},
+"PETCurrentLayerName" : "athens:Athens_PET_current",
+"PETPotentialLayerName": "athens:Athens_PET_potential"
+
 }
