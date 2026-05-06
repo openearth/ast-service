@@ -14,6 +14,12 @@ Rename the config.txt.example to config.txt and fill it in before running.
 ## Running
 When installed and in the right environment (`micromamba activate ast`), you should be able to run `python app.py` and have a live server to test with.
 
+## OpenAPI / Swagger
+This backend exposes an OpenAPI 2.0 specification and Swagger UI via the following endpoints:
+
+- OpenAPI spec (JSON): `http://localhost:5000/api/swagger/`
+- Swagger UI: `http://localhost:5000/api/swagger-ui/`
+
 ## Deployment
 We use [Ansible](https://docs.ansible.com/ansible/latest/) to deploy this code to a server (currently c-oet08041.directory.intra).
 You can install ansible with `pip install ansible` and then from the `ansible` directory run `ansible-playbook -i production site.yml -u <<USER>> -bk` to deploy the code. Please replace `<<USER>>` with your username.
