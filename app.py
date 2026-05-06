@@ -1,5 +1,9 @@
 import json
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env in project root before other imports.
+load_dotenv()
 
 # FLASK
 from apispec import APISpec
@@ -25,6 +29,7 @@ from ast_python.ast_pluvflood import (
 from ast_python.ast_selection import selection_dict
 from ast_python.web_map import layerurl, wfs_area_parser
 from errors import error_handler
+from analytics import init_analytics
 
 # FLASK app
 application = Flask(__name__)
@@ -45,6 +50,8 @@ docs = FlaskApiSpec(application)
 # CORS(application)
 
 application.register_blueprint(error_handler)
+print('application registered', application)
+init_analytics(application)
 
 
 # /
