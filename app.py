@@ -29,7 +29,7 @@ from ast_python.ast_pluvflood import (
 from ast_python.ast_selection import selection_dict
 from ast_python.web_map import layerurl, wfs_area_parser
 from errors import error_handler
-from analytics import init_analytics
+from analytics import analytics_bp, analytics_download, analytics_json, init_analytics
 
 # FLASK app
 application = Flask(__name__)
@@ -279,6 +279,8 @@ docs.register(maplayers)
 docs.register(mapsetup)
 docs.register(ast_calc_scores)
 docs.register(ast_calc_heatstress_reduction)
+docs.register(analytics_json, blueprint=analytics_bp.name)
+docs.register(analytics_download, blueprint=analytics_bp.name)
 
 
 # Main
