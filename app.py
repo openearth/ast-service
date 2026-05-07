@@ -41,6 +41,13 @@ application.config.update(
             version="v1",
             openapi_version="2.0.0",
             plugins=[MarshmallowPlugin()],
+            securityDefinitions={
+                "ApiKeyAuth": {
+                    "type": "apiKey",
+                    "in": "header",
+                    "name": "X-API-Key",
+                }
+            },
         ),
         "APISPEC_SWAGGER_URL": "/api/swagger/",
         "APISPEC_SWAGGER_UI_URL": "/api/swagger-ui/",

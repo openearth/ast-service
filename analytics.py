@@ -35,6 +35,7 @@ from urllib.parse import urlparse
 
 from filelock import FileLock
 from flask import Blueprint, abort, jsonify, request, send_file
+from flask_apispec import doc
 
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 _DEFAULT_LOG = os.path.join(_BASE_DIR, "analytics.csv")
@@ -127,6 +128,7 @@ def _require_analytics_api_key() -> None:
 
 
 @analytics_bp.get("/analytics")
+@doc(security=[{"ApiKeyAuth": []}], tags=["Analytics"])
 def analytics_json():
     _require_analytics_api_key()
     process_q = request.args.get("process")
@@ -151,6 +153,7 @@ def analytics_json():
 
 
 @analytics_bp.get("/analytics/download")
+@doc(security=[{"ApiKeyAuth": []}], tags=["Analytics"])
 def analytics_download():
     _require_analytics_api_key()
     with FileLock(LOCK_FILE, timeout=120):
